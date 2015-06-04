@@ -16,12 +16,14 @@ namespace kinguin.net
 
         protected void LoginForm_OnAuthenticate(object sender, AuthenticateEventArgs e)
         {
+            ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "stuff" + "');", true);
             Login l = (Login) sender;
             if (l.UserName == "admin")
             {
-                Response.Cookies["kinguin"]["loggedin"] = "admin";
+                Response.Cookies["kinguin"].Value = "admin";
 
             }
+            e.Authenticated = true;
         }
     }
 }

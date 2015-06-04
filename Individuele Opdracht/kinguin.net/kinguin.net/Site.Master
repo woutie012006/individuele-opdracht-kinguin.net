@@ -59,7 +59,7 @@
 
                     </ul>
                     <div id="Login" style="float: right; margin-top: 10px; margin-bottom: 10px;">
-                        <asp:Button ID="btnLogin" class="btn btn-default" runat="server" Text="Login" href="~/Login" OnClick="btnLogin_OnClick"/>
+                       <asp:LinkButton ID="btnLogin" OnClick="btnLogin_OnClick" class="btn btn-default" runat="server" Text="Login"></asp:LinkButton>
                     </div>
                 </div>
 

@@ -12,7 +12,12 @@ namespace kinguin.net
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Response.Cookies["kinguin.net"]["loggedin"] != null)
+            //string k = Request.Cookies["kinguin.net"]["loggedin"];
+            //Response.Cookies["kinguin"].Value = "admin";
+            //k = Response.Cookies["kinguin"].Value;
+            //HttpCookie h = Request.Cookies["kinguin.net"];
+            string k = Request.Cookies["kinguin"].Value;
+            if (!string.IsNullOrEmpty(k))
             {
                 btnLogin.Text = "Log out";
            }
@@ -20,13 +25,16 @@ namespace kinguin.net
 
         protected void btnLogin_OnClick(object sender, EventArgs e)
         {
-            if (((Button) sender).Text == "login")
+           // Response.Redirect("login.aspx");
+
+            if (((LinkButton) sender).Text.ToUpper() == "LOGIN")
             {
                 Response.Redirect("login.aspx");
             }
             else
             {
-                Response.Cookies["kinguin"]["loggedin"] = "";
+                Response.Cookies["kinguin"].Value = "";
+                Response.Redirect("login.aspx");
             }
         }
     }
