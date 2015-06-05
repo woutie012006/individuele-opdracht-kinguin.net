@@ -2,7 +2,7 @@
 using System;
 using System.Data;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+//using System.Windows.Forms;
 
 namespace Ict4Events_WindowsForms
 {
@@ -14,9 +14,9 @@ namespace Ict4Events_WindowsForms
         public const string databaseArgs = "user id=" + userName + ";password=" + password + ";data source=" + serverAddress;
 
         private OracleConnection connection;
-        private const string userName = "System", password = "pts7", serverAddress = "192.168.20.10", sid = "xe";
+        private const string userName = "System", password = "Password123", serverAddress = "127.0.0.1", sid = "xe";
 
-        private DatabaseQueries databaseQueries;
+        //private DatabaseQueries databaseQueries;
 
         private static readonly DatabaseConnection _instance = new DatabaseConnection();
       
@@ -26,6 +26,9 @@ namespace Ict4Events_WindowsForms
             get { return _instance; }
         }
 
+        public OracleConnection oracleConnection {
+            get { return connection;}
+        }
 
         /// <summary>
         /// Gets if the database is connected
@@ -48,13 +51,13 @@ namespace Ict4Events_WindowsForms
             get { return connection.State == ConnectionState.Open; }
         }
 
-        public DatabaseQueries DatabaseQueries
-        {
-            get { return databaseQueries; }
-            set { databaseQueries = value; }
-        }
+        //public DatabaseQueries DatabaseQueries
+        //{
+        //    get { return databaseQueries; }
+        //    set { databaseQueries = value; }
+        //}
 
-        private DatabaseConnection()
+        public DatabaseConnection()
         {
             this.connection = new OracleConnection(databaseArgs);
         }

@@ -11,7 +11,7 @@ namespace kinguin.net
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            PlaceHolder1.Controls.Add(new Label() { Text = Session.SessionID }); ;
         }
     }
 }

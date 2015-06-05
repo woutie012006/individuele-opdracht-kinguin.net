@@ -18,3 +18,4 @@ C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\Individuele Opdr
 C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\Individuele Opdracht\kinguin.net\kinguin.net\obj\Debug\kinguin.net.csprojResolveAssemblyReference.cache
 C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\Individuele Opdracht\kinguin.net\kinguin.net\obj\Debug\kinguin.net.dll
 C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\Individuele Opdracht\kinguin.net\kinguin.net\obj\Debug\kinguin.net.pdb
+C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\Individuele Opdracht\kinguin.net\kinguin.net\bin\Oracle.ManagedDataAccess.dll

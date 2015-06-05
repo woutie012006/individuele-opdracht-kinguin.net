@@ -16,6 +16,7 @@ namespace kinguin.net
             //Response.Cookies["kinguin"].Value = "admin";
             //k = Response.Cookies["kinguin"].Value;
             //HttpCookie h = Request.Cookies["kinguin.net"];
+            
             string k = Request.Cookies["kinguin"].Value;
             if (!string.IsNullOrEmpty(k))
             {
