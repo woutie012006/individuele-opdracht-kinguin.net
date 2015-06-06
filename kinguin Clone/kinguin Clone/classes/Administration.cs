@@ -13,10 +13,11 @@ namespace kinguin_Clone.classes
         private User currentUser { get; set; }
         private List<Game> games { get; set; }
 
-        public bool login(string email, string password)
+
+        public bool Login(string email, string password)
         {
             DatabaseConnection db = new DatabaseConnection();
-            string query = "select count(*) from lid where email='" + email+ "' and password = '" + password + "'";
+            string query = "select count(*) from lid where email='" + email + "' and password = '" + password + "'";
 
             //string sql = "SELECT count(*) FROM lid WHERE name=:un AND password=:pw";
             //OracleCommand oc = new OracleCommand(sql, db.oracleConnection);
@@ -39,28 +40,83 @@ namespace kinguin_Clone.classes
 
             return Convert.ToBoolean(valid);
         }
-
-        public List<Game> getGamesByName(string[] searchStrings )
+        public List<Game> getGamesByName(string[] searchStrings)
         {
             DatabaseConnection db = new DatabaseConnection();
             List<Game> games = new List<Game>();
-            string query  =null;
+            string query = null;
 
             foreach (var s in searchStrings)
             {
                 query = "%" + query;
             }
             query = query + "%";
-            query = "select gamenr,naam,jaar, from game where name like '" + query + "'";
+            query = "select gamenr,naam, categie, datum,foto,specificatie,platform from game where naam like '" + query + "'";
 
 
             OracleDataReader dr = db.ExecuteReadQuery(query);
 
             while (dr.Read())
             {
-                dr.GetInt32(0);                
+                int gamenr = dr.GetInt32(0);
+                string name = dr.GetString(1);
+                string category = dr.GetString(2);
+                DateTime date = dr.GetDateTime(3);
+                string picture = dr.GetString(4);
+                string specificatie = dr.GetString(5);
+                string platform = dr.GetString(6);
+
+                games.Add(new Game(gamenr, name,category, date, picture, specificatie, platform));
             }
-           
+            return games;
+        }
+        public List<Game> getGamesByCategory(string searchterm)
+        {
+            DatabaseConnection db = new DatabaseConnection();
+            List<Game> games = new List<Game>();
+            
+            string query = "select gamenr,naam,datum,foto,specificatie,platform from game where upper(categorie)= upper('" + searchterm + "')";
+
+
+            OracleDataReader dr = db.ExecuteReadQuery(query);
+
+            while (dr.Read())
+            {
+                int gamenr = dr.GetInt32(0);
+                string name = dr.GetString(1);
+                string category = dr.GetString(2);
+                DateTime date = dr.GetDateTime(3);
+                string picture = dr.GetString(4);
+                string specificatie = dr.GetString(5);
+                string platform = dr.GetString(6);
+
+                games.Add(new Game(gamenr, name, category, date, picture, specificatie, platform));
+            }
+            return games;
+        }
+        public List<Game> GetGamesByPlatform(string searchterm)
+        {
+            DatabaseConnection db = new DatabaseConnection();
+            List<Game> games = new List<Game>();
+
+            string query = "select gamenr,naam,datum,foto,specificatie,platform from game where upper(platform)= upper('" + searchterm + "')";
+
+
+            OracleDataReader dr = db.ExecuteReadQuery(query);
+
+            while (dr.Read())
+            {
+                int gamenr = dr.GetInt32(0);
+                string name = dr.GetString(1);
+                string category = dr.GetString(2);
+                DateTime date = dr.GetDateTime(3);
+                string picture = dr.GetString(4);
+                string specificatie = dr.GetString(5);
+                string platform = dr.GetString(6);
+
+                games.Add(new Game(gamenr, name, category, date, picture, specificatie, platform));
+            }
+            return games;
         }
     }
 }

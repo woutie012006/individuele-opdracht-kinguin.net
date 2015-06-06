@@ -30,7 +30,7 @@ namespace kinguin_Clone
         protected void LoginForm_OnAuthenticate(object sender, AuthenticateEventArgs e)//different class ??????
         {
             System.Web.UI.WebControls.Login l = (System.Web.UI.WebControls.Login)sender;
-            if (administration.login(l.UserName, l.Password))
+            if (administration.Login(l.UserName, l.Password))
             {
                 e.Authenticated = true;
                 Response.Redirect("~/");
