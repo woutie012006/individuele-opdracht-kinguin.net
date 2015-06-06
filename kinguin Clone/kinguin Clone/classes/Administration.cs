@@ -51,7 +51,7 @@ namespace kinguin_Clone.classes
                 query = "%" + query;
             }
             query = query + "%";
-            query = "select gamenr,naam, categie, datum,foto,specificatie,platform from game where naam like '" + query + "'";
+            query = "select gamenr,naam, categorie, datum,foto,specificatie,platform,beschrijving from game where naam like '" + query + "'";
 
 
             OracleDataReader dr = db.ExecuteReadQuery(query);
@@ -65,8 +65,9 @@ namespace kinguin_Clone.classes
                 string picture = dr.GetString(4);
                 string specificatie = dr.GetString(5);
                 string platform = dr.GetString(6);
+                string beschrijving = dr.GetString(7);
 
-                games.Add(new Game(gamenr, name,category, date, picture, specificatie, platform));
+                games.Add(new Game(gamenr, name,category, date, picture, specificatie, platform, beschrijving));
             }
             return games;
         }
@@ -75,7 +76,7 @@ namespace kinguin_Clone.classes
             DatabaseConnection db = new DatabaseConnection();
             List<Game> games = new List<Game>();
             
-            string query = "select gamenr,naam,datum,foto,specificatie,platform from game where upper(categorie)= upper('" + searchterm + "')";
+            string query = "select gamenr,naam,categorie, datum,foto,specificatie,platform, beschrijving from game where upper(categorie)= upper('" + searchterm + "')";
 
 
             OracleDataReader dr = db.ExecuteReadQuery(query);
@@ -89,8 +90,9 @@ namespace kinguin_Clone.classes
                 string picture = dr.GetString(4);
                 string specificatie = dr.GetString(5);
                 string platform = dr.GetString(6);
+                string beschrijving = dr.GetString(7);
 
-                games.Add(new Game(gamenr, name, category, date, picture, specificatie, platform));
+                games.Add(new Game(gamenr, name, category, date, picture, specificatie, platform, beschrijving));
             }
             return games;
         }
@@ -99,7 +101,7 @@ namespace kinguin_Clone.classes
             DatabaseConnection db = new DatabaseConnection();
             List<Game> games = new List<Game>();
 
-            string query = "select gamenr,naam,datum,foto,specificatie,platform from game where upper(platform)= upper('" + searchterm + "')";
+            string query = "select gamenr,naam, categorie, datum,foto,specificatie,platform,beschrijving from game where upper(platform)= upper('" + searchterm + "')";
 
 
             OracleDataReader dr = db.ExecuteReadQuery(query);
@@ -113,10 +115,40 @@ namespace kinguin_Clone.classes
                 string picture = dr.GetString(4);
                 string specificatie = dr.GetString(5);
                 string platform = dr.GetString(6);
+                string beschrijving = dr.GetString(7);
 
-                games.Add(new Game(gamenr, name, category, date, picture, specificatie, platform));
+                games.Add(new Game(gamenr, name, category, date, picture, specificatie, platform, beschrijving));
             }
             return games;
         }
+        public List<Game> GetallGames()
+        {
+            DatabaseConnection db = new DatabaseConnection();
+            List<Game> games = new List<Game>();
+
+            string query = "select gamenr,naam, categorie, datum,foto,specificatie,platform,beschrijving from game";
+
+
+            OracleDataReader dr = db.ExecuteReadQuery(query);
+
+            while (dr.Read())
+            {
+                int gamenr = dr.GetInt32(0);
+                string name = dr.GetString(1);
+                string category = dr.GetString(2);
+                DateTime date = dr.GetDateTime(3);
+                string picture = dr.GetString(4);
+                string specificatie = dr.GetString(5);
+                string platform = dr.GetString(6);
+                string beschrijving = dr.GetString(7);
+
+                games.Add(new Game(gamenr, name, category, date, picture, specificatie, platform, beschrijving));
+            }
+            return games;
+        }
+
+        //public List<Game> GetGamesBestSold()
+        //{
+        //}
     }
 }

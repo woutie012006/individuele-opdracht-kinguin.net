@@ -11,13 +11,14 @@ namespace kinguin_Clone.classes
     {
         public int gameNr { get; set; }
         public string name { get; set; }
+        public string description { get; set; }
         public DateTime date { get; set; }
         public string picture { get; set; }
         public string specificatie { get; set; }
         public string platform { get; set; }
         public string category { get; set; }
 
-        public Game(int gameNr, string name, string category, DateTime date, string picture, string specificatie, string platform)
+        public Game(int gameNr, string name, string category, DateTime date, string picture, string specificatie, string platform, string description)
         {
             this.gameNr = gameNr;
             this.name = name;
@@ -26,6 +27,7 @@ namespace kinguin_Clone.classes
             this.picture = picture;
             this.specificatie = specificatie;
             this.platform = platform;
+            this.description = description;
         }
 
         public List<GameCopy> GetAllCopies()
@@ -48,6 +50,7 @@ namespace kinguin_Clone.classes
             }
             return copies;
         }
+
 
     }
 }

@@ -13,8 +13,8 @@ namespace kinguin_Clone.classes
         public string code { get; set; }
 
 
-        public GameCopy(int gameNr, string name, string category, DateTime date, string picture, string specificatie, string platform, int CopyNr, float price, DateTime SellingDate, string code)
-            : base(gameNr, name, category, date, picture, specificatie, platform)
+        public GameCopy(int gameNr, string name, string category, DateTime date, string picture, string specificatie, string platform, int CopyNr, float price, DateTime SellingDate, string code, string description)
+            : base(gameNr, name, category, date, picture, specificatie, platform, description)
         {
             this.copyNr = CopyNr;
             this.price = price;
@@ -27,7 +27,7 @@ namespace kinguin_Clone.classes
         /// </summary>
         /// <returns></returns>
         public GameCopy(Game g, int CopyNr, float price, DateTime SellingDate, string code)
-            : base(g.gameNr, g.name, g.category, g.date, g.picture, g.specificatie, g.platform)
+            : base(g.gameNr, g.name, g.category, g.date, g.picture, g.specificatie, g.platform, g.description)
         {
             this.copyNr = CopyNr;
             this.price = price;
@@ -40,7 +40,7 @@ namespace kinguin_Clone.classes
         /// <returns></returns>
         public bool sell()
         {
-            //return false;
+            return false;
         }
 
         //public Game getGame()
