@@ -1,0 +1,22 @@
+C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\kinguin Clone\obj\Debug\kinguin Clone.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\kinguin Clone\bin\kinguin Clone.dll
+C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\kinguin Clone\bin\kinguin Clone.pdb
+C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\kinguin Clone\bin\Antlr3.Runtime.dll
+C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\kinguin Clone\bin\AspNet.ScriptManager.bootstrap.dll
+C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\kinguin Clone\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\kinguin Clone\bin\Microsoft.AspNet.FriendlyUrls.dll
+C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\kinguin Clone\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\kinguin Clone\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\kinguin Clone\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\kinguin Clone\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\kinguin Clone\bin\Newtonsoft.Json.dll
+C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\kinguin Clone\bin\Oracle.ManagedDataAccess.dll
+C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\kinguin Clone\bin\System.Web.Optimization.dll
+C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\kinguin Clone\bin\WebGrease.dll
+C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\kinguin Clone\bin\System.Web.Optimization.xml
+C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\kinguin Clone\bin\Antlr3.Runtime.pdb
+C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\kinguin Clone\bin\Newtonsoft.Json.xml
+C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\kinguin Clone\bin\Microsoft.AspNet.FriendlyUrls.xml
+C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\kinguin Clone\obj\Debug\kinguin Clone.dll
+C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\kinguin Clone\obj\Debug\kinguin Clone.pdb
+C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\kinguin Clone\bin\kinguin Clone.dll.config
