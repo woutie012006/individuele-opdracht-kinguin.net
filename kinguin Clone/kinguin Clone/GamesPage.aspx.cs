@@ -32,7 +32,7 @@ namespace kinguin_Clone
             btnbuyNow.NavigateUrl = "~/ShoppingCart.aspx/" + game.gameNr;
 
             HyperLink btnMoreInfo = e.Item.FindControl("btnMoreInfo") as HyperLink;
-            btnbuyNow.NavigateUrl = "~/GameInfo.aspx/" + game.gameNr;
+            btnMoreInfo.NavigateUrl = "~/GameInfo.aspx/" + game.gameNr;
         }
       
     }
