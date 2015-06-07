@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using kinguin_Clone.classes;
+using Microsoft.Ajax.Utilities;
 
 namespace kinguin_Clone
 {
@@ -14,9 +16,25 @@ namespace kinguin_Clone
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<Game> data = new List<Game>();
-            data.Add(administration.getGameByID(1));//will need id from url
-            GameView.DataSource = data;
+            if (!Request.RawUrl.EndsWith("info"))
+            {
+                try
+                {
+                    string k = Request.Url.AbsolutePath;
+                    string[] s = k.Split('/');
+                    int id = Convert.ToInt32(s[s.Length - 1]);
+                    List<Game> data = new List<Game>();
+                    data.Add(administration.getGameByID(id)); 
+                    GameView.DataSource = data;
+                }
+                catch (Exception exception)
+                {
+                    this.Controls.Add(new Label()
+                    {
+                        Text = "Game Not found, the following error occured : " + exception.Message
+                    });
+                }
+            }
         }
         protected void Page_PreRender(object sender, EventArgs e)
         {

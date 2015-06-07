@@ -40,18 +40,13 @@ namespace kinguin_Clone.classes
 
             return Convert.ToBoolean(valid);
         }
-        public List<Game> getGamesByName(string[] searchStrings)
+        public List<Game> getGamesByName(string searchterm)
         {
             DatabaseConnection db = new DatabaseConnection();
             List<Game> games = new List<Game>();
             string query = null;
-
-            foreach (var s in searchStrings)
-            {
-                query = "%" + query;
-            }
-            query = query + "%";
-            query = "select gamenr,naam, categorie, datum,foto,specificatie,platform,beschrijving from game where naam like '" + query + "'";
+            searchterm = searchterm.Replace("?", "%");
+            query = "select gamenr,naam, categorie, datum,foto,specificatie,platform,beschrijving from game where naam like '" + searchterm + "'";
 
 
             OracleDataReader dr = db.ExecuteReadQuery(query);

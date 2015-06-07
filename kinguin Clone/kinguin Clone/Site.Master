@@ -58,8 +58,7 @@
                     <div id="LoginLink" style="float: right; margin-top: 10px; margin-bottom: 10px;">
                         
                         <asp:TextBox ID="tbSearch" runat="server"></asp:TextBox>
-                        <button type="button" class="btn btn-primary glyphicon glyphicon-search" aria-label="Left Align" style=" background-color: rgba(0, 0, 0, 0.0); border-width: 0;"></button>
-
+                        <button ID="btnSearch"  onclick="btnSearch_OnClick" type="button" class="btn btn-primary glyphicon glyphicon-search" aria-label="Left Align" style=" background-color: rgba(0, 0, 0, 0.0); border-width: 0;"></button>
                         <asp:LinkButton ID="btnLogin" OnClick="btnLogin_OnClick" class="btn btn-default" runat="server" Text="Login" ></asp:LinkButton>
 
                     </div>

@@ -12,7 +12,7 @@ namespace kinguin_Clone
         protected void Page_Load(object sender, EventArgs e)
         {
             HttpCookie c = Request.Cookies["kinguin"];
-            if (c!=null && !string.IsNullOrEmpty(c.Value))
+            if (c != null && !string.IsNullOrEmpty(c.Value))
             {
                 btnLogin.Text = "Log out";
             }
@@ -30,6 +30,16 @@ namespace kinguin_Clone
                 Response.Cookies["kinguin"].Value = "";
                 Response.Redirect("login.aspx");
             }
+        }
+
+        protected void btnSearch_OnClick(object sender, EventArgs e)
+        {
+
+            string searchterm = tbSearch.Text.Replace(" ", "?");
+            searchterm = "?" + searchterm + "?";
+            searchterm = searchterm.Replace("??", "?");
+            Response.Redirect("GamesPage.aspx/search/" + searchterm);
+
         }
     }
 }

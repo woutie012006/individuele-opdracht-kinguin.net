@@ -14,8 +14,64 @@ namespace kinguin_Clone
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<Game> data = administration.GetallGames();
-            GamesView.DataSource = data;
+            string[] url = Request.RawUrl.Split('/');
+            
+
+            if (Request.RawUrl.EndsWith("Page"))
+            {
+                List<Game> data = administration.GetallGames();
+                GamesView.DataSource = data;
+            }
+            else if (url[2].ToUpper() == "GENRE")    //check if it needs to look for genre.
+            {
+                try
+                {
+                    string requested = url[2];
+                    List<Game> data = administration.getGamesByCategory(requested);
+                    GamesView.DataSource = data;
+                }
+                catch (Exception exception)
+                {
+                    this.Controls.Add(new Label()
+                    {
+                        Text = "Games Not found, the following error occured : " + exception.Message
+                    });
+                }
+            }
+            else if (url[2].ToUpper() == "PLATFORM") //check if it needs to look for platform.
+            {
+                try
+                {
+                    string requested = url[2];
+                    List<Game> data = administration.GetGamesByPlatform(requested);
+                    GamesView.DataSource = data;
+                }
+                catch (Exception exception)
+                {
+                    this.Controls.Add(new Label()
+                    {
+                        Text = "Game Not found, the following error occured : " + exception.Message
+                    });
+                }
+
+            }
+            else if (url[2].ToUpper() == "SEARCH") //check if it needs to look for platform.
+            {
+                try
+                {
+                    string requested = url[3];// Request.RawUrl.Replace(url[1],"");
+                    List<Game> data = administration.getGamesByName(requested);
+                    GamesView.DataSource = data;
+                }
+                catch (Exception exception)
+                {
+                    this.Controls.Add(new Label()
+                    {
+                        Text = "Game Not found, the following error occured : " + exception.Message
+                    });
+                }
+
+            }
         }
         protected void Page_PreRender(object sender, EventArgs e)
         {
