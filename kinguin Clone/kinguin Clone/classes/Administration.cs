@@ -67,7 +67,7 @@ namespace kinguin_Clone.classes
                 string platform = dr.GetString(6);
                 string beschrijving = dr.GetString(7);
 
-                games.Add(new Game(gamenr, name,category, date, picture, specificatie, platform, beschrijving));
+                games.Add(new Game(gamenr, name, category, date, picture, specificatie, platform, beschrijving));
             }
             return games;
         }
@@ -75,7 +75,7 @@ namespace kinguin_Clone.classes
         {
             DatabaseConnection db = new DatabaseConnection();
             List<Game> games = new List<Game>();
-            
+
             string query = "select gamenr,naam,categorie, datum,foto,specificatie,platform, beschrijving from game where upper(categorie)= upper('" + searchterm + "')";
 
 
@@ -145,6 +145,34 @@ namespace kinguin_Clone.classes
                 games.Add(new Game(gamenr, name, category, date, picture, specificatie, platform, beschrijving));
             }
             return games;
+        }
+
+        public Game getGameByID(int id)
+        {
+            Game g;
+
+
+            DatabaseConnection db = new DatabaseConnection();
+
+            string query = "select gamenr,naam, categorie, datum,foto,specificatie,platform,beschrijving from game where rownum=1 and GameNr = " + id;
+
+
+            OracleDataReader dr = db.ExecuteReadQuery(query);
+
+            dr.Read();
+
+            int gamenr = dr.GetInt32(0);
+            string name = dr.GetString(1);
+            string category = dr.GetString(2);
+            DateTime date = dr.GetDateTime(3);
+            string picture = dr.GetString(4);
+            string specificatie = dr.GetString(5);
+            string platform = dr.GetString(6);
+            string beschrijving = dr.GetString(7);
+
+            g = new Game(gamenr, name, category, date, picture, specificatie, platform, beschrijving);
+
+            return g;
         }
 
         //public List<Game> GetGamesBestSold()
