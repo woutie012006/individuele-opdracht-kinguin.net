@@ -148,6 +148,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-orginal.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -164,6 +165,8 @@
     <Content Include="GamesPage.aspx" />
     <Content Include="GameInfo.aspx" />
     <Content Include="ShoppingCart.aspx" />
+    <Content Include="Logout.aspx" />
+    <Content Include="Register.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -216,6 +219,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="classes\Admin.cs" />
     <Compile Include="classes\Administration.cs" />
+    <Compile Include="classes\Advert.cs" />
     <Compile Include="classes\Buyer.cs" />
     <Compile Include="classes\Cart.cs" />
     <Compile Include="classes\Game.cs" />
@@ -282,6 +286,20 @@
     </Compile>
     <Compile Include="ShoppingCart.aspx.designer.cs">
       <DependentUpon>ShoppingCart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

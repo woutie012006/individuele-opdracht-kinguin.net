@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -16,6 +17,7 @@ namespace kinguin_Clone
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             if (!Request.RawUrl.EndsWith("info"))
             {
                 try

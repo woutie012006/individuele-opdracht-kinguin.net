@@ -22,13 +22,22 @@ namespace kinguin_Clone {
         protected global::System.Web.UI.WebControls.TextBox tbSearch;
         
         /// <summary>
-        /// btnLogin control.
+        /// btnSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnLogin;
+        protected global::System.Web.UI.WebControls.Button btnSearch;
+        
+        /// <summary>
+        /// LoginLogout control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink LoginLogout;
         
         /// <summary>
         /// MainContent control.

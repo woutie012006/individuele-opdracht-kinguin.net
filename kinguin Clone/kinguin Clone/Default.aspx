@@ -2,10 +2,18 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="jumbotron">
-        <h1>ASP.NET</h1>
+    <div id ="jumbotron" class="jumbotron alert alert-dismissible alert-info" runat="server" >
+        <br>
+        <asp:Image ID="imgJumbotron" runat="server" Width="100%"/>
+        <br>
+        <br>
+         <%--<asp:Panel ID="Panel" runat="server">
+            <asp:Image ID="adimage" runat="server" ></asp:Image>
+
+        </asp:Panel>--%>
+        <%--<h1>ASP.NET</h1>
         <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>--%>
     </div>
 
     <div class="row">

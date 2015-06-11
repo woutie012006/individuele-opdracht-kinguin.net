@@ -5,7 +5,10 @@ using System.Web;
 
 namespace kinguin_Clone.classes
 {
-    public class Admin
+    public class Admin:User
     {
+        public Admin(int Usernr, string name, string adres, string phonent, float kinguinBalance) : base(Usernr, name, adres, phonent, kinguinBalance)
+        {
+        }
     }
 }

@@ -33,7 +33,7 @@ namespace kinguin_Clone
             if (administration.Login(l.UserName, l.Password))
             {
                 e.Authenticated = true;
-                Response.Redirect("~/");
+                Response.Redirect("~/Default.aspx");
             }
         }
 

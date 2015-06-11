@@ -22,11 +22,11 @@ namespace kinguin_Clone
                 List<Game> data = administration.GetallGames();
                 GamesView.DataSource = data;
             }
-            else if (url[2].ToUpper() == "GENRE")    //check if it needs to look for genre.
+            else if (url[url.Length - 2].ToUpper() == "GENRE")    //check if it needs to look for genre.
             {
                 try
                 {
-                    string requested = url[2];
+                    string requested = url[url.Length-1];
                     List<Game> data = administration.getGamesByCategory(requested);
                     GamesView.DataSource = data;
                 }
@@ -38,11 +38,11 @@ namespace kinguin_Clone
                     });
                 }
             }
-            else if (url[2].ToUpper() == "PLATFORM") //check if it needs to look for platform.
+            else if (url[url.Length-2].ToUpper() == "PLATFORM") //check if it needs to look for platform.
             {
                 try
                 {
-                    string requested = url[2];
+                    string requested = url[url.Length-1];
                     List<Game> data = administration.GetGamesByPlatform(requested);
                     GamesView.DataSource = data;
                 }
@@ -55,11 +55,13 @@ namespace kinguin_Clone
                 }
 
             }
-            else if (url[2].ToUpper() == "SEARCH") //check if it needs to look for platform.
+            else if (url[url.Length-2].ToUpper() == "SEARCH") //check if it needs to look for platform.
             {
                 try
                 {
-                    string requested = url[3];// Request.RawUrl.Replace(url[1],"");
+                    string requested = url[url.Length-1];// Request.RawUrl.Replace(url[1],"");
+                    requested = "%" + requested + "%";
+                    requested = requested.Replace(" ", "%");
                     List<Game> data = administration.getGamesByName(requested);
                     GamesView.DataSource = data;
                 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using kinguin_Clone.classes;
 
 namespace kinguin_Clone
 {
@@ -11,7 +12,9 @@ namespace kinguin_Clone
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            imgJumbotron.ImageUrl = new Administration().getAdds()[1].picture;
+            //jumbotron.Style["background-image"] = new Administration().getAdds()[1].picture;
+            //dimage.ImageUrl = new Administration().getAdds()[1].picture;
         }
     }
 }

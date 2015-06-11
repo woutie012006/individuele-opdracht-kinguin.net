@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="GamesPage.aspx.cs" Inherits="kinguin_Clone.GamesPage" %>
+<%@ MasterType virtualpath="~/Site.master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 

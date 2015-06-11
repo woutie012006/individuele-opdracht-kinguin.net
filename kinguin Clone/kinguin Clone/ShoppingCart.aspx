@@ -1,39 +1,33 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ShoppingCart.aspx.cs" Inherits="kinguin_Clone.ShoppingCart" %>
+<%@ MasterType virtualpath="~/Site.master" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    
-    <div id="tableDiv" style="display:flex;justify-content:center;align-items:center; margin-top: 20%; margin-bottom: 20%; ">
-    <table class="table table-bordered table-striped" >
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Username</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
-      </tbody>
-    </table>
-        
-  </div>
+
+    <div id="tableDiv" style="display: flex; justify-content: center; align-items: center; margin-top: 20%; margin-bottom: 20%;">
+        <table class="table table-bordered table-striped">
+
+            <thead>
+                <tr>
+                    <th>Item Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <asp:ListView ID="ItemView" OnItemDataBound="ItemView_OnItemDataBoundView_ItemDataBound" runat="server">
+                    <ItemTemplate>
+                        <tr>
+                            <td><%# Eval("name") %></td>
+                            <td><%# Eval("description") %></td>
+                            <td><%# Eval("price") %></td>
+                        </tr>
+                    </ItemTemplate>
+                </asp:ListView>
+            </tbody>
+        </table>
+
+    </div>
 
 
 </asp:Content>

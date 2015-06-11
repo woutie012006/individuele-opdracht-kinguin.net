@@ -10,16 +10,16 @@
 namespace kinguin_Clone {
     
     
-    public partial class GamesPage {
+    public partial class Logout {
         
         /// <summary>
-        /// GamesView control.
+        /// lblLogout control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView GamesView;
+        protected global::System.Web.UI.WebControls.Label lblLogout;
         
         /// <summary>
         /// Master property.
