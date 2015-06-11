@@ -11,30 +11,31 @@ namespace kinguin_Clone.classes
         public List<GameCopy> gamesOwned { get; set; }
         public Cart cart { get; set; }
 
-        public Buyer(int Usernr, string name, string adres, string phonenr, float kinguinBalance)
+        public Buyer(int Usernr, string name, string adres, string phonenr, float kinguinBalance, string nickname)
             : base(Usernr, name,adres,phonenr,kinguinBalance)
         {
+            this.Nickname = nickname;
             cart = new Cart() {owned = GetUserCopies()};
 
         }
         public List<GameCopy> GetUserCopies()
         {
-            //todo implement
+            //todo implement Buyer.GetUserCopies()
             return new List<GameCopy>();
         }
         public void addGameToCart(GameCopy game)
         {
-            cart.AddGame(game);
+            cart.AddGame(game, this);
         }
 
         public void removeGameToCart(GameCopy game)
         {
-            cart.RemoveGame(game);
+            cart.RemoveGame(game, this);
         }
 
         public void buyCart()
         {
-            //todo database implementation.
+            //todo database implementation Buyer.BuyCart
         }
     }
 }
