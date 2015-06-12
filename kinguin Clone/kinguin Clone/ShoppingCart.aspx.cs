@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -10,17 +11,24 @@ namespace kinguin_Clone
 {
     public partial class ShoppingCart : System.Web.UI.Page
     {
-        Administration administration = new Administration();
+        private Administration administration;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<GameCopy> data = administration.GetCartCopies();
-            ItemView.DataSource = data;
+            administration = Master.administration;
+            if (administration.currentUser is Buyer)
+            {
+                List<GameCopy> data = ((Buyer)administration.currentUser).cart.owned;
+                ItemView.DataSource = data;
+            }
         }
-
+        protected void Page_PreRender(object sender, EventArgs e)
+        {
+            ItemView.DataBind();
+        }
         protected void ItemView_OnItemDataBoundView_ItemDataBound(object sender, ListViewItemEventArgs e)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }
 }

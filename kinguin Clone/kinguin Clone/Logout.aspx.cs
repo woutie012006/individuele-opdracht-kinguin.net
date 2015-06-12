@@ -11,7 +11,8 @@ namespace kinguin_Clone
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Response.Cookies["kinguin"].Value = "";
+            Master.administration.currentUser = null;
+            Session["administration"] = Master.administration;
             lblLogout.Text = "You have been successfully logged out";
             HyperLink h = (HyperLink)Master.FindControl("LoginLogout");
             h.Text = "Login";

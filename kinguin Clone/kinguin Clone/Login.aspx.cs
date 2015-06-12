@@ -13,14 +13,15 @@ namespace kinguin_Clone
 {
     public partial class Login : System.Web.UI.Page
     {
-        Administration administration = new Administration();
+        Administration administration;
 
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            HttpCookie c = Request.Cookies["kinguin"];
+            administration = Master.administration;
+            User c = administration.currentUser;
 
-            if (c != null && !string.IsNullOrEmpty(c.Value))
+            if (c != null)
                         Response.Redirect("~/");
             
             LoginForm.UserNameLabelText = "E-mail ";

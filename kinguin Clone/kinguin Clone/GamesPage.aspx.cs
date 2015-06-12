@@ -86,8 +86,8 @@ namespace kinguin_Clone
             Image image = e.Item.FindControl("IMGGame") as Image;
             image.ImageUrl = game.picture;
 
-            HyperLink btnbuyNow = e.Item.FindControl("btnBuyNow") as HyperLink;
-            btnbuyNow.NavigateUrl = "~/ShoppingCart.aspx/" + game.gameNr;
+            //HyperLink btnbuyNow = e.Item.FindControl("btnBuyNow") as HyperLink;
+            //btnbuyNow.NavigateUrl = "~/ShoppingCart.aspx/" + game.gameNr;
 
             HyperLink btnMoreInfo = e.Item.FindControl("btnMoreInfo") as HyperLink;
             btnMoreInfo.NavigateUrl = "~/GameInfo.aspx/" + game.gameNr;

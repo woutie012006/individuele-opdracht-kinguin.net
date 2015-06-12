@@ -22,6 +22,15 @@ namespace kinguin_Clone {
         protected global::System.Web.UI.WebControls.Login LoginForm;
         
         /// <summary>
+        /// hlRegister control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hlRegister;
+        
+        /// <summary>
         /// Master property.
         /// </summary>
         /// <remarks>

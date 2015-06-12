@@ -17,8 +17,6 @@ namespace kinguin_Clone.classes
         public string PhoneNr { get; set; }
         public float KinguinBalance { get; set; }
         
-        //todo everything User
-
         protected User(int Usernr,string name, string adres, string phonenr, float kinguinBalance)
         {
             this.UserNr = Usernr;

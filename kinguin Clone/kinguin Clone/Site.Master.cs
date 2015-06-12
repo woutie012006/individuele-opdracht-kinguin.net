@@ -29,8 +29,10 @@ namespace kinguin_Clone
         {
             LoginLogout.NavigateUrl = "/Default.aspx";
 
-            HttpCookie c = Request.Cookies["kinguin"];
-            if (c != null && !string.IsNullOrEmpty(c.Value))
+            //HttpCookie c = Request.Cookies["kinguin"];
+            User c = administration.currentUser;
+
+            if (c != null)
             {
                 LoginLogout.Text = "Log out";
                 LoginLogout.NavigateUrl = "/Logout.aspx";
@@ -40,22 +42,6 @@ namespace kinguin_Clone
             }
 
         }
-
-        //protected void btnLogin_OnClick(object sender, EventArgs e)
-        //{
-        //    // Response.Redirect("login.aspx");
-        //    string baseUrl = Request.Url.GetLeftPart(UriPartial.Authority);
-        //    if (((LinkButton)sender).Text.ToUpper() == "LOGIN")
-        //    {
-        //        Response.Redirect("/login.aspx");
-        //    }
-        //    else
-        //    {
-        //        Response.Cookies["kinguin"].Value = "";
-        //        Response.Redirect("login.aspx");
-        //    }
-        //}
-
         protected void btnSearch_OnClick(object sender, EventArgs e)
         {
 

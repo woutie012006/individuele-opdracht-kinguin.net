@@ -9,6 +9,7 @@ namespace kinguin_Clone.classes
     {
         public Admin(int Usernr, string name, string adres, string phonent, float kinguinBalance) : base(Usernr, name, adres, phonent, kinguinBalance)
         {
+            //todo implement Admin
         }
     }
 }

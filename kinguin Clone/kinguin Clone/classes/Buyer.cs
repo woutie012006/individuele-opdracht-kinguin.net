@@ -15,13 +15,14 @@ namespace kinguin_Clone.classes
             : base(Usernr, name,adres,phonenr,kinguinBalance)
         {
             this.Nickname = nickname;
-            cart = new Cart() {owned = GetUserCopies()};
+            cart = new Cart(this);
 
         }
         public List<GameCopy> GetUserCopies()
         {
             //todo implement Buyer.GetUserCopies()
-            return new List<GameCopy>();
+
+            return cart.owned;
         }
         public void addGameToCart(GameCopy game)
         {
