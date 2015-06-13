@@ -11,8 +11,8 @@
 
 
 
-    <asp:HyperLink ID="hlChangeUserinfo" runat="server">Verander uw gebruikersinfo</asp:HyperLink><br>
-    <asp:HyperLink ID="hlAddGame" runat="server" NavigateUrl="AddGame.aspx">Voeg een game toe</asp:HyperLink><br>
-    <asp:HyperLink ID="hlAddObject" runat="server">Voeg een verkoopobject toe</asp:HyperLink><br>
+    <asp:HyperLink ID="hlChangeUserinfo" runat="server" Visible="False">Change UserInfo</asp:HyperLink><br>
+    <asp:HyperLink ID="hlAddGame" runat="server" NavigateUrl="AddGame.aspx" Visible="False">Add a game</asp:HyperLink><br>
+    <asp:HyperLink ID="hlAddObject" runat="server" NavigateUrl="AddObject.aspx"  Visible="False">Add Selling object</asp:HyperLink><br>
 
 </asp:Content>

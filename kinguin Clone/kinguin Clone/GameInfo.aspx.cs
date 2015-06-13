@@ -25,7 +25,7 @@ namespace kinguin_Clone
                     string[] s = k.Split('/');
                     int id = Convert.ToInt32(s[s.Length - 1]);
                     List<Game> data = new List<Game>();
-                    data.Add(administration.getGameByID(id)); 
+                    data.Add(administration.GetGameByID(id)); 
                     GameView.DataSource = data;
 
                     this.currentGame = data[0];

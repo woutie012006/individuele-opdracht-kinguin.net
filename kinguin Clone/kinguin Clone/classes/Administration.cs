@@ -131,7 +131,7 @@ namespace kinguin_Clone.classes
             return false;
         }
 
-        public List<Game> getGamesByName(string searchterm)
+        public List<Game> GetGamesByName(string searchterm)
         {
             DatabaseConnection db = new DatabaseConnection();
             List<Game> games = new List<Game>();
@@ -157,7 +157,7 @@ namespace kinguin_Clone.classes
             }
             return games;
         }
-        public List<Game> getGamesByCategory(string searchterm)
+        public List<Game> GetGamesByCategory(string searchterm)
         {
             DatabaseConnection db = new DatabaseConnection();
             List<Game> games = new List<Game>();
@@ -232,7 +232,7 @@ namespace kinguin_Clone.classes
             }
             return games;
         }
-        public Game getGameByID(int id)
+        public Game GetGameByID(int id)
         {
             Game g;
 
@@ -307,7 +307,7 @@ namespace kinguin_Clone.classes
 
         //}
 #endregion 
-        public List<Advert> getAdds()
+        public List<Advert> GetAdds()
         {
             List<Advert> ads = new List<Advert>();
 

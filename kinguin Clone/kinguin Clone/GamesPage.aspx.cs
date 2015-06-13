@@ -27,7 +27,7 @@ namespace kinguin_Clone
                 try
                 {
                     string requested = url[url.Length-1];
-                    List<Game> data = administration.getGamesByCategory(requested);
+                    List<Game> data = administration.GetGamesByCategory(requested);
                     GamesView.DataSource = data;
                 }
                 catch (Exception exception)
@@ -62,7 +62,7 @@ namespace kinguin_Clone
                     string requested = url[url.Length-1];// Request.RawUrl.Replace(url[1],"");
                     requested = "%" + requested + "%";
                     requested = requested.Replace(" ", "%");
-                    List<Game> data = administration.getGamesByName(requested);
+                    List<Game> data = administration.GetGamesByName(requested);
                     GamesView.DataSource = data;
                 }
                 catch (Exception exception)

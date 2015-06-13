@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Ict4Events_WindowsForms
 {
+
+    //Bron : https://github.com/teunw/PTS2-Camping-Management-program   Dit is de klasse die is geschreven tijdens de proftaak
+
     /// <summary>
     /// Class for the connection to the database.
     /// </summary>

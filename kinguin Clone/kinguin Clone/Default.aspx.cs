@@ -12,9 +12,9 @@ namespace kinguin_Clone
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            imgJumbotron.ImageUrl = new Administration().getAdds()[1].picture;
-            //jumbotron.Style["background-image"] = new Administration().getAdds()[1].picture;
-            //dimage.ImageUrl = new Administration().getAdds()[1].picture;
+            imgJumbotron.ImageUrl = new Administration().GetAdds()[1].picture;
+            //jumbotron.Style["background-image"] = new Administration().GetAdds()[1].picture;
+            //dimage.ImageUrl = new Administration().GetAdds()[1].picture;
         }
     }
 }

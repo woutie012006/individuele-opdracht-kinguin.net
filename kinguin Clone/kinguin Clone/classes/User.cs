@@ -27,7 +27,7 @@ namespace kinguin_Clone.classes
             this.Email = email;
         }
 
-        public bool changeName(string name)
+        public bool ChangeName(string name)
         {
             try
             {
@@ -46,7 +46,7 @@ namespace kinguin_Clone.classes
             return false;
         }
 
-        public bool changeAdres(string adres)
+        public bool ChangeAdres(string adres)
         {
             try
             {
@@ -65,7 +65,7 @@ namespace kinguin_Clone.classes
             return false;
         }
 
-        public bool changePhoneNr(string phonenr)
+        public bool ChangePhoneNr(string phonenr)
         {
             try
             {
@@ -89,7 +89,7 @@ namespace kinguin_Clone.classes
         /// <param name="change"></param>
         /// <param name="whattodo"></param>
         /// <returns></returns>
-        public bool changeKinguinBalance(float change, string whattodo)
+        public bool ChangeKinguinBalance(float change, string whattodo)
         {
             try
             {

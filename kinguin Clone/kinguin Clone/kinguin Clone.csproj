@@ -175,6 +175,7 @@
     <Content Include="UserPage.aspx" />
     <Content Include="AddGame.aspx" />
     <Content Include="AddObject.aspx" />
+    <Content Include="ChangeUserInfo.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -329,6 +330,13 @@
     </Compile>
     <Compile Include="AddObject.aspx.designer.cs">
       <DependentUpon>AddObject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeUserInfo.aspx.cs">
+      <DependentUpon>ChangeUserInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangeUserInfo.aspx.designer.cs">
+      <DependentUpon>ChangeUserInfo.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

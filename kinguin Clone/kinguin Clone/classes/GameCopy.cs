@@ -39,7 +39,7 @@ namespace kinguin_Clone.classes
         /// /////////////////////////////////////////////////////////////////////////////////////////BNORT IMPLEMENTED YET
         /// </summary>
         /// <returns></returns>
-        public bool sell()
+        public bool Sell()
         {
             return false;
         }

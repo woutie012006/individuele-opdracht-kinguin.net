@@ -14,7 +14,7 @@ namespace kinguin_Clone.classes
         public Cart(User currentUser)
         {
 
-            owned = getUserCopies(currentUser);
+            owned = GetUserCopies(currentUser);
         }
         public void AddGame(GameCopy game, User currentUser)
         {
@@ -37,13 +37,13 @@ namespace kinguin_Clone.classes
             owned.Remove(game);
         }
 
-        public bool buycart(User currentUser)
+        public bool Buycart(User currentUser)
         {
-            //todo implement Cart.buyCart()
+            //todo implement Cart.BuyCart()
             return false;
         }
 
-        public List<GameCopy> getUserCopies(User currentUser)
+        public List<GameCopy> GetUserCopies(User currentUser)
         {
              List<GameCopy> copies = new List<GameCopy>();
              if (currentUser == null)
@@ -103,7 +103,7 @@ namespace kinguin_Clone.classes
                 db.OpenConnection();
                 db.ExecuteQuery(query);
                 db.CloseConnection();
-                owned = getUserCopies(currentUser);
+                owned = GetUserCopies(currentUser);
             }
             catch (Exception exception)
             {

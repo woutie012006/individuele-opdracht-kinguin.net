@@ -141,7 +141,7 @@ namespace kinguin_Clone.classes
             return users;
         }
 
-        public List<User> getBuyersByUserID(int userID)
+        public List<User> GetBuyersByUserID(int userID)
         {
             DatabaseConnection db = new DatabaseConnection();
             OracleDataReader odr;

@@ -24,17 +24,17 @@ namespace kinguin_Clone.classes
 
             return cart.owned;
         }
-        public void addGameToCart(GameCopy game)
+        public void AddGameToCart(GameCopy game)
         {
             cart.AddGame(game, this);
         }
 
-        public void removeGameToCart(GameCopy game)
+        public void RemoveGameToCart(GameCopy game)
         {
             cart.RemoveGame(game, this);
         }
 
-        public void buyCart()
+        public void BuyCart()
         {
             //todo database implementation Buyer.BuyCart
         }
