@@ -22,6 +22,15 @@ namespace kinguin_Clone {
         protected global::System.Web.UI.WebControls.ListView GameView;
         
         /// <summary>
+        /// ObjectView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView ObjectView;
+        
+        /// <summary>
         /// Master property.
         /// </summary>
         /// <remarks>

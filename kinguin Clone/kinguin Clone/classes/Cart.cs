@@ -86,5 +86,29 @@ namespace kinguin_Clone.classes
             }
             return copies;
         }
+
+        public bool AddCopyByID(int copyid, User currentUser)
+        {
+            try
+            {
+                if (currentUser == null)
+                {
+                    return false;
+                }
+
+                DatabaseConnection db = new DatabaseConnection();
+
+                string query = "insert into mandje (verkoopobject,lidnr,relevant) values(" + copyid + "," + currentUser.UserNr + ",'Y')";
+                db.OpenConnection();
+                db.ExecuteQuery(query);
+                db.CloseConnection();
+                owned = getUserCopies(currentUser);
+            }
+            catch (Exception exception)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }

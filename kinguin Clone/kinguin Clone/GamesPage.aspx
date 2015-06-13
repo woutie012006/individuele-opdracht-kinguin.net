@@ -22,7 +22,7 @@
                             <h3></h3>
                             <p>
                                 <%--<asp:HyperLink ID="btnBuyNow" CssClass="btn btn-primary" runat="server" Text="Buy Now!" />--%>
-                                <asp:HyperLink ID="btnMoreInfo" CssClass="btn btn-default" runat="server" Text="More Info" />
+                                <asp:HyperLink ID="btnMoreInfo" CssClass="btn btn-default" runat="server" Text="More Info"/>
                             </p>
                         </div>
                     </div>

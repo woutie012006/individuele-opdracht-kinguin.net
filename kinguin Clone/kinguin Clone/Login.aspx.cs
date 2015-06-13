@@ -25,7 +25,7 @@ namespace kinguin_Clone
                         Response.Redirect("~/");
             
             LoginForm.UserNameLabelText = "E-mail ";
-
+            
         }
 
         protected void LoginForm_OnAuthenticate(object sender, AuthenticateEventArgs e)//different class ??????

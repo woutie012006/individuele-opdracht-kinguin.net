@@ -35,7 +35,7 @@ namespace kinguin_Clone.classes
             DatabaseConnection db = new DatabaseConnection();
             List<GameCopy> copies = new List<GameCopy>();
 
-            string query = "select objectnr,prijs,code from verkoopobject where verkoopsdatum is null";
+            string query = "select objectnr,prijs,code from verkoopobject where gamenr = " + gameNr + " and verkoopsdatum <to_date('01/01/1901','DD/MM/YYYY')";
 
 
             OracleDataReader dr = db.ExecuteReadQuery(query);

@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="GameInfo.aspx.cs" Inherits="kinguin_Clone.GameInfo" %>
-<%@ MasterType virtualpath="~/Site.master" %>
+
+<%@ MasterType VirtualPath="~/Site.master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -9,16 +10,6 @@
     <div class="container">
 
         <div class="row">
-
-            <%--<div class="col-md-3">
-                <p class="lead">Shop Name</p>
-                <div class="list-group">
-                    <a href="#" class="list-group-item active">Category 1</a>
-                    <a href="#" class="list-group-item">Category 2</a>
-                    <a href="#" class="list-group-item">Category 3</a>
-                </div>
-            </div>--%>
-
             <div class="col-md-9">
                 <asp:ListView ID="GameView" OnItemDataBound="GamesView_OnItemDataBound_ItemDataBound" runat="server">
                     <ItemTemplate>
@@ -34,47 +25,27 @@
                     </ItemTemplate>
                 </asp:ListView>
 
+                <br>
+                <br>
 
+                <asp:ListView ID="ObjectView" OnItemDataBound="ObjectView_OnItemDataBound" runat="server">
+                    <ItemTemplate>
+                        
+                        <div class="row">
+                            <div class="col-md-12">
+                                <%# Eval("copyNr") %>>
+                            <span class="pull-right"><%# Eval("price") %></span>
+                                <%--<p>This product was great in terms of quality. I would definitely buy another!</p>--%>
+                               <%-- <asp:Button ID="btnPutInCart" runat="server" Text="Put in cart" />--%>
+                                <asp:HyperLink ID="btnPutInCart" CssClass="btn btn-default" runat="server" Text ="put in cart"/>
+                            </div>
+                        </div>
 
-
-                <%--<div class="thumbnail">
-                    <img id ="imgGame" class="img-responsive" alt="">
-                    <div class="caption-full">
-                        <h4 class="pull-right">$24.99</h4>
-                        <h4><a href="#">Product Name</a>
-                        </h4>
-                        <p>See more snippets like these online store reviews at <a target="_blank" href="http://bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
-                        <p>
-                            Want to make these reviews work? Check out
-                            <strong><a href="http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/">this building a review system tutorial</a>
-                            </strong>over at maxoffsky.com!
-                        </p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                    </div>
-                    
-
-<%--                    <div class="ratings">
-                        <p class="pull-right">3 reviews</p>
-                        <p>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star-empty"></span>
-                            4.0 stars
-                        </p>
-                    </div>--%>
-            </div>
-            
-                
+                    </ItemTemplate>
+                </asp:ListView>
 
                 <!-- reviews-->
-            <%--<div class="well">
-
-                <div class="text-right">
-                    <a class="btn btn-success">Leave a Review</a>
-                </div>
-
+                <%--<div class="well">
                 <hr>
 
                 <div class="row">
@@ -121,12 +92,11 @@
                 </div>
 
             </div>--%>
+            </div>
 
         </div>
 
     </div>
-
-    
     <!-- /.container -->
 
 </asp:Content>

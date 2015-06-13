@@ -5,5 +5,5 @@
 <div style="display:flex;justify-content:center;align-items:center; margin-top: 20%; margin-bottom: 20%;">
     <asp:Login ID="LoginForm" runat="server"  OnAuthenticate="LoginForm_OnAuthenticate"></asp:Login>   
  </div>
-    <asp:HyperLink ID="hlRegister" runat="server" href="/Register.aspx">Don't have a account yet ? click here.</asp:HyperLink>
+    <asp:HyperLink ID="hlRegister" runat="server" href="/Register.aspx" >Don't have a account yet ? click here.</asp:HyperLink>
 </asp:Content>
