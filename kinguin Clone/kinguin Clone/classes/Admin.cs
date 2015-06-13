@@ -311,12 +311,12 @@ namespace kinguin_Clone.classes
                              " values " +
                              "(seq_game.nextval, " +
                              " '" + game.name + "' , " +
-                             " '" + game.description + "', "
-                                  + game.date +                 //might not work so needs to be checked
+                             " '" + game.description + "', " +
+                             "to_date('"+ game.date + "','DD-MM-YYYY HH24:MI:SS')" +              //might not work so needs to be checked
                              ",'" + game.picture + "', " +
                              " '" + game.specificatie + "'," +
                              " '" + game.platform + "'," +
-                             " '" + game.category + "');";
+                             " '" + game.category + "')";
 
                 OracleCommand oc = new OracleCommand(sql, db.oracleConnection);
                 oc.Connection.Open();

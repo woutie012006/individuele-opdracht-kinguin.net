@@ -6,7 +6,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Ict4Events_WindowsForms;
 using kinguin_Clone.classes;
-using Microsoft.Ajax.Utilities;
 using Oracle.ManagedDataAccess.Client;
 
 namespace kinguin_Clone

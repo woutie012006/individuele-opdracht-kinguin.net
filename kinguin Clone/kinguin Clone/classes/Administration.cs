@@ -5,7 +5,6 @@ using System.Linq;
 using System.Web;
 using Ict4Events_WindowsForms;
 using Oracle.ManagedDataAccess.Client;
-using WebGrease.Css.Ast.Selectors;
 
 namespace kinguin_Clone.classes
 {
@@ -93,6 +92,45 @@ namespace kinguin_Clone.classes
 
 
         }
+
+        public bool Register(string name, string adres,string telNr, string email, string Password , string nickname)
+        {
+            try
+            {
+                DatabaseConnection db = new DatabaseConnection();
+                string sql = "insert into Lid (LIDNR,NAAM,ADRES,TELEFOONNR,SOORT,KINGUINBALANCE,EMAIL,PASSWORD)" +
+                             " values " +
+                             "(seq_LID.nextval, " +
+                             " '" + name + "' , " +
+                             " '" + adres + "', " +
+                             ",'" + telNr + "', " +
+                             " 'KLANT'," +
+                             " (0)," +
+                             " '" + email + "', " +
+                             "'"+ Password +"')";
+
+                OracleCommand oc = new OracleCommand(sql, db.oracleConnection);
+                oc.Connection.Open();
+                oc.ExecuteNonQuery();
+                oc.Connection.Close();
+
+                sql = "insert into KLANT (LIDNR, NICKNAME)" +
+                             " values " +
+                             "(seq_LID.currval,'" + nickname + "')";
+
+                oc = new OracleCommand(sql, db.oracleConnection);
+                oc.Connection.Open();
+                oc.ExecuteNonQuery();
+                oc.Connection.Close();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e);
+            }
+            return false;
+        }
+
         public List<Game> getGamesByName(string searchterm)
         {
             DatabaseConnection db = new DatabaseConnection();

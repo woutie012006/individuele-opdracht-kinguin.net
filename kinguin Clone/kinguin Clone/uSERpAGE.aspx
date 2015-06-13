@@ -3,15 +3,16 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <br>
     <br>
-    <asp:Label ID="lblName" runat="server" Text="Name : "></asp:Label>
-    <asp:Label ID="lblAdres" runat="server" Text="Adres : "></asp:Label>
-    <asp:Label ID="lblPhonenr" runat="server" Text="Phone number : "></asp:Label>
-    <asp:Label ID="lblKinguinBalance" runat="server" Text="Kinguin Balace : "></asp:Label>
+    <asp:Label ID="lblName" runat="server" Text="Name : "></asp:Label><br>
+    <asp:Label ID="lblAdres" runat="server" Text="Adres : "></asp:Label><br>
+    <asp:Label ID="lblPhonenr" runat="server" Text="Phone number : "></asp:Label><br>
+    <asp:Label ID="lblKinguinBalance" runat="server" Text="Kinguin Balace : "></asp:Label><br>
+    <br><br><br>
 
 
 
-    <asp:HyperLink ID="hlChangeUserinfo" runat="server">Verander uw gebruikersinfo</asp:HyperLink>
-    <asp:HyperLink ID="hlAddGame" runat="server">Voeg een game toe</asp:HyperLink>
-    <asp:HyperLink ID="hlAddObject" runat="server">Voeg een verkoopobject toe</asp:HyperLink>
+    <asp:HyperLink ID="hlChangeUserinfo" runat="server">Verander uw gebruikersinfo</asp:HyperLink><br>
+    <asp:HyperLink ID="hlAddGame" runat="server" NavigateUrl="AddGame.aspx">Voeg een game toe</asp:HyperLink><br>
+    <asp:HyperLink ID="hlAddObject" runat="server">Voeg een verkoopobject toe</asp:HyperLink><br>
 
 </asp:Content>
