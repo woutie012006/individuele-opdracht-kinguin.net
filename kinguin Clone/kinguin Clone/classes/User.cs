@@ -16,14 +16,16 @@ namespace kinguin_Clone.classes
         public string Adres { get; set; }
         public string PhoneNr { get; set; }
         public float KinguinBalance { get; set; }
-        
-        protected User(int Usernr,string name, string adres, string phonenr, float kinguinBalance)
+        public string Email { get; set; }
+
+        protected User(int Usernr,string name, string adres, string phonenr, float kinguinBalance, string email)
         {
             this.UserNr = Usernr;
             this.Name = name;
             this.Adres = adres;
             this.PhoneNr = phonenr;
             this.KinguinBalance = kinguinBalance;
+            this.Email = email;
         }
 
         public bool changeName(string name)

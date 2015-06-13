@@ -54,12 +54,12 @@
                         <li><a runat="server" href="~/">Home</a></li>
                         <li><a runat="server" href="~/GamesPage.aspx">Games</a></li>
                         <li><a runat="server" href="~/ShoppingCart.aspx">Shopping cart</a></li>
+                        <li><a runat="server" href="~/UserPage.aspx" Visible="False" id ="hlUserPage">User info</a></li>
                     </ul>
                     <div id="LoginLink" style="float: right; margin-top: 10px; margin-bottom: 10px;">
                         
                         <asp:TextBox ID="tbSearch" runat="server"></asp:TextBox>
-                        <asp:Button ID="btnSearch" runat="server" onclick="btnSearch_OnClick" type="button" CssClass="btn btn-primary glyphicon glyphicon-search" aria-label="Left Align" style="background-color: rgba(0, 0, 0, 0.0); border-width: 0;" Text="Search" />
-                        <%--<asp:LinkButton ID="btnLogin" OnClick="btnLogin_OnClick"  runat="server" Text="Login" ></asp:LinkButton>--%>
+                        <asp:Button ID="btnSearch" runat="server" onclick="btnSearch_OnClick" type="button" CssClass="glyphicon-search btn btn-primary" aria-label="Left Align" style="background-color: rgba(0, 0, 0, 0.0); border-width: 0;" Text="Search" />
                         <asp:HyperLink ID="LoginLogout" runat="server" Text="Login" class="btn btn-default" ></asp:HyperLink>
                     </div>
                 </div>

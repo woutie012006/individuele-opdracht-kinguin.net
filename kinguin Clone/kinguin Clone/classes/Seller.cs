@@ -13,7 +13,8 @@ namespace kinguin_Clone.classes
         public string SellerName { get; set; }
         public string BankAccount { get; set; }
         
-        public Seller(int Usernr, string name, string adres, string phonenr, float kinguinBalance, string nickname, string SellerName,string bankaccount ) : base(Usernr, name, adres, phonenr, kinguinBalance, nickname )
+        public Seller(int Usernr, string name, string adres, string phonenr, float kinguinBalance, string nickname, string SellerName,string bankaccount, string email ) 
+            : base(Usernr, name, adres, phonenr, kinguinBalance, nickname, email )
         {
             this.SellerName = SellerName;
             this.BankAccount = bankaccount;

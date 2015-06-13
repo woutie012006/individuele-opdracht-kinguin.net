@@ -67,15 +67,15 @@ namespace kinguin_Clone.classes
                         switch (type)
                         {
                             case "ADMIN":
-                                currentUser = new Admin(usernr, naam, adres, telNr, kinguinbalance);
+                                currentUser = new Admin(usernr, naam, adres, telNr, kinguinbalance, email);
                                 break;
                             case "KLANT":
-                                currentUser = new Buyer(usernr,naam,adres,telNr,kinguinbalance,nickname);
+                                currentUser = new Buyer(usernr,naam,adres,telNr,kinguinbalance,nickname, email);
                                 break;
                             case "VERKOPER":
                                 string verkopernaam = oddr.GetString(7);
                                 string bankreking = oddr.GetString(8);
-                                currentUser = new Seller(usernr, naam, adres, telNr, kinguinbalance, nickname,verkopernaam,bankreking);
+                                currentUser = new Seller(usernr, naam, adres, telNr, kinguinbalance, nickname,verkopernaam,bankreking, email);
                                 break;
                         }
                     }

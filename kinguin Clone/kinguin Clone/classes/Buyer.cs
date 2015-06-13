@@ -11,8 +11,8 @@ namespace kinguin_Clone.classes
         public List<GameCopy> gamesOwned { get; set; }
         public Cart cart { get; set; }
 
-        public Buyer(int Usernr, string name, string adres, string phonenr, float kinguinBalance, string nickname)
-            : base(Usernr, name,adres,phonenr,kinguinBalance)
+        public Buyer(int Usernr, string name, string adres, string phonenr, float kinguinBalance, string nickname, string email)
+            : base(Usernr, name,adres,phonenr,kinguinBalance, email)
         {
             this.Nickname = nickname;
             cart = new Cart(this);

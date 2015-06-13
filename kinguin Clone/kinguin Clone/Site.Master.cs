@@ -31,11 +31,11 @@ namespace kinguin_Clone
 
             //HttpCookie c = Request.Cookies["kinguin"];
             User c = administration.currentUser;
-
             if (c != null)
             {
                 LoginLogout.Text = "Log out";
                 LoginLogout.NavigateUrl = "/Logout.aspx";
+                hlUserPage.Visible = true;
             }else
             {
                 LoginLogout.NavigateUrl = "/Login.aspx";
