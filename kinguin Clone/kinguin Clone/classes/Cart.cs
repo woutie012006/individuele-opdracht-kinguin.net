@@ -55,7 +55,7 @@ namespace kinguin_Clone.classes
 
             string query = "select g.gamenr,g.naam,g.categorie,g.datum," +
                            " g.foto,g.specificatie,g.platform, g.beschrijving, " +
-                           "O.Objectnr, o.prijs,O.Verkoopsdatum,O.Code " +
+                           "O.Objectnr, o.prijs,O.Verkoopsdatum,O.Code , o.eigenaar_lidnr" +
 
                            "from mandje m , verkoopobject o, game g " +
 
@@ -81,8 +81,9 @@ namespace kinguin_Clone.classes
                 float price = dr.GetFloat(9);
                 DateTime datum =dr.GetDateTime(10);
                 string code = dr.GetString(11);
+                int eigenaar = dr.GetInt32(12);
 
-                copies.Add(new GameCopy(gamenr, name, category, date, picture, specificatie, platform, objectnr,price,datum, code,beschrijving));
+                copies.Add(new GameCopy(gamenr, name, category, date, picture, specificatie, platform, objectnr, price, datum, code, beschrijving, eigenaar));
             }
             return copies;
         }

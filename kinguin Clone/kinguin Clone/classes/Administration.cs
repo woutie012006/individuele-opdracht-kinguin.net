@@ -103,7 +103,7 @@ namespace kinguin_Clone.classes
                              "(seq_LID.nextval, " +
                              " '" + name + "' , " +
                              " '" + adres + "', " +
-                             ",'" + telNr + "', " +
+                             "'" + telNr + "', " +
                              " 'KLANT'," +
                              " (0)," +
                              " '" + email + "', " +

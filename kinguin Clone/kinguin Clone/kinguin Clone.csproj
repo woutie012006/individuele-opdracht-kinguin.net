@@ -41,6 +41,9 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\packages\AjaxControlToolkit.15.1.2.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Oracle.ManagedDataAccess">
       <HintPath>..\packages\odp.net.managed.121.1.2\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
@@ -171,6 +174,7 @@
     <Content Include="Register.aspx" />
     <Content Include="UserPage.aspx" />
     <Content Include="AddGame.aspx" />
+    <Content Include="AddObject.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -318,6 +322,13 @@
     </Compile>
     <Compile Include="AddGame.aspx.designer.cs">
       <DependentUpon>AddGame.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddObject.aspx.cs">
+      <DependentUpon>AddObject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddObject.aspx.designer.cs">
+      <DependentUpon>AddObject.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

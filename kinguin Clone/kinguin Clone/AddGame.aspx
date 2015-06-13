@@ -7,7 +7,7 @@
     <form class="form-horizontal">
         <h2>Add Game</h2>
         <br>
-
+        
         <asp:Label runat="server" Text="Name" CssClass="col-lg-2 control-label"></asp:Label><br>
         <asp:TextBox ID="tbName" runat="server" CssClass="form-control"></asp:TextBox><br>
         <asp:RequiredFieldValidator ControlToValidate="tbName" runat="server" ErrorMessage="Name was not entered" CssClass="alert alert-dismissible alert-danger"></asp:RequiredFieldValidator><br>

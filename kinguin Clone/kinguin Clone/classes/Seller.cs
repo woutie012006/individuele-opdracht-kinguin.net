@@ -56,5 +56,27 @@ namespace kinguin_Clone.classes
             }
             return false;
         }
+
+        public bool AddGameCopy(GameCopy gameCopy)
+        {
+            try
+            {
+                
+                DatabaseConnection db = new DatabaseConnection();
+                string query = "insert into verkoopobject (objectnr,gamenr,prijs, verkoopsdatum,code,eigenaar_lidnr) " +
+                               " values (seq_verkoopobject.nextval," + gameCopy.gameNr + ",( " + gameCopy.price + "),to_date('" + gameCopy.sellingDate + "','DD-MM-YYYY HH24:MI:SS')  " +
+                               "  ,'" + gameCopy.code + "'," + gameCopy.Owner + ")";
+                db.OpenConnection();
+                db.ExecuteQuery(query);
+                db.CloseConnection();
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e);
+            }
+            return false;
+        }
     }
 }
