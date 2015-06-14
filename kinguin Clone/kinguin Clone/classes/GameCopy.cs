@@ -141,7 +141,7 @@ namespace kinguin_Clone.classes
         public int Owner { get; set; }
 
         /// <summary>
-        /// /////////////////////////////////////////////////////////////////////////////////////////BNORT IMPLEMENTED YET
+        /// BNORT IMPLEMENTED YET sells all games in the cart
         /// </summary>
         /// <returns>
         /// The <see cref="bool"/>.

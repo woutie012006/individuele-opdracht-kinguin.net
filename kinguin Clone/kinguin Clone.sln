@@ -5,6 +5,10 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kinguin Clone", "kinguin Clone\kinguin Clone.csproj", "{5B5B555D-B6DA-40AE-8EBB-321FC887BA7A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UTLogin", "UnitTestProject2\UTLogin.csproj", "{848D4D5D-B822-4FF4-9D3C-FDF7818290CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UTRegister", "UnitTestProject3\UTRegister.csproj", "{8065A6D6-0038-48F3-A2F7-594FBBD844CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{5B5B555D-B6DA-40AE-8EBB-321FC887BA7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B5B555D-B6DA-40AE-8EBB-321FC887BA7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B5B555D-B6DA-40AE-8EBB-321FC887BA7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{848D4D5D-B822-4FF4-9D3C-FDF7818290CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{848D4D5D-B822-4FF4-9D3C-FDF7818290CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{848D4D5D-B822-4FF4-9D3C-FDF7818290CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{848D4D5D-B822-4FF4-9D3C-FDF7818290CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8065A6D6-0038-48F3-A2F7-594FBBD844CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8065A6D6-0038-48F3-A2F7-594FBBD844CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8065A6D6-0038-48F3-A2F7-594FBBD844CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8065A6D6-0038-48F3-A2F7-594FBBD844CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,12 @@
+C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\UnitTestProject2\obj\Debug\UTLogin.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\UnitTestProject2\bin\Debug\UnitTestProject2.dll
+C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\UnitTestProject2\bin\Debug\UnitTestProject2.pdb
+C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\UnitTestProject2\bin\Debug\kinguin Clone.dll
+C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\UnitTestProject2\bin\Debug\System.Web.Optimization.dll
+C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\UnitTestProject2\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\UnitTestProject2\bin\Debug\Microsoft.AspNet.FriendlyUrls.dll
+C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\UnitTestProject2\bin\Debug\kinguin Clone.pdb
+C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\UnitTestProject2\bin\Debug\System.Web.Optimization.xml
+C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\UnitTestProject2\bin\Debug\Microsoft.AspNet.FriendlyUrls.xml
+C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\UnitTestProject2\obj\Debug\UnitTestProject2.dll
+C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\UnitTestProject2\obj\Debug\UnitTestProject2.pdb
