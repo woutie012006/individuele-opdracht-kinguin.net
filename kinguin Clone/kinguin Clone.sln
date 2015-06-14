@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kinguin Clone", "kinguin Cl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject", "UnitTestProject\UnitTestProject.csproj", "{E3BFA9C1-7201-4A22-91C6-C25EAFC10942}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{C427FE82-22D4-49FE-9C46-7CC64F15645A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{E3BFA9C1-7201-4A22-91C6-C25EAFC10942}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3BFA9C1-7201-4A22-91C6-C25EAFC10942}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3BFA9C1-7201-4A22-91C6-C25EAFC10942}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C427FE82-22D4-49FE-9C46-7CC64F15645A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C427FE82-22D4-49FE-9C46-7CC64F15645A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C427FE82-22D4-49FE-9C46-7CC64F15645A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C427FE82-22D4-49FE-9C46-7CC64F15645A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
