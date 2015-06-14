@@ -4,45 +4,40 @@
 
     <div id="jumbotron" class="jumbotron alert alert-dismissible alert-info" runat="server">
         <br>
-        <asp:Image ID="imgJumbotron" runat="server" Width="100%"/>
+        <a href="GamesPage.aspx"><asp:Image ID="imgJumbotron"  runat="server" Width="100%" /></a>
         <br>
         <br>
-        <%--<asp:Panel ID="Panel" runat="server">
-            <asp:Image ID="adimage" runat="server" ></asp:Image>
-
-        </asp:Panel>--%>
-        <%--<h1>ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>--%>
+      
     </div>
 
     <div class="row">
         <div class="col-md-4">
-            <h2>Getting started</h2>
+            <h2>Kinguin gives you more for less</h2>
             <p>
-                ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-                A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
+               Kinguin.net has been a market leader for years and will be for years to come, with our razersharp prices and our awesome website. We will rule
+                over everyone who dares to defy us. You shall buy from  kinguin.net, for we are the best.
+
             </p>
             <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>
-                NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-            </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
+                <a class="btn btn-default" href="http://kinguin.net">Learn more &raquo;</a>
             </p>
         </div>
         <div class="col-md-4">
-            <h2>Web Hosting</h2>
+            <h2>Our games</h2>
             <p>
-                You can easily find a web hosting company that offers the right mix of features and price for your applications.
+                Want to get some sweet games, say no more we have everything, so click down below and feast your eyes.
             </p>
             <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
+                <a class="btn btn-default" href="/GamesPage.aspx">Learn more &raquo;</a>
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h2>Asp.net</h2>
+            <p>
+               This awesome page was created in ASP.NET, want to find out more, click down below.
+            </p>
+            <p>
+                <a class="btn btn-default" href="http://www.ASP.NET">Learn more &raquo;</a>
             </p>
         </div>
     </div>
