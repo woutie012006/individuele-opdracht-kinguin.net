@@ -89,8 +89,8 @@
 
                         <div id="LoginLink" style="float: right; margin-top: 10px; margin-bottom: 10px;">
                             <asp:TextBox ID="tbSearch" runat="server"></asp:TextBox>
-                            <asp:Button ID="btnSearch" runat="server" OnClick="btnSearch_OnClick" type="button" CssClass="glyphicon-search btn btn-primary" aria-label="Left Align" Style="background-color: rgba(0, 0, 0, 0.0); border-width: 0;" Text="Search" />
-                            <asp:HyperLink ID="LoginLogout" runat="server" Text="Login" class="btn btn-default"></asp:HyperLink>
+                            <asp:Button ID="btnSearch" runat="server" OnClick="btnSearch_OnClick"  CssClass="glyphicon-search btn btn-primary" Style="background-color: rgba(0, 0, 0, 0.0); border-width: 0;" Text="Search" />
+                            <asp:HyperLink ID="LoginLogout" runat="server" Text="Login" CssClass="btn btn-default"></asp:HyperLink>
                         </div>
                     </ul>
                 </div>
