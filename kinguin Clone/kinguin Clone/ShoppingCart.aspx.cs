@@ -41,33 +41,33 @@ namespace kinguin_Clone
         protected void Page_Load(object sender, EventArgs e)
         {
             this.administration = this.Master.administration;
-            if (this.administration.currentUser != null)
+            if (this.administration.CurrentUser != null)
             {
                 // url redirection check
                 string sellingobject = this.Request.QueryString["GameCopyID"];
 
-                if (this.administration.currentUser != null && this.administration.currentUser is Seller)
+                if (this.administration.CurrentUser != null && this.administration.CurrentUser is Seller)
                 {
                     if (!string.IsNullOrEmpty(sellingobject))
                     {
-                        (this.administration.currentUser as Seller).cart.AddCopyByID(
+                        (this.administration.CurrentUser as Seller).cart.AddCopyByID(
                             Convert.ToInt32(sellingobject), 
-                            this.administration.currentUser);
+                            this.administration.CurrentUser);
                     }
 
-                    List<GameCopy> data = ((Seller)this.administration.currentUser).cart.owned;
+                    List<GameCopy> data = ((Seller)this.administration.CurrentUser).cart.Owned;
                     this.ItemView.DataSource = data;
                 }
-                else if (this.administration.currentUser != null && this.administration.currentUser is Buyer)
+                else if (this.administration.CurrentUser != null && this.administration.CurrentUser is Buyer)
                 {
                     if (!string.IsNullOrEmpty(sellingobject))
                     {
-                        (this.administration.currentUser as Buyer).cart.AddCopyByID(
+                        (this.administration.CurrentUser as Buyer).cart.AddCopyByID(
                             Convert.ToInt32(sellingobject), 
-                            this.administration.currentUser);
+                            this.administration.CurrentUser);
                     }
 
-                    List<GameCopy> data = ((Buyer)this.administration.currentUser).cart.owned;
+                    List<GameCopy> data = ((Buyer)this.administration.CurrentUser).cart.Owned;
                     this.ItemView.DataSource = data;
                 }
             }

@@ -40,7 +40,7 @@ namespace kinguin_Clone
         protected void Page_Load(object sender, EventArgs e)
         {
             this.administration = this.Master.administration;
-            User c = this.administration.currentUser;
+            User c = this.administration.CurrentUser;
 
             if (c != null)
             {

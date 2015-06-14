@@ -152,9 +152,9 @@ namespace kinguin_Clone.classes
             {
                 DatabaseConnection db = new DatabaseConnection();
                 string query = "insert into verkoopobject (objectnr,gamenr,prijs, verkoopsdatum,code,eigenaar_lidnr) "
-                               + " values (seq_verkoopobject.nextval," + gameCopy.gameNr + ",( " + gameCopy.price
-                               + "),to_date('" + gameCopy.sellingDate + "','DD-MM-YYYY HH24:MI:SS')  " + "  ,'"
-                               + gameCopy.code + "'," + gameCopy.Owner + ")";
+                               + " values (seq_verkoopobject.nextval," + gameCopy.GameNr + ",( " + gameCopy.Price
+                               + "),to_date('" + gameCopy.SellingDate + "','DD-MM-YYYY HH24:MI:SS')  " + "  ,'"
+                               + gameCopy.Code + "'," + gameCopy.Owner + ")";
                 db.OpenConnection();
                 db.ExecuteQuery(query);
                 db.CloseConnection();

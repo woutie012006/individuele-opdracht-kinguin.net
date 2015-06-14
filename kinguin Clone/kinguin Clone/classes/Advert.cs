@@ -21,20 +21,20 @@ namespace kinguin_Clone.classes
         /// The id.
         /// </param>
         /// <param name="picture">
-        /// The picture.
+        /// The Picture.
         /// </param>
         /// <param name="Url">
         /// The url.
         /// </param>
         /// <param name="description">
-        /// The description.
+        /// The Description.
         /// </param>
         public Advert(int id, string picture, string Url, string description)
         {
             this.ID = id;
-            this.picture = picture;
+            this.Picture = picture;
             this.Url = Url;
-            this.description = description;
+            this.Description = description;
         }
 
         /// <summary>
@@ -43,9 +43,9 @@ namespace kinguin_Clone.classes
         public int ID { get; set; }
 
         /// <summary>
-        /// Gets or sets the picture.
+        /// Gets or sets the Picture.
         /// </summary>
-        public string picture { get; set; }
+        public string Picture { get; set; }
 
         /// <summary>
         /// Gets or sets the url.
@@ -53,8 +53,8 @@ namespace kinguin_Clone.classes
         public string Url { get; set; }
 
         /// <summary>
-        /// Gets or sets the description.
+        /// Gets or sets the Description.
         /// </summary>
-        public string description { get; set; }
+        public string Description { get; set; }
     }
 }

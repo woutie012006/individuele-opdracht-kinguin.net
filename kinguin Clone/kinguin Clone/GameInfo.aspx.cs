@@ -95,7 +95,7 @@ namespace kinguin_Clone
         {
             Game game = e.Item.DataItem as Game;
             Image image = e.Item.FindControl("imgGame") as Image;
-            image.ImageUrl = game.picture;
+            image.ImageUrl = game.Picture;
         }
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace kinguin_Clone
         {
             GameCopy game = e.Item.DataItem as GameCopy;
             HyperLink btn = e.Item.FindControl("btnPutInCart") as HyperLink;
-            btn.NavigateUrl = "/ShoppingCart.aspx?GameCopyID=" + game.copyNr;
+            btn.NavigateUrl = "/ShoppingCart.aspx?GameCopyID=" + game.CopyNr;
         }
     }
 }

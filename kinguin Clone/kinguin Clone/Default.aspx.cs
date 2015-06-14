@@ -34,10 +34,10 @@ namespace kinguin_Clone
         /// </param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.imgJumbotron.ImageUrl = new Administration().GetAdds()[1].picture;
+            this.imgJumbotron.ImageUrl = new Administration().GetAdds()[1].Picture;
 
-            // jumbotron.Style["background-image"] = new Administration().GetAdds()[1].picture;
-            // dimage.ImageUrl = new Administration().GetAdds()[1].picture;
+            // jumbotron.Style["background-image"] = new Administration().GetAdds()[1].Picture;
+            // dimage.ImageUrl = new Administration().GetAdds()[1].Picture;
         }
     }
 }

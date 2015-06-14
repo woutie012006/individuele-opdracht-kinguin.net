@@ -123,12 +123,12 @@ namespace kinguin_Clone
         {
             Game game = e.Item.DataItem as Game;
             Image image = e.Item.FindControl("IMGGame") as Image;
-            image.ImageUrl = game.picture;
+            image.ImageUrl = game.Picture;
 
             // HyperLink btnbuyNow = e.Item.FindControl("btnBuyNow") as HyperLink;
-            // btnbuyNow.NavigateUrl = "~/ShoppingCart.aspx/" + game.gameNr;
+            // btnbuyNow.NavigateUrl = "~/ShoppingCart.aspx/" + game.GameNr;
             HyperLink btnMoreInfo = e.Item.FindControl("btnMoreInfo") as HyperLink;
-            btnMoreInfo.NavigateUrl = "~/GameInfo.aspx/" + game.gameNr;
+            btnMoreInfo.NavigateUrl = "~/GameInfo.aspx/" + game.GameNr;
         }
     }
 }

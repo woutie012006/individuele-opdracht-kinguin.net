@@ -30,7 +30,7 @@ namespace kinguin_Clone.classes
         /// <summary>
         /// Gets or sets the current user.
         /// </summary>
-        public User currentUser { get; set; }
+        public User CurrentUser { get; set; }
 
         // private List<Game> games { get; set; }
 
@@ -96,10 +96,10 @@ namespace kinguin_Clone.classes
                         switch (type)
                         {
                             case "ADMIN":
-                                this.currentUser = new Admin(usernr, naam, adres, telNr, kinguinbalance, email);
+                                this.CurrentUser = new Admin(usernr, naam, adres, telNr, kinguinbalance, email);
                                 break;
                             case "KLANT":
-                                this.currentUser = new Buyer(
+                                this.CurrentUser = new Buyer(
                                     usernr, 
                                     naam, 
                                     adres, 
@@ -111,7 +111,7 @@ namespace kinguin_Clone.classes
                             case "VERKOPER":
                                 string verkopernaam = oddr.GetString(7);
                                 string bankreking = oddr.GetString(8);
-                                this.currentUser = new Seller(
+                                this.CurrentUser = new Seller(
                                     usernr, 
                                     naam, 
                                     adres, 
@@ -384,7 +384,7 @@ namespace kinguin_Clone.classes
             List<Advert> ads = new List<Advert>();
 
             DatabaseConnection db = new DatabaseConnection();
-            string sql = "SELECT id, foto, url, description FROM Advertentie ORDER BY dbms_random.value";
+            string sql = "SELECT id, foto, url, Description FROM Advertentie ORDER BY dbms_random.value";
 
             OracleCommand oc = new OracleCommand(sql, db.oracleConnection);
             oc.Connection.Open();
@@ -403,7 +403,7 @@ namespace kinguin_Clone.classes
         // public List<GameCopy> GetCartCopies()
         // {
         // List<GameCopy> copies = new List<GameCopy>();
-        // if (currentUser == null)
+        // if (CurrentUser == null)
         // {
         // return copies; //zo crasht het programma niet en wordt er niet toegevoegd.
         // }
@@ -412,7 +412,7 @@ namespace kinguin_Clone.classes
         // List<GameCopy> games = new List<GameCopy>();
 
         // string query = "select g.gamenr,g.naam,g.categorie,g.datum," +
-        // " g.foto,g.specificatie,g.platform, g.beschrijving, " +
+        // " g.foto,g.Specificatie,g.Platform, g.beschrijving, " +
         // "O.Objectnr, o.prijs,O.Verkoopsdatum,O.Code " +
 
         // "from mandje m , verkoopobject o, game g " +
@@ -420,7 +420,7 @@ namespace kinguin_Clone.classes
         // "where M.Relevant= 'Y' " +
         // "and M.Verkoopobject = O.Objectnr " +
         // "and O.Gamenr = G.Gamenr" +
-        // "and m.lidnr = " + currentUser.UserNr;
+        // "and m.lidnr = " + CurrentUser.UserNr;
 
         // OracleDataReader dr = db.ExecuteReadQuery(query);
 
@@ -430,7 +430,7 @@ namespace kinguin_Clone.classes
         // string name = dr.GetString(1);
         // string category = dr.GetString(2);
         // DateTime date = dr.GetDateTime(3);
-        // string picture = dr.GetString(4);
+        // string Picture = dr.GetString(4);
         // string specificatie = dr.GetString(5);
         // string platform = dr.GetString(6);
         // string beschrijving = dr.GetString(7);
@@ -439,7 +439,7 @@ namespace kinguin_Clone.classes
         // DateTime datum = dr.GetDateTime(10);
         // string code = dr.GetString(11);
 
-        // copies.Add(new GameCopy(gamenr, name, category, date, picture, specificatie, platform, objectnr,price,datum,code,beschrijving));
+        // copies.Add(new GameCopy(gamenr, name, category, date, Picture, specificatie, platform, objectnr,price,datum,code,beschrijving));
         // }
         // return games;
 

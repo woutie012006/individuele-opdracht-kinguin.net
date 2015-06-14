@@ -35,7 +35,7 @@ namespace kinguin_Clone
         /// </param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!(this.Master.administration.currentUser is Admin))
+            if (!(this.Master.administration.CurrentUser is Admin))
             {
                 this.Response.Redirect("Default.aspx");
             }
@@ -87,9 +87,9 @@ namespace kinguin_Clone
                 this.tbSpecifications.InnerText, 
                 this.ddPlatform.Text, 
                 this.tbDescription.InnerText);
-            if (this.Master.administration.currentUser is Admin)
+            if (this.Master.administration.CurrentUser is Admin)
             {
-                if ((this.Master.administration.currentUser as Admin).AddGame(game))
+                if ((this.Master.administration.CurrentUser as Admin).AddGame(game))
                 {
                     this.ClientScript.RegisterStartupScript(
                         this.GetType(), 

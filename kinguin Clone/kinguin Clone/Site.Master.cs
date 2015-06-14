@@ -59,7 +59,7 @@ namespace kinguin_Clone
             this.LoginLogout.NavigateUrl = "/Default.aspx";
 
             // HttpCookie c = Request.Cookies["kinguin"];
-            User c = this.administration.currentUser;
+            User c = this.administration.CurrentUser;
             if (c != null)
             {
                 this.LoginLogout.Text = "Log out";

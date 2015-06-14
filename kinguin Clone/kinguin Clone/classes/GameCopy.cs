@@ -33,10 +33,10 @@ namespace kinguin_Clone.classes
         /// The category.
         /// </param>
         /// <param name="date">
-        /// The date.
+        /// The Date.
         /// </param>
         /// <param name="picture">
-        /// The picture.
+        /// The Picture.
         /// </param>
         /// <param name="specificatie">
         /// The specificatie.
@@ -51,13 +51,13 @@ namespace kinguin_Clone.classes
         /// The price.
         /// </param>
         /// <param name="SellingDate">
-        /// The selling date.
+        /// The selling Date.
         /// </param>
         /// <param name="code">
         /// The code.
         /// </param>
         /// <param name="description">
-        /// The description.
+        /// The Description.
         /// </param>
         /// <param name="owner">
         /// The owner.
@@ -78,10 +78,10 @@ namespace kinguin_Clone.classes
             int owner)
             : base(gameNr, name, category, date, picture, specificatie, platform, description)
         {
-            this.copyNr = CopyNr;
-            this.price = price;
-            this.sellingDate = SellingDate;
-            this.code = code;
+            this.CopyNr = CopyNr;
+            this.Price = price;
+            this.SellingDate = SellingDate;
+            this.Code = code;
             this.Owner = owner;
         }
 
@@ -107,33 +107,33 @@ namespace kinguin_Clone.classes
         /// <returns>
         /// </returns>
         public GameCopy(Game g, int CopyNr, float price, DateTime SellingDate, string code)
-            : base(g.gameNr, g.name, g.category, g.date, g.picture, g.specificatie, g.platform, g.description)
+            : base(g.GameNr, g.Name, g.Category, g.Date, g.Picture, g.Specificatie, g.Platform, g.Description)
         {
-            this.copyNr = CopyNr;
-            this.price = price;
-            this.sellingDate = SellingDate;
-            this.code = code;
+            this.CopyNr = CopyNr;
+            this.Price = price;
+            this.SellingDate = SellingDate;
+            this.Code = code;
         }
 
         /// <summary>
         /// Gets or sets the copy nr.
         /// </summary>
-        public int copyNr { get; set; }
+        public int CopyNr { get; set; }
 
         /// <summary>
         /// Gets or sets the price.
         /// </summary>
-        public float price { get; set; }
+        public float Price { get; set; }
 
         /// <summary>
-        /// Gets or sets the selling date.
+        /// Gets or sets the selling Date.
         /// </summary>
-        public DateTime sellingDate { get; set; }
+        public DateTime SellingDate { get; set; }
 
         /// <summary>
         /// Gets or sets the code.
         /// </summary>
-        public string code { get; set; }
+        public string Code { get; set; }
 
         /// <summary>
         /// Gets or sets the owner.

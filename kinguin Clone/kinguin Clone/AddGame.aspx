@@ -20,7 +20,7 @@
 
         <asp:Label runat="server" Text="Platform"></asp:Label><br>
         <asp:FileUpload ID="fuPicture" runat="server" CssClass="form-control"/>
-        <asp:RequiredFieldValidator ControlToValidate="fuPicture" runat="server" ErrorMessage="No picture was loaded" CssClass="alert alert-dismissible alert-danger"></asp:RequiredFieldValidator><br>
+        <asp:RequiredFieldValidator ControlToValidate="fuPicture" runat="server" ErrorMessage="No Picture was loaded" CssClass="alert alert-dismissible alert-danger"></asp:RequiredFieldValidator><br>
 
         <asp:Label runat="server" Text="Description"></asp:Label><br>
         <textarea id="tbDescription" cols="20" rows="5" runat="server" CssClass="form-control"></textarea><br>

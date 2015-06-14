@@ -38,12 +38,12 @@ namespace kinguin_Clone
         /// </param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (this.Master.administration == null || this.Master.administration.currentUser == null)
+            if (this.Master.administration == null || this.Master.administration.CurrentUser == null)
             {
                 this.Response.Redirect("Default.aspx");
             }
 
-            this.cUser = this.Master.administration.currentUser;
+            this.cUser = this.Master.administration.CurrentUser;
 
             this.tbName.Text = this.cUser.Name;
             this.tbAdres.Text = this.cUser.Adres;

@@ -427,12 +427,12 @@ namespace kinguin_Clone.classes
                 DatabaseConnection db = new DatabaseConnection();
                 string sql = "insert into game"
                              + " (GAMENR,NAAM,BESCHRIJVING,DATUM,FOTO,SPECIFICATIE,PLATFORM,CATEGORIE)" + " values "
-                             + "(seq_game.nextval, " + " '" + game.name + "' , " + " '" + game.description + "', "
-                             + "to_date('" + game.date + "','DD-MM-YYYY HH24:MI:SS')" +
+                             + "(seq_game.nextval, " + " '" + game.Name + "' , " + " '" + game.Description + "', "
+                             + "to_date('" + game.Date + "','DD-MM-YYYY HH24:MI:SS')" +
 
                              // might not work so needs to be checked
-                             ",'" + game.picture + "', " + " '" + game.specificatie + "'," + " '" + game.platform + "',"
-                             + " '" + game.category + "')";
+                             ",'" + game.Picture + "', " + " '" + game.Specificatie + "'," + " '" + game.Platform + "',"
+                             + " '" + game.Category + "')";
 
                 OracleCommand oc = new OracleCommand(sql, db.oracleConnection);
                 oc.Connection.Open();

@@ -40,26 +40,26 @@ namespace kinguin_Clone
         {
             this.administration = this.Master.administration;
 
-            if (this.administration == null || this.administration.currentUser == null)
+            if (this.administration == null || this.administration.CurrentUser == null)
             {
                 this.Response.Redirect("~/Default.aspx");
             }
 
-            this.lblName.Text = "Name : " + this.administration.currentUser.Name;
-            this.lblAdres.Text = "Adres : " + this.administration.currentUser.Adres;
-            this.lblPhonenr.Text = "Phone number : " + this.administration.currentUser.Name;
-            this.lblKinguinBalance.Text = "Kinguin Balance : " + this.administration.currentUser.KinguinBalance;
+            this.lblName.Text = "Name : " + this.administration.CurrentUser.Name;
+            this.lblAdres.Text = "Adres : " + this.administration.CurrentUser.Adres;
+            this.lblPhonenr.Text = "Phone number : " + this.administration.CurrentUser.Name;
+            this.lblKinguinBalance.Text = "Kinguin Balance : " + this.administration.CurrentUser.KinguinBalance;
 
-            if (this.Master.administration.currentUser is Admin)
+            if (this.Master.administration.CurrentUser is Admin)
             {
                 this.hlAddGame.Visible = true;
             }
-            else if (this.Master.administration.currentUser is Seller)
+            else if (this.Master.administration.CurrentUser is Seller)
             {
                 this.hlChangeUserinfo.Visible = true;
                 this.hlAddObject.Visible = true;
             }
-            else if (this.Master.administration.currentUser is Buyer)
+            else if (this.Master.administration.CurrentUser is Buyer)
             {
                 this.hlChangeUserinfo.Visible = true;
             }

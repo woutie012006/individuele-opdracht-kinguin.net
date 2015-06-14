@@ -68,9 +68,9 @@ namespace kinguin_Clone.classes
         public string Nickname { get; set; }
 
         /// <summary>
-        /// Gets or sets the games owned.
+        /// Gets or sets the games Owned.
         /// </summary>
-        public List<GameCopy> gamesOwned { get; set; }
+        public List<GameCopy> GamesOwned { get; set; }
 
         /// <summary>
         /// Gets or sets the cart.
@@ -86,7 +86,7 @@ namespace kinguin_Clone.classes
         public List<GameCopy> GetUserCopies()
         {
             // todo implement Buyer.GetUserCopies()
-            return this.cart.owned;
+            return this.cart.Owned;
         }
 
         /// <summary>

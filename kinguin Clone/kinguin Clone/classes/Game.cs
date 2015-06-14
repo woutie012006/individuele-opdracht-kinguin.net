@@ -38,10 +38,10 @@ namespace kinguin_Clone.classes
         /// The category.
         /// </param>
         /// <param name="date">
-        /// The date.
+        /// The Date.
         /// </param>
         /// <param name="picture">
-        /// The picture.
+        /// The Picture.
         /// </param>
         /// <param name="specificatie">
         /// The specificatie.
@@ -50,7 +50,7 @@ namespace kinguin_Clone.classes
         /// The platform.
         /// </param>
         /// <param name="description">
-        /// The description.
+        /// The Description.
         /// </param>
         public Game(
             int gameNr, 
@@ -62,55 +62,55 @@ namespace kinguin_Clone.classes
             string platform, 
             string description)
         {
-            this.gameNr = gameNr;
-            this.name = name;
-            this.category = category;
-            this.date = date;
-            this.picture = picture;
-            this.specificatie = specificatie;
-            this.platform = platform;
-            this.description = description;
+            this.GameNr = gameNr;
+            this.Name = name;
+            this.Category = category;
+            this.Date = date;
+            this.Picture = picture;
+            this.Specificatie = specificatie;
+            this.Platform = platform;
+            this.Description = description;
         }
 
         /// <summary>
         /// Gets or sets the game nr.
         /// </summary>
-        public int gameNr { get; set; }
+        public int GameNr { get; set; }
 
         /// <summary>
         /// Gets or sets the name.
         /// </summary>
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets the description.
+        /// Gets or sets the Description.
         /// </summary>
-        public string description { get; set; }
+        public string Description { get; set; }
 
         /// <summary>
-        /// Gets or sets the date.
+        /// Gets or sets the Date.
         /// </summary>
-        public DateTime date { get; set; }
+        public DateTime Date { get; set; }
 
         /// <summary>
-        /// Gets or sets the picture.
+        /// Gets or sets the Picture.
         /// </summary>
-        public string picture { get; set; }
+        public string Picture { get; set; }
 
         /// <summary>
         /// Gets or sets the specificatie.
         /// </summary>
-        public string specificatie { get; set; }
+        public string Specificatie { get; set; }
 
         /// <summary>
         /// Gets or sets the platform.
         /// </summary>
-        public string platform { get; set; }
+        public string Platform { get; set; }
 
         /// <summary>
         /// Gets or sets the category.
         /// </summary>
-        public string category { get; set; }
+        public string Category { get; set; }
 
         /// <summary>
         /// The get all copies.
@@ -123,7 +123,7 @@ namespace kinguin_Clone.classes
             DatabaseConnection db = new DatabaseConnection();
             List<GameCopy> copies = new List<GameCopy>();
 
-            string query = "select objectnr,prijs,code from verkoopobject where gamenr = " + this.gameNr
+            string query = "select objectnr,prijs,code from verkoopobject where gamenr = " + this.GameNr
                            + " and verkoopsdatum <to_date('01/01/1901','DD/MM/YYYY')";
 
             OracleDataReader dr = db.ExecuteReadQuery(query);
