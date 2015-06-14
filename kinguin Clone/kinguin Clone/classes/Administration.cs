@@ -20,7 +20,7 @@ using Oracle.ManagedDataAccess.Client;
 
 #endregion
 
-namespace Kinguin_Clone.classes
+namespace kinguin_Clone.classes
 {
     /// <summary>
     /// The administration.

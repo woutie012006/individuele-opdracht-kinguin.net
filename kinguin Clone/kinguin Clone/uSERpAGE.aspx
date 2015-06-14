@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="UserPage.aspx.cs" Inherits="Kinguin_Clone.UserPage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="UserPage.aspx.cs" Inherits="kinguin_Clone.UserPage" %>
 <%@ Import Namespace="System.Web.UI.WebControls.WebParts" %>
 <%@ Import Namespace="System.Web.UI" %>
 <%@ Import Namespace="System.Web.UI.WebControls" %>

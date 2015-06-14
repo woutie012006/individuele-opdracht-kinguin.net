@@ -14,7 +14,7 @@ using System.Web.UI.WebControls;
 
 #endregion
 
-namespace Kinguin_Clone
+namespace kinguin_Clone
 {
     /// <summary>
     /// The logout.

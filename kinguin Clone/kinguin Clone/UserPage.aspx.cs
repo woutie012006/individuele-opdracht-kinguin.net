@@ -11,13 +11,13 @@
 
 using System;
 
-using Kinguin_Clone.classes;
+using kinguin_Clone.classes;
 
 #endregion
 
-namespace Kinguin_Clone
+namespace kinguin_Clone
 {
-    using Kinguin_Clone.classes;
+    using kinguin_Clone.classes;
 
     /// <summary>
     /// The user page.

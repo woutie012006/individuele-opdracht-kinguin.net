@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Kinguin_Clone {
+namespace kinguin_Clone {
     
     
     public partial class Logout {

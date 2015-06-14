@@ -17,7 +17,7 @@ using Microsoft.AspNet.FriendlyUrls.Resolvers;
 
 #endregion
 
-namespace Kinguin_Clone
+namespace kinguin_Clone
 {
     /// <summary>
     /// The view switcher.

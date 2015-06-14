@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ShoppingCart.aspx.cs" Inherits="Kinguin_Clone.ShoppingCart" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ShoppingCart.aspx.cs" Inherits="kinguin_Clone.ShoppingCart" %>
 <%@ MasterType virtualpath="~/Site.master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">

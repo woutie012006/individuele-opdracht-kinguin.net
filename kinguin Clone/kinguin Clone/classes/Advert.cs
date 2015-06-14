@@ -7,7 +7,7 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Kinguin_Clone.classes
+namespace kinguin_Clone.classes
 {
     /// <summary>
     /// The advert.

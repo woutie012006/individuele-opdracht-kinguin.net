@@ -13,7 +13,7 @@ using System;
 
 #endregion
 
-namespace Kinguin_Clone
+namespace kinguin_Clone
 {
     /// <summary>
     /// The site_ mobile.

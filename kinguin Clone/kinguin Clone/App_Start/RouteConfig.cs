@@ -15,7 +15,7 @@ using Microsoft.AspNet.FriendlyUrls;
 
 #endregion
 
-namespace Kinguin_Clone
+namespace kinguin_Clone
 {
     /// <summary>
     /// The route config.

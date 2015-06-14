@@ -16,7 +16,7 @@ using System.Web.Routing;
 
 #endregion
 
-namespace Kinguin_Clone
+namespace kinguin_Clone
 {
     /// <summary>
     /// The global.

@@ -13,7 +13,7 @@ using System;
 
 #endregion
 
-namespace Kinguin_Clone.classes
+namespace kinguin_Clone.classes
 {
     /// <summary>
     /// The game copy.

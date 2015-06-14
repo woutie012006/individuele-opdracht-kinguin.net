@@ -14,7 +14,7 @@ using System.Web.UI;
 
 #endregion
 
-namespace Kinguin_Clone
+namespace kinguin_Clone
 {
     /// <summary>
     /// The bundle config.

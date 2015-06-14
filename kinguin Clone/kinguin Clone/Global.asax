@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="Kinguin_Clone.Global" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="kinguin_Clone.Global" Language="C#" %>

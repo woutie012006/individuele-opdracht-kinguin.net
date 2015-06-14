@@ -17,7 +17,7 @@ using Ict4Events_WindowsForms;
 
 #endregion
 
-namespace Kinguin_Clone.classes
+namespace kinguin_Clone.classes
 {
     /// <summary>
     /// The buyer.
