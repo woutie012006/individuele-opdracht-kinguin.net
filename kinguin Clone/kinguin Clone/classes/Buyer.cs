@@ -1,18 +1,16 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Web;
 using Ict4Events_WindowsForms;
+
+#endregion
 
 namespace kinguin_Clone.classes
 {
     public class Buyer : User
     {
-        public string Nickname { get; set; }
-        public List<GameCopy> gamesOwned { get; set; }
-        public Cart cart { get; set; }
-
         public Buyer(int Usernr, string name, string adres, string phonenr, float kinguinBalance, string nickname,
             string email)
             : base(Usernr, name, adres, phonenr, kinguinBalance, email)
@@ -20,6 +18,10 @@ namespace kinguin_Clone.classes
             this.Nickname = nickname;
             cart = new Cart(this);
         }
+
+        public string Nickname { get; set; }
+        public List<GameCopy> gamesOwned { get; set; }
+        public Cart cart { get; set; }
 
         public List<GameCopy> GetUserCopies()
         {
@@ -42,6 +44,7 @@ namespace kinguin_Clone.classes
         {
             //todo database implementation Buyer.BuyCart
         }
+
         public bool ChangeNickname(string nickname)
         {
             try

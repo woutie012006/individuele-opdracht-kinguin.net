@@ -1,8 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Web;
+#region
+
 using System.Web.Routing;
 using Microsoft.AspNet.FriendlyUrls;
+
+#endregion
 
 namespace kinguin_Clone
 {

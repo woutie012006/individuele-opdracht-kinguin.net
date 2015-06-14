@@ -1,22 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿#region
+
+using System;
 using System.Diagnostics;
-using System.Dynamic;
-using System.Linq;
-using System.Web;
 using Ict4Events_WindowsForms;
+
+#endregion
 
 namespace kinguin_Clone.classes
 {
     public abstract class User
     {
-        public int UserNr { get; set; }
-        public string Name { get; set; }
-        public string Adres { get; set; }
-        public string PhoneNr { get; set; }
-        public float KinguinBalance { get; set; }
-        public string Email { get; set; }
-
         protected User(int Usernr, string name, string adres, string phonenr, float kinguinBalance, string email)
         {
             this.UserNr = Usernr;
@@ -26,6 +19,13 @@ namespace kinguin_Clone.classes
             this.KinguinBalance = kinguinBalance;
             this.Email = email;
         }
+
+        public int UserNr { get; set; }
+        public string Name { get; set; }
+        public string Adres { get; set; }
+        public string PhoneNr { get; set; }
+        public float KinguinBalance { get; set; }
+        public string Email { get; set; }
 
         public bool ChangeName(string name)
         {
@@ -83,6 +83,7 @@ namespace kinguin_Clone.classes
             }
             return false;
         }
+
         public bool ChangeEmail(string email)
         {
             try

@@ -1,20 +1,22 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using Ict4Events_WindowsForms;
 using Oracle.ManagedDataAccess.Client;
+
+#endregion
 
 namespace kinguin_Clone.classes
 {
     public class Cart
     {
-        public List<GameCopy> owned { get; set; }
-
         public Cart(User currentUser)
         {
             owned = GetUserCopies(currentUser);
         }
+
+        public List<GameCopy> owned { get; set; }
 
         public void AddGame(GameCopy game, User currentUser)
         {

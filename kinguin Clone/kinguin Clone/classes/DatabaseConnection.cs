@@ -1,7 +1,9 @@
-﻿using Oracle.ManagedDataAccess.Client;
-using System;
+﻿#region
+
 using System.Data;
-using System.Threading.Tasks;
+using Oracle.ManagedDataAccess.Client;
+
+#endregion
 
 //using System.Windows.Forms;
 
@@ -17,13 +19,22 @@ namespace Ict4Events_WindowsForms
         public const string databaseArgs =
             "user id=" + userName + ";password=" + password + ";data source=" + serverAddress;// + ";service name=" + servicename;
 
-        private OracleConnection connection;
         //private const string userName = "dbi311425", password = "zqy7T4qfdD", serverAddress = "fhictora01.fhict.local", sid = "xe", servicename = "fhictora";
         private const string userName = "kinguin", password = "Password123", serverAddress = "127.0.0.1";
         //private DatabaseQueries databaseQueries;
 
         private static readonly DatabaseConnection _instance = new DatabaseConnection();
+        private OracleConnection connection;
+        //public DatabaseQueries DatabaseQueries
+        //{
+        //    get { return databaseQueries; }
+        //    set { databaseQueries = value; }
+        //}
 
+        public DatabaseConnection()
+        {
+            this.connection = new OracleConnection(databaseArgs);
+        }
 
         public static DatabaseConnection Instance
         {
@@ -54,17 +65,6 @@ namespace Ict4Events_WindowsForms
         public bool ConnectionReady
         {
             get { return connection.State == ConnectionState.Open; }
-        }
-
-        //public DatabaseQueries DatabaseQueries
-        //{
-        //    get { return databaseQueries; }
-        //    set { databaseQueries = value; }
-        //}
-
-        public DatabaseConnection()
-        {
-            this.connection = new OracleConnection(databaseArgs);
         }
 
         /// <summary>

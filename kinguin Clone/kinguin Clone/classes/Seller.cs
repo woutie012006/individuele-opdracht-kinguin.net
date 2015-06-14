@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿#region
+
+using System;
 using System.Diagnostics;
-using System.Linq;
-using System.Web;
 using Ict4Events_WindowsForms;
+
+#endregion
 
 namespace kinguin_Clone.classes
 {
     public class Seller : Buyer
     {
-        public string SellerName { get; set; }
-        public string BankAccount { get; set; }
-
         public Seller(int Usernr, string name, string adres, string phonenr, float kinguinBalance, string nickname,
             string SellerName, string bankaccount, string email)
             : base(Usernr, name, adres, phonenr, kinguinBalance, nickname, email)
@@ -19,6 +17,9 @@ namespace kinguin_Clone.classes
             this.SellerName = SellerName;
             this.BankAccount = bankaccount;
         }
+
+        public string SellerName { get; set; }
+        public string BankAccount { get; set; }
 
         public bool ChangeSellerName(string name)
         {

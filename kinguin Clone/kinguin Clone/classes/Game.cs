@@ -1,23 +1,16 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using Ict4Events_WindowsForms;
 using Oracle.ManagedDataAccess.Client;
+
+#endregion
 
 namespace kinguin_Clone.classes
 {
     public class Game
     {
-        public int gameNr { get; set; }
-        public string name { get; set; }
-        public string description { get; set; }
-        public DateTime date { get; set; }
-        public string picture { get; set; }
-        public string specificatie { get; set; }
-        public string platform { get; set; }
-        public string category { get; set; }
-
         public Game(int gameNr, string name, string category, DateTime date, string picture, string specificatie,
             string platform, string description)
         {
@@ -30,6 +23,15 @@ namespace kinguin_Clone.classes
             this.platform = platform;
             this.description = description;
         }
+
+        public int gameNr { get; set; }
+        public string name { get; set; }
+        public string description { get; set; }
+        public DateTime date { get; set; }
+        public string picture { get; set; }
+        public string specificatie { get; set; }
+        public string platform { get; set; }
+        public string category { get; set; }
 
         public List<GameCopy> GetAllCopies()
         {

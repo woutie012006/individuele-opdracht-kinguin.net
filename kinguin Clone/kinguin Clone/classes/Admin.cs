@@ -1,11 +1,12 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Web;
 using Ict4Events_WindowsForms;
 using Oracle.ManagedDataAccess.Client;
+
+#endregion
 
 namespace kinguin_Clone.classes
 {

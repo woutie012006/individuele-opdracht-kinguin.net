@@ -1,16 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+﻿#region
+
+using System;
 using kinguin_Clone.classes;
+
+#endregion
 
 namespace kinguin_Clone
 {
     public partial class ChangeUserInfo : System.Web.UI.Page
     {
         private User cUser;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Master.administration == null || Master.administration.currentUser == null)

@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿#region
+
+using System;
+
+#endregion
 
 namespace kinguin_Clone.classes
 {
     public class GameCopy : Game
     {
-        public int copyNr { get; set; }
-        public float price { get; set; }
-        public DateTime sellingDate { get; set; }
-        public string code { get; set; }
-        public int Owner { get; set; }
-
         public GameCopy(int gameNr, string name, string category, DateTime date, string picture, string specificatie,
             string platform, int CopyNr, float price, DateTime SellingDate, string code, string description, int owner)
             : base(gameNr, name, category, date, picture, specificatie, platform, description)
@@ -37,6 +32,12 @@ namespace kinguin_Clone.classes
             this.code = code;
         }
 
+        public int copyNr { get; set; }
+        public float price { get; set; }
+        public DateTime sellingDate { get; set; }
+        public string code { get; set; }
+        public int Owner { get; set; }
+
         /// <summary>
         /// /////////////////////////////////////////////////////////////////////////////////////////BNORT IMPLEMENTED YET
         /// </summary>
@@ -45,9 +46,5 @@ namespace kinguin_Clone.classes
         {
             return false;
         }
-
-        //public Game getGame()
-        //{
-        //}
     }
 }

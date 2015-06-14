@@ -1,19 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
+﻿#region
+
+using System;
 using System.Web.UI.WebControls;
-using Ict4Events_WindowsForms;
 using kinguin_Clone.classes;
-using Oracle.ManagedDataAccess.Client;
+
+#endregion
 
 namespace kinguin_Clone
 {
     public partial class Login : System.Web.UI.Page
     {
         private Administration administration;
-
 
         protected void Page_Load(object sender, EventArgs e)
         {

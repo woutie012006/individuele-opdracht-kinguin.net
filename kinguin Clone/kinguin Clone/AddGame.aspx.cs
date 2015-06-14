@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿#region
+
+using System;
 using System.IO;
-using System.Linq;
 using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using kinguin_Clone.classes;
+
+#endregion
 
 namespace kinguin_Clone
 {

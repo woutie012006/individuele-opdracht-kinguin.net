@@ -1,10 +1,13 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Web;
 using Ict4Events_WindowsForms;
 using Oracle.ManagedDataAccess.Client;
+
+#endregion
 
 namespace kinguin_Clone.classes
 {
@@ -271,6 +274,25 @@ namespace kinguin_Clone.classes
             return g;
         }
 
+        public List<Advert> GetAdds()
+        {
+            List<Advert> ads = new List<Advert>();
+
+            DatabaseConnection db = new DatabaseConnection();
+            string sql = "SELECT id, foto, url, description FROM Advertentie ORDER BY dbms_random.value";
+
+
+            OracleCommand oc = new OracleCommand(sql, db.oracleConnection);
+            oc.Connection.Open();
+            OracleDataReader odr = oc.ExecuteReader();
+            while (odr.Read())
+            {
+                ads.Add(new Advert(odr.GetInt32(0), odr.GetString(1), odr.GetString(2), odr.GetString(3)));
+            }
+            oc.Connection.Close();
+            return ads;
+        }
+
         #region
 
         //public List<GameCopy> GetCartCopies()
@@ -321,28 +343,5 @@ namespace kinguin_Clone.classes
         //}
 
         #endregion
-
-        public List<Advert> GetAdds()
-        {
-            List<Advert> ads = new List<Advert>();
-
-            DatabaseConnection db = new DatabaseConnection();
-            string sql = "SELECT id, foto, url, description FROM Advertentie ORDER BY dbms_random.value";
-
-
-            OracleCommand oc = new OracleCommand(sql, db.oracleConnection);
-            oc.Connection.Open();
-            OracleDataReader odr = oc.ExecuteReader();
-            while (odr.Read())
-            {
-                ads.Add(new Advert(odr.GetInt32(0), odr.GetString(1), odr.GetString(2), odr.GetString(3)));
-            }
-            oc.Connection.Close();
-            return ads;
-        }
-
-        //public List<Game> GetGamesBestSold()
-        //{
-        //}
     }
 }
