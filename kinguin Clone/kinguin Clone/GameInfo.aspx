@@ -18,9 +18,11 @@
                             <asp:Image ID="imgGame" CssClass="img-responsive" runat="server"/>
                             <div class="caption-full">
                                 <h4>
-                                    <a href="#"><%# Eval("name") %></a>
+                                    <a href="#"><%#
+                this.Eval("name") %></a>
                                 </h4>
-                                <p><%# Eval("description") %></p>
+                                <p><%#
+                this.Eval("description") %></p>
                             </div>
                         </div>
 
@@ -35,8 +37,10 @@
 
                         <div class="row">
                             <div class="col-md-12">
-                                <%# Eval("copyNr") %>
-                                <span class="pull-right"><%# Eval("price") %></span>
+                                <%#
+                this.Eval("copyNr") %>
+                                <span class="pull-right"><%#
+                this.Eval("price") %></span>
 
                                 <asp:HyperLink ID="btnPutInCart" CssClass="btn btn-default" runat="server" Text="put in cart"/>
                             </div>

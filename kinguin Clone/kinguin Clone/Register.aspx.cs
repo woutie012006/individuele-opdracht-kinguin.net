@@ -1,4 +1,13 @@
-﻿#region
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Register.aspx.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   The register.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+#region
 
 using System;
 
@@ -6,25 +15,51 @@ using System;
 
 namespace kinguin_Clone
 {
+    /// <summary>
+    /// The register.
+    /// </summary>
     public partial class Register : System.Web.UI.Page
     {
+        /// <summary>
+        /// The page_ load.
+        /// </summary>
+        /// <param name="sender">
+        /// The sender.
+        /// </param>
+        /// <param name="e">
+        /// The e.
+        /// </param>
         protected void Page_Load(object sender, EventArgs e)
         {
         }
 
+        /// <summary>
+        /// The btn submit_ on click.
+        /// </summary>
+        /// <param name="sender">
+        /// The sender.
+        /// </param>
+        /// <param name="e">
+        /// The e.
+        /// </param>
         protected void btnSubmit_OnClick(object sender, EventArgs e)
         {
-            if (Page.IsValid)
+            if (this.Page.IsValid)
             {
-                bool succes = Master.administration.Register(tbName.Text, tbAdres.Text, tbTelNr.Text, tbEmail.Text,
-                    tbPassword1.Text, tbNickname.Text);
+                bool succes = this.Master.administration.Register(
+                    this.tbName.Text, 
+                    this.tbAdres.Text, 
+                    this.tbTelNr.Text, 
+                    this.tbEmail.Text, 
+                    this.tbPassword1.Text, 
+                    this.tbNickname.Text);
                 if (succes)
                 {
-                    Response.Redirect("Login.aspx");
+                    this.Response.Redirect("Login.aspx");
                 }
                 else
                 {
-                    Response.Redirect("#");
+                    this.Response.Redirect("#");
                 }
             }
         }

@@ -17,8 +17,10 @@
                     <div class="thumbnail">
                         <asp:Image ID="IMGGame" runat="server"/>
                         <div class="caption">
-                            <h3><%# Eval("name") %></h3>
-                            <p><%# Eval("description") %></p>
+                            <h3><%#
+                this.Eval("name") %></h3>
+                            <p><%#
+                this.Eval("description") %></p>
                             <h3></h3>
                             <p>
                                 <%--<asp:HyperLink ID="btnBuyNow" CssClass="btn btn-primary" runat="server" Text="Buy Now!" />--%>

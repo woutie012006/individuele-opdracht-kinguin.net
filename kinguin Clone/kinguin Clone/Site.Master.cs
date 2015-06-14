@@ -1,52 +1,91 @@
-﻿#region
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Site.Master.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   The site master.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+#region
 
 using System;
 using System.Web.UI;
+
 using kinguin_Clone.classes;
 
 #endregion
 
 namespace kinguin_Clone
 {
+    /// <summary>
+    /// The site master.
+    /// </summary>
     public partial class SiteMaster : MasterPage
     {
+        /// <summary>
+        /// Gets or sets the administration.
+        /// </summary>
         public Administration administration
         {
             get
             {
-                Administration a = (Administration) Session["administration"];
+                Administration a = (Administration)this.Session["administration"];
                 if (a != null)
                 {
                     return a;
                 }
+
                 return new Administration();
             }
-            set { Session["administration"] = value; }
+
+            set
+            {
+                this.Session["administration"] = value;
+            }
         }
 
+        /// <summary>
+        /// The page_ load.
+        /// </summary>
+        /// <param name="sender">
+        /// The sender.
+        /// </param>
+        /// <param name="e">
+        /// The e.
+        /// </param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            LoginLogout.NavigateUrl = "/Default.aspx";
+            this.LoginLogout.NavigateUrl = "/Default.aspx";
 
-            //HttpCookie c = Request.Cookies["kinguin"];
-            User c = administration.currentUser;
+            // HttpCookie c = Request.Cookies["kinguin"];
+            User c = this.administration.currentUser;
             if (c != null)
             {
-                LoginLogout.Text = "Log out";
-                LoginLogout.NavigateUrl = "/Logout.aspx";
-                hlUserPage.Visible = true;
+                this.LoginLogout.Text = "Log out";
+                this.LoginLogout.NavigateUrl = "/Logout.aspx";
+                this.hlUserPage.Visible = true;
             }
             else
             {
-                LoginLogout.NavigateUrl = "/Login.aspx";
+                this.LoginLogout.NavigateUrl = "/Login.aspx";
             }
         }
 
+        /// <summary>
+        /// The btn search_ on click.
+        /// </summary>
+        /// <param name="sender">
+        /// The sender.
+        /// </param>
+        /// <param name="e">
+        /// The e.
+        /// </param>
         protected void btnSearch_OnClick(object sender, EventArgs e)
         {
-            string searchterm = tbSearch.Text; //.Replace(" ", "?");
+            string searchterm = this.tbSearch.Text; // .Replace(" ", "?");
 
-            Response.Redirect("GamesPage.aspx/search/" + searchterm);
+            this.Response.Redirect("GamesPage.aspx/search/" + searchterm);
         }
     }
 }

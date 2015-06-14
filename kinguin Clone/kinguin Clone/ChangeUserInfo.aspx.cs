@@ -1,82 +1,122 @@
-﻿#region
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ChangeUserInfo.aspx.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   The change user info.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+#region
 
 using System;
+
 using kinguin_Clone.classes;
 
 #endregion
 
 namespace kinguin_Clone
 {
+    /// <summary>
+    /// The change user info.
+    /// </summary>
     public partial class ChangeUserInfo : System.Web.UI.Page
     {
+        /// <summary>
+        /// The c user.
+        /// </summary>
         private User cUser;
 
+        /// <summary>
+        /// The page_ load.
+        /// </summary>
+        /// <param name="sender">
+        /// The sender.
+        /// </param>
+        /// <param name="e">
+        /// The e.
+        /// </param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Master.administration == null || Master.administration.currentUser == null)
+            if (this.Master.administration == null || this.Master.administration.currentUser == null)
             {
-                Response.Redirect("Default.aspx");
+                this.Response.Redirect("Default.aspx");
             }
-            cUser = Master.administration.currentUser;
 
-            tbName.Text = cUser.Name;
-            tbAdres.Text = cUser.Adres;
-            tbTelNr.Text = cUser.PhoneNr;
-            tbEmail.Text = cUser.Email;
-            tbNickname.Text = ((Buyer) cUser).Nickname;
-            //for now you can;t change your password
-            if (cUser is Seller)
+            this.cUser = this.Master.administration.currentUser;
+
+            this.tbName.Text = this.cUser.Name;
+            this.tbAdres.Text = this.cUser.Adres;
+            this.tbTelNr.Text = this.cUser.PhoneNr;
+            this.tbEmail.Text = this.cUser.Email;
+            this.tbNickname.Text = ((Buyer)this.cUser).Nickname;
+
+            // for now you can;t change your password
+            if (this.cUser is Seller)
             {
-                lblSellerName.Visible = true;
-                tbSellerName.Visible = true;
-                tbSellerNameVal.Enabled = true;
+                this.lblSellerName.Visible = true;
+                this.tbSellerName.Visible = true;
+                this.tbSellerNameVal.Enabled = true;
 
-                tbSellerName.Text = ((Seller) cUser).SellerName;
+                this.tbSellerName.Text = ((Seller)this.cUser).SellerName;
 
-                lblBankAccount.Visible = true;
-                tbBankAccount.Visible = true;
-                tbBankAccountVal.Enabled = true;
-                
-                tbBankAccount.Text = ((Seller)cUser).BankAccount;
+                this.lblBankAccount.Visible = true;
+                this.tbBankAccount.Visible = true;
+                this.tbBankAccountVal.Enabled = true;
 
+                this.tbBankAccount.Text = ((Seller)this.cUser).BankAccount;
             }
         }
 
+        /// <summary>
+        /// The btn submit_ on click.
+        /// </summary>
+        /// <param name="sender">
+        /// The sender.
+        /// </param>
+        /// <param name="e">
+        /// The e.
+        /// </param>
         protected void btnSubmit_OnClick(object sender, EventArgs e)
         {
-            if (tbName.Text != cUser.Name)
+            if (this.tbName.Text != this.cUser.Name)
             {
-                cUser.ChangeName(tbName.Text);
-            }
-            if (tbAdres.Text != cUser.Adres)
-            {
-                cUser.ChangeAdres(tbAdres.Text);
-            }
-            if (tbTelNr.Text != cUser.PhoneNr)
-            {
-                cUser.ChangePhoneNr(tbTelNr.Text);
-            }
-            if (tbEmail.Text != cUser.Email)
-            {
-                cUser.ChangeEmail(tbEmail.Text);
-            }
-            if (tbNickname.Text != ((Buyer)cUser).Nickname)
-            {
-                ((Buyer)cUser).ChangeNickname(tbNickname.Text);
-            }
-            if (cUser is Seller)
-            {
-                Seller sUser = cUser as Seller;
-                if (tbSellerName.Text != sUser.SellerName)
-                {
-                    sUser.ChangeSellerName(tbSellerName.Text);
-                }
-                if (tbBankAccount.Text != sUser.SellerName)
-                {
-                    sUser.ChangeBankAccount(tbBankAccount.Text);
-                }
+                this.cUser.ChangeName(this.tbName.Text);
             }
 
+            if (this.tbAdres.Text != this.cUser.Adres)
+            {
+                this.cUser.ChangeAdres(this.tbAdres.Text);
+            }
+
+            if (this.tbTelNr.Text != this.cUser.PhoneNr)
+            {
+                this.cUser.ChangePhoneNr(this.tbTelNr.Text);
+            }
+
+            if (this.tbEmail.Text != this.cUser.Email)
+            {
+                this.cUser.ChangeEmail(this.tbEmail.Text);
+            }
+
+            if (this.tbNickname.Text != ((Buyer)this.cUser).Nickname)
+            {
+                ((Buyer)this.cUser).ChangeNickname(this.tbNickname.Text);
+            }
+
+            if (this.cUser is Seller)
+            {
+                Seller sUser = this.cUser as Seller;
+                if (this.tbSellerName.Text != sUser.SellerName)
+                {
+                    sUser.ChangeSellerName(this.tbSellerName.Text);
+                }
+
+                if (this.tbBankAccount.Text != sUser.SellerName)
+                {
+                    sUser.ChangeBankAccount(this.tbBankAccount.Text);
+                }
+            }
         }
     }
 }

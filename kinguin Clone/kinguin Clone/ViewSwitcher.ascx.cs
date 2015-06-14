@@ -1,28 +1,61 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ViewSwitcher.ascx.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   The view switcher.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
 #region
 
 using System;
 using System.Web;
 using System.Web.Routing;
+
 using Microsoft.AspNet.FriendlyUrls.Resolvers;
 
 #endregion
 
 namespace kinguin_Clone
 {
+    /// <summary>
+    /// The view switcher.
+    /// </summary>
     public partial class ViewSwitcher : System.Web.UI.UserControl
     {
+        /// <summary>
+        /// Gets the current view.
+        /// </summary>
         protected string CurrentView { get; private set; }
+
+        /// <summary>
+        /// Gets the alternate view.
+        /// </summary>
         protected string AlternateView { get; private set; }
+
+        /// <summary>
+        /// Gets the switch url.
+        /// </summary>
         protected string SwitchUrl { get; private set; }
 
+        /// <summary>
+        /// The page_ load.
+        /// </summary>
+        /// <param name="sender">
+        /// The sender.
+        /// </param>
+        /// <param name="e">
+        /// The e.
+        /// </param>
         protected void Page_Load(object sender, EventArgs e)
         {
             // Determine current view
-            var isMobile = WebFormsFriendlyUrlResolver.IsMobileView(new HttpContextWrapper(Context));
-            CurrentView = isMobile ? "Mobile" : "Desktop";
+            var isMobile = WebFormsFriendlyUrlResolver.IsMobileView(new HttpContextWrapper(this.Context));
+            this.CurrentView = isMobile ? "Mobile" : "Desktop";
 
             // Determine alternate view
-            AlternateView = isMobile ? "Desktop" : "Mobile";
+            this.AlternateView = isMobile ? "Desktop" : "Mobile";
 
             // Create switch URL from the route, e.g. ~/__FriendlyUrls_SwitchView/Mobile?ReturnUrl=/Page
             var switchViewRouteName = "AspNet.FriendlyUrls.SwitchView";
@@ -33,9 +66,12 @@ namespace kinguin_Clone
                 this.Visible = false;
                 return;
             }
-            var url = GetRouteUrl(switchViewRouteName, new {view = AlternateView, __FriendlyUrls_SwitchViews = true});
-            url += "?ReturnUrl=" + HttpUtility.UrlEncode(Request.RawUrl);
-            SwitchUrl = url;
+
+            var url = this.GetRouteUrl(
+                switchViewRouteName, 
+                new { view = this.AlternateView, __FriendlyUrls_SwitchViews = true });
+            url += "?ReturnUrl=" + HttpUtility.UrlEncode(this.Request.RawUrl);
+            this.SwitchUrl = url;
         }
     }
 }

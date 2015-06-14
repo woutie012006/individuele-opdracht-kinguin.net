@@ -1,58 +1,104 @@
-﻿#region
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ShoppingCart.aspx.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   The shopping cart.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+#region
 
 using System;
 using System.Collections.Generic;
 using System.Web.UI.WebControls;
+
 using kinguin_Clone.classes;
 
 #endregion
 
 namespace kinguin_Clone
 {
+    /// <summary>
+    /// The shopping cart.
+    /// </summary>
     public partial class ShoppingCart : System.Web.UI.Page
     {
+        /// <summary>
+        /// The administration.
+        /// </summary>
         private Administration administration;
 
+        /// <summary>
+        /// The page_ load.
+        /// </summary>
+        /// <param name="sender">
+        /// The sender.
+        /// </param>
+        /// <param name="e">
+        /// The e.
+        /// </param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            administration = Master.administration;
-            if (administration.currentUser != null)
+            this.administration = this.Master.administration;
+            if (this.administration.currentUser != null)
             {
-                //url redirection check
-                string sellingobject = Request.QueryString["GameCopyID"];
+                // url redirection check
+                string sellingobject = this.Request.QueryString["GameCopyID"];
 
-
-                if (administration.currentUser != null && administration.currentUser is Seller)
+                if (this.administration.currentUser != null && this.administration.currentUser is Seller)
                 {
                     if (!string.IsNullOrEmpty(sellingobject))
                     {
-                        (administration.currentUser as Seller).cart.AddCopyByID(Convert.ToInt32(sellingobject),
-                            administration.currentUser);
+                        (this.administration.currentUser as Seller).cart.AddCopyByID(
+                            Convert.ToInt32(sellingobject), 
+                            this.administration.currentUser);
                     }
-                    List<GameCopy> data = ((Seller) administration.currentUser).cart.owned;
-                    ItemView.DataSource = data;
+
+                    List<GameCopy> data = ((Seller)this.administration.currentUser).cart.owned;
+                    this.ItemView.DataSource = data;
                 }
-                else if (administration.currentUser != null && administration.currentUser is Buyer)
+                else if (this.administration.currentUser != null && this.administration.currentUser is Buyer)
                 {
                     if (!string.IsNullOrEmpty(sellingobject))
                     {
-                        (administration.currentUser as Buyer).cart.AddCopyByID(Convert.ToInt32(sellingobject),
-                            administration.currentUser);
+                        (this.administration.currentUser as Buyer).cart.AddCopyByID(
+                            Convert.ToInt32(sellingobject), 
+                            this.administration.currentUser);
                     }
-                    List<GameCopy> data = ((Buyer) administration.currentUser).cart.owned;
-                    ItemView.DataSource = data;
+
+                    List<GameCopy> data = ((Buyer)this.administration.currentUser).cart.owned;
+                    this.ItemView.DataSource = data;
                 }
             }
         }
 
+        /// <summary>
+        /// The page_ pre render.
+        /// </summary>
+        /// <param name="sender">
+        /// The sender.
+        /// </param>
+        /// <param name="e">
+        /// The e.
+        /// </param>
         protected void Page_PreRender(object sender, EventArgs e)
         {
-            ItemView.DataBind();
+            this.ItemView.DataBind();
         }
 
+        /// <summary>
+        /// The item view_ on item data bound view_ item data bound.
+        /// </summary>
+        /// <param name="sender">
+        /// The sender.
+        /// </param>
+        /// <param name="e">
+        /// The e.
+        /// </param>
         protected void ItemView_OnItemDataBoundView_ItemDataBound(object sender, ListViewItemEventArgs e)
         {
-            //throw new NotImplementedException();
+            // throw new NotImplementedException();
         }
     }
 }

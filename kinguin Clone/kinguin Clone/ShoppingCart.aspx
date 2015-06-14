@@ -18,9 +18,12 @@
             <asp:ListView ID="ItemView" OnItemDataBound="ItemView_OnItemDataBoundView_ItemDataBound" runat="server">
                 <ItemTemplate>
                     <tr>
-                        <td><%# Eval("name") %></td>
-                        <td><%# Eval("description") %></td>
-                        <td><%# Eval("price") %></td>
+                        <td><%#
+                this.Eval("name") %></td>
+                        <td><%#
+                this.Eval("description") %></td>
+                        <td><%#
+                this.Eval("price") %></td>
                     </tr>
                 </ItemTemplate>
             </asp:ListView>

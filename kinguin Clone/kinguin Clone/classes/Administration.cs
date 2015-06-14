@@ -1,22 +1,51 @@
-﻿#region
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Administration.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   The administration.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+#region
 
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Web;
+
 using Ict4Events_WindowsForms;
+
 using Oracle.ManagedDataAccess.Client;
 
 #endregion
 
 namespace kinguin_Clone.classes
 {
+    /// <summary>
+    /// The administration.
+    /// </summary>
     public class Administration
     {
+        /// <summary>
+        /// Gets or sets the current user.
+        /// </summary>
         public User currentUser { get; set; }
-        //private List<Game> games { get; set; }
 
+        // private List<Game> games { get; set; }
 
+        /// <summary>
+        /// The login.
+        /// </summary>
+        /// <param name="email">
+        /// The email.
+        /// </param>
+        /// <param name="password">
+        /// The password.
+        /// </param>
+        /// <returns>
+        /// The <see cref="bool"/>.
+        /// </returns>
         public bool Login(string email, string password)
         {
             int valid = -1;
@@ -37,16 +66,14 @@ namespace kinguin_Clone.classes
                 {
                     valid = oddr.GetInt32(0);
                 }
+
                 oddr.Close();
                 if (valid == 1)
                 {
-                    sql = "SELECT L.SOORT,L.LIDNR,L.NAAM,L.ADRES,L.TELEFOONNR," +
-                          "L.KINGUINBALANCE," +
-                          "K.NICKNAME," +
-                          "V.VERKOPERNAAM,V.BANKREKING " +
-                          "FROM lid l, klant k, verkoper v  " +
-                          "WHERE L.email=:un AND L.password=:pw " +
-                          "and (l.lidnr = K.Lidnr or L.Lidnr = V.Lidnr or (l.lidnr not in (select lidnr from verkoper) AND L.LIDNR NOT IN (SELECT LIDNR FROM KLANT)))";
+                    sql = "SELECT L.SOORT,L.LIDNR,L.NAAM,L.ADRES,L.TELEFOONNR," + "L.KINGUINBALANCE," + "K.NICKNAME,"
+                          + "V.VERKOPERNAAM,V.BANKREKING " + "FROM lid l, klant k, verkoper v  "
+                          + "WHERE L.email=:un AND L.password=:pw "
+                          + "and (l.lidnr = K.Lidnr or L.Lidnr = V.Lidnr or (l.lidnr not in (select lidnr from verkoper) AND L.LIDNR NOT IN (SELECT LIDNR FROM KLANT)))";
 
                     OracleCommand oc2 = new OracleCommand(sql, db.oracleConnection);
 
@@ -62,26 +89,42 @@ namespace kinguin_Clone.classes
                         string adres = oddr.GetString(3);
                         string telNr = oddr.GetString(4);
                         float kinguinbalance = oddr.GetFloat(5);
-                        //email is already available
-                        string nickname = oddr.GetString(6);
 
+                        // email is already available
+                        string nickname = oddr.GetString(6);
 
                         switch (type)
                         {
                             case "ADMIN":
-                                currentUser = new Admin(usernr, naam, adres, telNr, kinguinbalance, email);
+                                this.currentUser = new Admin(usernr, naam, adres, telNr, kinguinbalance, email);
                                 break;
                             case "KLANT":
-                                currentUser = new Buyer(usernr, naam, adres, telNr, kinguinbalance, nickname, email);
+                                this.currentUser = new Buyer(
+                                    usernr, 
+                                    naam, 
+                                    adres, 
+                                    telNr, 
+                                    kinguinbalance, 
+                                    nickname, 
+                                    email);
                                 break;
                             case "VERKOPER":
                                 string verkopernaam = oddr.GetString(7);
                                 string bankreking = oddr.GetString(8);
-                                currentUser = new Seller(usernr, naam, adres, telNr, kinguinbalance, nickname,
-                                    verkopernaam, bankreking, email);
+                                this.currentUser = new Seller(
+                                    usernr, 
+                                    naam, 
+                                    adres, 
+                                    telNr, 
+                                    kinguinbalance, 
+                                    nickname, 
+                                    verkopernaam, 
+                                    bankreking, 
+                                    email);
                                 break;
                         }
                     }
+
                     HttpContext.Current.Session["administration"] = this;
                     return true;
                 }
@@ -95,30 +138,45 @@ namespace kinguin_Clone.classes
             return false;
         }
 
+        /// <summary>
+        /// The register.
+        /// </summary>
+        /// <param name="name">
+        /// The name.
+        /// </param>
+        /// <param name="adres">
+        /// The adres.
+        /// </param>
+        /// <param name="telNr">
+        /// The tel nr.
+        /// </param>
+        /// <param name="email">
+        /// The email.
+        /// </param>
+        /// <param name="Password">
+        /// The password.
+        /// </param>
+        /// <param name="nickname">
+        /// The nickname.
+        /// </param>
+        /// <returns>
+        /// The <see cref="bool"/>.
+        /// </returns>
         public bool Register(string name, string adres, string telNr, string email, string Password, string nickname)
         {
             try
             {
                 DatabaseConnection db = new DatabaseConnection();
-                string sql = "insert into Lid (LIDNR,NAAM,ADRES,TELEFOONNR,SOORT,KINGUINBALANCE,EMAIL,PASSWORD)" +
-                             " values " +
-                             "(seq_LID.nextval, " +
-                             " '" + name + "' , " +
-                             " '" + adres + "', " +
-                             "'" + telNr + "', " +
-                             " 'KLANT'," +
-                             " (0)," +
-                             " '" + email + "', " +
-                             "'" + Password + "')";
+                string sql = "insert into Lid (LIDNR,NAAM,ADRES,TELEFOONNR,SOORT,KINGUINBALANCE,EMAIL,PASSWORD)"
+                             + " values " + "(seq_LID.nextval, " + " '" + name + "' , " + " '" + adres + "', " + "'"
+                             + telNr + "', " + " 'KLANT'," + " (0)," + " '" + email + "', " + "'" + Password + "')";
 
                 OracleCommand oc = new OracleCommand(sql, db.oracleConnection);
                 oc.Connection.Open();
                 oc.ExecuteNonQuery();
                 oc.Connection.Close();
 
-                sql = "insert into KLANT (LIDNR, NICKNAME)" +
-                      " values " +
-                      "(seq_LID.currval,'" + nickname + "')";
+                sql = "insert into KLANT (LIDNR, NICKNAME)" + " values " + "(seq_LID.currval,'" + nickname + "')";
 
                 oc = new OracleCommand(sql, db.oracleConnection);
                 oc.Connection.Open();
@@ -130,9 +188,19 @@ namespace kinguin_Clone.classes
             {
                 Debug.WriteLine(e);
             }
+
             return false;
         }
 
+        /// <summary>
+        /// The get games by name.
+        /// </summary>
+        /// <param name="searchterm">
+        /// The searchterm.
+        /// </param>
+        /// <returns>
+        /// The <see cref="List"/>.
+        /// </returns>
         public List<Game> GetGamesByName(string searchterm)
         {
             DatabaseConnection db = new DatabaseConnection();
@@ -140,9 +208,8 @@ namespace kinguin_Clone.classes
             string query = null;
             searchterm = searchterm.Replace("?", "%");
             query =
-                "select gamenr,naam, categorie, datum,foto,specificatie,platform,beschrijving from game where naam like '" +
-                searchterm + "'";
-
+                "select gamenr,naam, categorie, datum,foto,specificatie,platform,beschrijving from game where naam like '"
+                + searchterm + "'";
 
             OracleDataReader dr = db.ExecuteReadQuery(query);
 
@@ -159,18 +226,27 @@ namespace kinguin_Clone.classes
 
                 games.Add(new Game(gamenr, name, category, date, picture, specificatie, platform, beschrijving));
             }
+
             return games;
         }
 
+        /// <summary>
+        /// The get games by category.
+        /// </summary>
+        /// <param name="searchterm">
+        /// The searchterm.
+        /// </param>
+        /// <returns>
+        /// The <see cref="List"/>.
+        /// </returns>
         public List<Game> GetGamesByCategory(string searchterm)
         {
             DatabaseConnection db = new DatabaseConnection();
             List<Game> games = new List<Game>();
 
             string query =
-                "select gamenr,naam,categorie, datum,foto,specificatie,platform, beschrijving from game where upper(categorie)= upper('" +
-                searchterm + "')";
-
+                "select gamenr,naam,categorie, datum,foto,specificatie,platform, beschrijving from game where upper(categorie)= upper('"
+                + searchterm + "')";
 
             OracleDataReader dr = db.ExecuteReadQuery(query);
 
@@ -187,18 +263,27 @@ namespace kinguin_Clone.classes
 
                 games.Add(new Game(gamenr, name, category, date, picture, specificatie, platform, beschrijving));
             }
+
             return games;
         }
 
+        /// <summary>
+        /// The get games by platform.
+        /// </summary>
+        /// <param name="searchterm">
+        /// The searchterm.
+        /// </param>
+        /// <returns>
+        /// The <see cref="List"/>.
+        /// </returns>
         public List<Game> GetGamesByPlatform(string searchterm)
         {
             DatabaseConnection db = new DatabaseConnection();
             List<Game> games = new List<Game>();
 
             string query =
-                "select gamenr,naam, categorie, datum,foto,specificatie,platform,beschrijving from game where upper(platform)= upper('" +
-                searchterm + "')";
-
+                "select gamenr,naam, categorie, datum,foto,specificatie,platform,beschrijving from game where upper(platform)= upper('"
+                + searchterm + "')";
 
             OracleDataReader dr = db.ExecuteReadQuery(query);
 
@@ -215,9 +300,16 @@ namespace kinguin_Clone.classes
 
                 games.Add(new Game(gamenr, name, category, date, picture, specificatie, platform, beschrijving));
             }
+
             return games;
         }
 
+        /// <summary>
+        /// The getall games.
+        /// </summary>
+        /// <returns>
+        /// The <see cref="List"/>.
+        /// </returns>
         public List<Game> GetallGames()
         {
             DatabaseConnection db = new DatabaseConnection();
@@ -225,7 +317,6 @@ namespace kinguin_Clone.classes
 
             string query = "select gamenr,naam, categorie, datum,foto,specificatie,platform,beschrijving from game";
 
-
             OracleDataReader dr = db.ExecuteReadQuery(query);
 
             while (dr.Read())
@@ -241,20 +332,28 @@ namespace kinguin_Clone.classes
 
                 games.Add(new Game(gamenr, name, category, date, picture, specificatie, platform, beschrijving));
             }
+
             return games;
         }
 
+        /// <summary>
+        /// The get game by id.
+        /// </summary>
+        /// <param name="id">
+        /// The id.
+        /// </param>
+        /// <returns>
+        /// The <see cref="Game"/>.
+        /// </returns>
         public Game GetGameByID(int id)
         {
             Game g;
 
-
             DatabaseConnection db = new DatabaseConnection();
 
             string query =
-                "select gamenr,naam, categorie, datum,foto,specificatie,platform,beschrijving from game where rownum=1 and GameNr = " +
-                id;
-
+                "select gamenr,naam, categorie, datum,foto,specificatie,platform,beschrijving from game where rownum=1 and GameNr = "
+                + id;
 
             OracleDataReader dr = db.ExecuteReadQuery(query);
 
@@ -274,13 +373,18 @@ namespace kinguin_Clone.classes
             return g;
         }
 
+        /// <summary>
+        /// The get adds.
+        /// </summary>
+        /// <returns>
+        /// The <see cref="List"/>.
+        /// </returns>
         public List<Advert> GetAdds()
         {
             List<Advert> ads = new List<Advert>();
 
             DatabaseConnection db = new DatabaseConnection();
             string sql = "SELECT id, foto, url, description FROM Advertentie ORDER BY dbms_random.value";
-
 
             OracleCommand oc = new OracleCommand(sql, db.oracleConnection);
             oc.Connection.Open();
@@ -289,59 +393,57 @@ namespace kinguin_Clone.classes
             {
                 ads.Add(new Advert(odr.GetInt32(0), odr.GetString(1), odr.GetString(2), odr.GetString(3)));
             }
+
             oc.Connection.Close();
             return ads;
         }
 
         #region
 
-        //public List<GameCopy> GetCartCopies()
-        //{
-        //    List<GameCopy> copies = new List<GameCopy>();
-        //    if (currentUser == null)
-        //    {
-        //        return copies; //zo crasht het programma niet en wordt er niet toegevoegd.
-        //    }
+        // public List<GameCopy> GetCartCopies()
+        // {
+        // List<GameCopy> copies = new List<GameCopy>();
+        // if (currentUser == null)
+        // {
+        // return copies; //zo crasht het programma niet en wordt er niet toegevoegd.
+        // }
 
-        //    DatabaseConnection db = new DatabaseConnection();
-        //    List<GameCopy> games = new List<GameCopy>();
+        // DatabaseConnection db = new DatabaseConnection();
+        // List<GameCopy> games = new List<GameCopy>();
 
-        //    string query = "select g.gamenr,g.naam,g.categorie,g.datum," +
-        //                   " g.foto,g.specificatie,g.platform, g.beschrijving, " +
-        //                   "O.Objectnr, o.prijs,O.Verkoopsdatum,O.Code " +
+        // string query = "select g.gamenr,g.naam,g.categorie,g.datum," +
+        // " g.foto,g.specificatie,g.platform, g.beschrijving, " +
+        // "O.Objectnr, o.prijs,O.Verkoopsdatum,O.Code " +
 
-        //                   "from mandje m , verkoopobject o, game g " +
+        // "from mandje m , verkoopobject o, game g " +
 
-        //                   "where M.Relevant= 'Y' " +
-        //                   "and M.Verkoopobject = O.Objectnr " +
-        //                   "and O.Gamenr = G.Gamenr" +
-        //                   "and m.lidnr = " + currentUser.UserNr;
+        // "where M.Relevant= 'Y' " +
+        // "and M.Verkoopobject = O.Objectnr " +
+        // "and O.Gamenr = G.Gamenr" +
+        // "and m.lidnr = " + currentUser.UserNr;
 
+        // OracleDataReader dr = db.ExecuteReadQuery(query);
 
-        //    OracleDataReader dr = db.ExecuteReadQuery(query);
+        // while (dr.Read())
+        // {
+        // int gamenr = dr.GetInt32(0);
+        // string name = dr.GetString(1);
+        // string category = dr.GetString(2);
+        // DateTime date = dr.GetDateTime(3);
+        // string picture = dr.GetString(4);
+        // string specificatie = dr.GetString(5);
+        // string platform = dr.GetString(6);
+        // string beschrijving = dr.GetString(7);
+        // int objectnr = dr.GetInt32(8);
+        // float price = dr.GetFloat(9);
+        // DateTime datum = dr.GetDateTime(10);
+        // string code = dr.GetString(11);
 
-        //    while (dr.Read())
-        //    {
-        //        int gamenr = dr.GetInt32(0);
-        //        string name = dr.GetString(1);
-        //        string category = dr.GetString(2);
-        //        DateTime date = dr.GetDateTime(3);
-        //        string picture = dr.GetString(4);
-        //        string specificatie = dr.GetString(5);
-        //        string platform = dr.GetString(6);
-        //        string beschrijving = dr.GetString(7);
-        //        int objectnr = dr.GetInt32(8);
-        //        float price = dr.GetFloat(9);
-        //        DateTime datum = dr.GetDateTime(10);
-        //        string code = dr.GetString(11);
+        // copies.Add(new GameCopy(gamenr, name, category, date, picture, specificatie, platform, objectnr,price,datum,code,beschrijving));
+        // }
+        // return games;
 
-        //        copies.Add(new GameCopy(gamenr, name, category, date, picture, specificatie, platform, objectnr,price,datum,code,beschrijving));
-        //    }
-        //    return games;
-
-
-        //}
-
+        // }
         #endregion
     }
 }

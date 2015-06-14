@@ -1,50 +1,133 @@
-﻿#region
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Buyer.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   The buyer.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+#region
 
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+
 using Ict4Events_WindowsForms;
 
 #endregion
 
 namespace kinguin_Clone.classes
 {
+    /// <summary>
+    /// The buyer.
+    /// </summary>
     public class Buyer : User
     {
-        public Buyer(int Usernr, string name, string adres, string phonenr, float kinguinBalance, string nickname,
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Buyer"/> class.
+        /// </summary>
+        /// <param name="Usernr">
+        /// The usernr.
+        /// </param>
+        /// <param name="name">
+        /// The name.
+        /// </param>
+        /// <param name="adres">
+        /// The adres.
+        /// </param>
+        /// <param name="phonenr">
+        /// The phonenr.
+        /// </param>
+        /// <param name="kinguinBalance">
+        /// The kinguin balance.
+        /// </param>
+        /// <param name="nickname">
+        /// The nickname.
+        /// </param>
+        /// <param name="email">
+        /// The email.
+        /// </param>
+        public Buyer(
+            int Usernr, 
+            string name, 
+            string adres, 
+            string phonenr, 
+            float kinguinBalance, 
+            string nickname, 
             string email)
             : base(Usernr, name, adres, phonenr, kinguinBalance, email)
         {
             this.Nickname = nickname;
-            cart = new Cart(this);
+            this.cart = new Cart(this);
         }
 
+        /// <summary>
+        /// Gets or sets the nickname.
+        /// </summary>
         public string Nickname { get; set; }
+
+        /// <summary>
+        /// Gets or sets the games owned.
+        /// </summary>
         public List<GameCopy> gamesOwned { get; set; }
+
+        /// <summary>
+        /// Gets or sets the cart.
+        /// </summary>
         public Cart cart { get; set; }
 
+        /// <summary>
+        /// The get user copies.
+        /// </summary>
+        /// <returns>
+        /// The <see cref="List"/>.
+        /// </returns>
         public List<GameCopy> GetUserCopies()
         {
-            //todo implement Buyer.GetUserCopies()
-
-            return cart.owned;
+            // todo implement Buyer.GetUserCopies()
+            return this.cart.owned;
         }
 
+        /// <summary>
+        /// The add game to cart.
+        /// </summary>
+        /// <param name="game">
+        /// The game.
+        /// </param>
         public void AddGameToCart(GameCopy game)
         {
-            cart.AddGame(game, this);
+            this.cart.AddGame(game, this);
         }
 
+        /// <summary>
+        /// The remove game to cart.
+        /// </summary>
+        /// <param name="game">
+        /// The game.
+        /// </param>
         public void RemoveGameToCart(GameCopy game)
         {
-            cart.RemoveGame(game, this);
+            this.cart.RemoveGame(game, this);
         }
 
+        /// <summary>
+        /// The buy cart.
+        /// </summary>
         public void BuyCart()
         {
-            //todo database implementation Buyer.BuyCart
+            // todo database implementation Buyer.BuyCart
         }
 
+        /// <summary>
+        /// The change nickname.
+        /// </summary>
+        /// <param name="nickname">
+        /// The nickname.
+        /// </param>
+        /// <returns>
+        /// The <see cref="bool"/>.
+        /// </returns>
         public bool ChangeNickname(string nickname)
         {
             try
@@ -61,6 +144,7 @@ namespace kinguin_Clone.classes
             {
                 Debug.WriteLine(e);
             }
+
             return false;
         }
     }

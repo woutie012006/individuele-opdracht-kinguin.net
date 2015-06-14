@@ -1,62 +1,106 @@
-﻿#region
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="AddGame.aspx.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   The add game.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+#region
 
 using System;
 using System.IO;
 using System.Web;
+
 using kinguin_Clone.classes;
 
 #endregion
 
 namespace kinguin_Clone
 {
+    /// <summary>
+    /// The add game.
+    /// </summary>
     public partial class AddGame : System.Web.UI.Page
     {
+        /// <summary>
+        /// The page_ load.
+        /// </summary>
+        /// <param name="sender">
+        /// The sender.
+        /// </param>
+        /// <param name="e">
+        /// The e.
+        /// </param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!(Master.administration.currentUser is Admin))
+            if (!(this.Master.administration.currentUser is Admin))
             {
-                Response.Redirect("Default.aspx");
+                this.Response.Redirect("Default.aspx");
             }
-            clDate.SelectedDate = System.DateTime.Now;
 
-            string[] platform = {"PS", "XBOX", "PC"};
-            string[] category = {"MURDER", "RPG", "RACING"};
+            this.clDate.SelectedDate = DateTime.Now;
+
+            string[] platform = { "PS", "XBOX", "PC" };
+            string[] category = { "MURDER", "RPG", "RACING" };
             for (int i = 0; i <= 2; i++)
             {
-                ddPlatform.Items.Add(platform[i]);
-                ddCategory.Items.Add(category[i]);
+                this.ddPlatform.Items.Add(platform[i]);
+                this.ddCategory.Items.Add(category[i]);
             }
         }
 
+        /// <summary>
+        /// The btn add game_ on click.
+        /// </summary>
+        /// <param name="sender">
+        /// The sender.
+        /// </param>
+        /// <param name="e">
+        /// The e.
+        /// </param>
         protected void btnAddGame_OnClick(object sender, EventArgs e)
         {
-            //saves it in the first drive it finds under 
-            HttpPostedFile picture = fuPicture.PostedFile;
-            //DriveInfo[] drives = DriveInfo.GetDrives();
-            //string directory =  drives[0].Name;
-            string filePath = Server.MapPath("~") + "/IMG/" + tbName.Text + Path.GetExtension(picture.FileName);
-            string file = "/IMG/" + tbName.Text + "." + Path.GetExtension(picture.FileName);
+            // saves it in the first drive it finds under 
+            HttpPostedFile picture = this.fuPicture.PostedFile;
 
-            if (!Directory.Exists(Server.MapPath("~") + "/IMG/"))
+            // DriveInfo[] drives = DriveInfo.GetDrives();
+            // string directory =  drives[0].Name;
+            string filePath = this.Server.MapPath("~") + "/IMG/" + this.tbName.Text
+                              + Path.GetExtension(picture.FileName);
+            string file = "/IMG/" + this.tbName.Text + "." + Path.GetExtension(picture.FileName);
+
+            if (!Directory.Exists(this.Server.MapPath("~") + "/IMG/"))
             {
-                Directory.CreateDirectory(Server.MapPath("~") + "/IMG/");
+                Directory.CreateDirectory(this.Server.MapPath("~") + "/IMG/");
             }
 
             picture.SaveAs(filePath);
 
-            Game game = new Game(-1, tbName.Text, ddCategory.Text, clDate.SelectedDate, file, tbSpecifications.InnerText,
-                ddPlatform.Text, tbDescription.InnerText);
-            if (Master.administration.currentUser is Admin)
+            Game game = new Game(
+                -1, 
+                this.tbName.Text, 
+                this.ddCategory.Text, 
+                this.clDate.SelectedDate, 
+                file, 
+                this.tbSpecifications.InnerText, 
+                this.ddPlatform.Text, 
+                this.tbDescription.InnerText);
+            if (this.Master.administration.currentUser is Admin)
             {
-                if ((Master.administration.currentUser as Admin).AddGame(game))
+                if ((this.Master.administration.currentUser as Admin).AddGame(game))
                 {
-                    ClientScript.RegisterStartupScript(this.GetType(), "Game alert",
-                        "alert('" + "You succesfully added a game." + "');", true);
+                    this.ClientScript.RegisterStartupScript(
+                        this.GetType(), 
+                        "Game alert", 
+                        "alert('" + "You succesfully added a game." + "');", 
+                        true);
                 }
             }
             else
             {
-                Response.Redirect("Default.aspx");
+                this.Response.Redirect("Default.aspx");
             }
         }
     }
