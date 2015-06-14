@@ -42,10 +42,10 @@ namespace kinguin_Clone
         /// <summary>
         /// The page_ load.
         /// </summary>
-        /// <param Name="sender">
+        /// <param name="sender">
         /// The sender.
         /// </param>
-        /// <param Name="e">
+        /// <param name="e">
         /// The e.
         /// </param>
         protected void Page_Load(object sender, EventArgs e)
@@ -62,7 +62,7 @@ namespace kinguin_Clone
             var switchViewRoute = RouteTable.Routes[switchViewRouteName];
             if (switchViewRoute == null)
             {
-                // Friendly URLs is not enabled or the Name of the switch view route is out of sync
+                // Friendly URLs is not enabled or the name of the switch view route is out of sync
                 this.Visible = false;
                 return;
             }

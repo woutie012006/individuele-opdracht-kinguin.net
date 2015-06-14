@@ -23,10 +23,10 @@ namespace kinguin_Clone
         /// <summary>
         /// The page_ load.
         /// </summary>
-        /// <param Name="sender">
+        /// <param name="sender">
         /// The sender.
         /// </param>
-        /// <param Name="e">
+        /// <param name="e">
         /// The e.
         /// </param>
         protected void Page_Load(object sender, EventArgs e)
@@ -36,10 +36,10 @@ namespace kinguin_Clone
         /// <summary>
         /// The btn submit_ on click.
         /// </summary>
-        /// <param Name="sender">
+        /// <param name="sender">
         /// The sender.
         /// </param>
-        /// <param Name="e">
+        /// <param name="e">
         /// The e.
         /// </param>
         protected void btnSubmit_OnClick(object sender, EventArgs e)

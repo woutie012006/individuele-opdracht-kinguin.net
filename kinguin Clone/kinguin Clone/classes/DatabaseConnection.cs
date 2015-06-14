@@ -31,11 +31,11 @@ namespace Ict4Events_WindowsForms
         public const string databaseArgs =
             "user id=" + userName + ";password=" + password + ";data source=" + serverAddress;
 
-                            // + ";service Name=" + servicename;
+                            // + ";service name=" + servicename;
 
         // private const string userName = "dbi311425", password = "zqy7T4qfdD", serverAddress = "fhictora01.fhict.local", sid = "xe", servicename = "fhictora";
         /// <summary>
-        /// The user Name.
+        /// The user name.
         /// </summary>
         private const string userName = "kinguin";
 
@@ -124,7 +124,7 @@ namespace Ict4Events_WindowsForms
         /// <summary>
         /// The execute command.
         /// </summary>
-        /// <param Name="query">
+        /// <param name="query">
         /// The query.
         /// </param>
         /// <returns>
@@ -140,7 +140,7 @@ namespace Ict4Events_WindowsForms
         /// <summary>
         /// Executes a SELECT or query with result on the database
         /// </summary>
-        /// <param Name="query">
+        /// <param name="query">
         /// The query you want to execute
         /// </param>
         /// <returns>
@@ -148,13 +148,13 @@ namespace Ict4Events_WindowsForms
         /// </returns>
         /// <example>
         /// This example shows how to get all rows from a query
-        /// <Code>
+        /// <code>
         /// OracleDataReader odr = DatabaseConnection.Instance.ExecuteReadQuery("SELECT TEST FROM TEST");
         /// do
         /// {
         ///     System.Diagnostics.Debug.WriteLine(odr.GetValue(0));
         /// } while (odr.Read());
-        /// </Code>
+        /// </code>
         /// </example>
         public OracleDataReader ExecuteReadQuery(string query)
         {
@@ -176,10 +176,10 @@ namespace Ict4Events_WindowsForms
         /// <summary>
         /// Executes a prepared statement on the database, NOT TESTED YET
         /// </summary>
-        /// <param Name="query">
+        /// <param name="query">
         /// Query to execute
         /// </param>
-        /// <param Name="parameters">
+        /// <param name="parameters">
         /// Prepared parameters for the query
         /// </param>
         /// <returns>
@@ -206,7 +206,7 @@ namespace Ict4Events_WindowsForms
         /// <returns>
         /// Value of rows affected, -1 on statements not affecting any rows
         /// </returns>
-        /// <param Name="query">
+        /// <param name="query">
         /// Query you want to execute, DONT USE SEMICOLONS (;)
         /// </param>
         /// <example>

@@ -24,15 +24,15 @@ namespace kinguin_Clone
         /// <summary>
         /// The page_ load.
         /// </summary>
-        /// <param Name="sender">
+        /// <param name="sender">
         /// The sender.
         /// </param>
-        /// <param Name="e">
+        /// <param name="e">
         /// The e.
         /// </param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.Master.administration.CurrentUser = null;
+            this.Master.administration.currentUser = null;
             this.Session["administration"] = this.Master.administration;
             this.lblLogout.Text = "You have been successfully logged out";
             HyperLink h = (HyperLink)this.Master.FindControl("LoginLogout");

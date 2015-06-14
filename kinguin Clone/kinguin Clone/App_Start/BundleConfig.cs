@@ -25,7 +25,7 @@ namespace kinguin_Clone
         /// <summary>
         /// The register bundles.
         /// </summary>
-        /// <param Name="bundles">
+        /// <param name="bundles">
         /// The bundles.
         /// </param>
         public static void RegisterBundles(BundleCollection bundles)

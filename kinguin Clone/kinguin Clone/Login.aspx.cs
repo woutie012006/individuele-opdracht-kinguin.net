@@ -18,8 +18,6 @@ using kinguin_Clone.classes;
 
 namespace kinguin_Clone
 {
-    using kinguin_Clone.classes;
-
     /// <summary>
     /// The login.
     /// </summary>
@@ -33,16 +31,16 @@ namespace kinguin_Clone
         /// <summary>
         /// The page_ load.
         /// </summary>
-        /// <param Name="sender">
+        /// <param name="sender">
         /// The sender.
         /// </param>
-        /// <param Name="e">
+        /// <param name="e">
         /// The e.
         /// </param>
         protected void Page_Load(object sender, EventArgs e)
         {
             this.administration = this.Master.administration;
-            User c = this.administration.CurrentUser;
+            User c = this.administration.currentUser;
 
             if (c != null)
             {
@@ -55,10 +53,10 @@ namespace kinguin_Clone
         /// <summary>
         /// The login form_ on authenticate.
         /// </summary>
-        /// <param Name="sender">
+        /// <param name="sender">
         /// The sender.
         /// </param>
-        /// <param Name="e">
+        /// <param name="e">
         /// The e.
         /// </param>
         protected void LoginForm_OnAuthenticate(object sender, AuthenticateEventArgs e)

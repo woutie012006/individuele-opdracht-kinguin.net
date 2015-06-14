@@ -19,10 +19,10 @@
                             <div class="caption-full">
                                 <h4>
                                     <a href="#"><%#
-                this.Eval("Name") %></a>
+                this.Eval("name") %></a>
                                 </h4>
                                 <p><%#
-                this.Eval("Description") %></p>
+                this.Eval("description") %></p>
                             </div>
                         </div>
 
@@ -38,11 +38,11 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <%#
-                this.Eval("CopyNr") %>
+                this.Eval("copyNr") %>
                                 <span class="pull-right"><%#
-                this.Eval("Price") %></span>
+                this.Eval("price") %></span>
 
-                                <asp:HyperLink ID="btnPutInCart" CssClass="btn btn-default" runat="server" Text="put in Cart"/>
+                                <asp:HyperLink ID="btnPutInCart" CssClass="btn btn-default" runat="server" Text="put in cart"/>
                             </div>
                         </div>
 

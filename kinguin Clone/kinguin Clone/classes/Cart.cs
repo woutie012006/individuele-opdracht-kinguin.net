@@ -3,7 +3,7 @@
 //   
 // </copyright>
 // <summary>
-//   The Cart.
+//   The cart.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
@@ -21,7 +21,7 @@ using Oracle.ManagedDataAccess.Client;
 namespace kinguin_Clone.classes
 {
     /// <summary>
-    /// The Cart.
+    /// The cart.
     /// </summary>
     public class Cart
     {
@@ -33,58 +33,58 @@ namespace kinguin_Clone.classes
         /// </param>
         public Cart(User currentUser)
         {
-            this.Owned = this.GetUserCopies(currentUser);
+            this.owned = this.GetUserCopies(currentUser);
         }
 
         /// <summary>
-        /// Gets or sets the Owned.
+        /// Gets or sets the owned.
         /// </summary>
-        public List<GameCopy> Owned { get; set; }
+        public List<GameCopy> owned { get; set; }
 
         /// <summary>
         /// The add game.
         /// </summary>
-        /// <param Name="game">
+        /// <param name="game">
         /// The game.
         /// </param>
-        /// <param Name="currentUser">
+        /// <param name="currentUser">
         /// The current user.
         /// </param>
         public void AddGame(GameCopy game, User currentUser)
         {
             DatabaseConnection db = new DatabaseConnection();
-            string query = "INSERT INTO mandje (verkoopobject, lidnr) VALUES (" + game.CopyNr + ", "
+            string query = "INSERT INTO mandje (verkoopobject, lidnr) VALUES (" + game.copyNr + ", "
                            + currentUser.UserNr + ")";
             db.OpenConnection();
             db.ExecuteQuery(query);
             db.CloseConnection();
-            this.Owned.Add(game);
+            this.owned.Add(game);
         }
 
         /// <summary>
         /// The remove game.
         /// </summary>
-        /// <param Name="game">
+        /// <param name="game">
         /// The game.
         /// </param>
-        /// <param Name="currentUser">
+        /// <param name="currentUser">
         /// The current user.
         /// </param>
         public void RemoveGame(GameCopy game, User currentUser)
         {
             DatabaseConnection db = new DatabaseConnection();
             string query = "UPDATE mandje  SET relevant = 'N' " + "WHERE lidnr=" + currentUser.UserNr
-                           + " and verkoopobject=" + game.CopyNr;
+                           + " and verkoopobject=" + game.copyNr;
             db.OpenConnection();
             db.ExecuteQuery(query);
             db.CloseConnection();
-            this.Owned.Remove(game);
+            this.owned.Remove(game);
         }
 
         /// <summary>
         /// The buycart.
         /// </summary>
-        /// <param Name="currentUser">
+        /// <param name="currentUser">
         /// The current user.
         /// </param>
         /// <returns>
@@ -99,11 +99,11 @@ namespace kinguin_Clone.classes
         /// <summary>
         /// The get user copies.
         /// </summary>
-        /// <param Name="currentUser">
+        /// <param name="currentUser">
         /// The current user.
         /// </param>
         /// <returns>
-        /// The <see cref="List{T}"/>.
+        /// The <see cref="List"/>.
         /// </returns>
         public List<GameCopy> GetUserCopies(User currentUser)
         {
@@ -116,7 +116,7 @@ namespace kinguin_Clone.classes
             DatabaseConnection db = new DatabaseConnection();
 
             string query = "select g.gamenr,g.naam,g.categorie,g.datum,"
-                           + " g.foto,g.Specificatie,g.Platform, g.beschrijving, "
+                           + " g.foto,g.specificatie,g.platform, g.beschrijving, "
                            + "O.Objectnr, o.prijs,O.Verkoopsdatum,O.Code , o.eigenaar_lidnr"
                            + "from mandje m , verkoopobject o, game g " + "where M.Relevant= 'Y' "
                            + "and M.Verkoopobject = O.Objectnr " + "and O.Gamenr = G.Gamenr " + "and m.lidnr = "
@@ -163,10 +163,10 @@ namespace kinguin_Clone.classes
         /// <summary>
         /// The add copy by id.
         /// </summary>
-        /// <param Name="copyid">
+        /// <param name="copyid">
         /// The copyid.
         /// </param>
-        /// <param Name="currentUser">
+        /// <param name="currentUser">
         /// The current user.
         /// </param>
         /// <returns>
@@ -188,7 +188,7 @@ namespace kinguin_Clone.classes
                 db.OpenConnection();
                 db.ExecuteQuery(query);
                 db.CloseConnection();
-                this.Owned = this.GetUserCopies(currentUser);
+                this.owned = this.GetUserCopies(currentUser);
             }
             catch (Exception exception)
             {

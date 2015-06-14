@@ -19,11 +19,11 @@
                 <ItemTemplate>
                     <tr>
                         <td><%#
-                this.Eval("Name") %></td>
+                this.Eval("name") %></td>
                         <td><%#
-                this.Eval("Description") %></td>
+                this.Eval("description") %></td>
                         <td><%#
-                this.Eval("Price") %></td>
+                this.Eval("price") %></td>
                     </tr>
                 </ItemTemplate>
             </asp:ListView>

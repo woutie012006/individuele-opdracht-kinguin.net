@@ -26,10 +26,10 @@ namespace kinguin_Clone
         /// <summary>
         /// The application_ start.
         /// </summary>
-        /// <param Name="sender">
+        /// <param name="sender">
         /// The sender.
         /// </param>
-        /// <param Name="e">
+        /// <param name="e">
         /// The e.
         /// </param>
         private void Application_Start(object sender, EventArgs e)

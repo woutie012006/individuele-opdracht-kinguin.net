@@ -18,8 +18,6 @@ using kinguin_Clone.classes;
 
 namespace kinguin_Clone
 {
-    using kinguin_Clone.classes;
-
     /// <summary>
     /// The _ default.
     /// </summary>
@@ -28,18 +26,18 @@ namespace kinguin_Clone
         /// <summary>
         /// The page_ load.
         /// </summary>
-        /// <param Name="sender">
+        /// <param name="sender">
         /// The sender.
         /// </param>
-        /// <param Name="e">
+        /// <param name="e">
         /// The e.
         /// </param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.imgJumbotron.ImageUrl = new Administration().GetAdds()[1].Picture;
+            this.imgJumbotron.ImageUrl = new Administration().GetAdds()[1].picture;
 
-            // jumbotron.Style["background-image"] = new Administration().GetAdds()[1].Picture;
-            // dimage.ImageUrl = new Administration().GetAdds()[1].Picture;
+            // jumbotron.Style["background-image"] = new Administration().GetAdds()[1].picture;
+            // dimage.ImageUrl = new Administration().GetAdds()[1].picture;
         }
     }
 }

@@ -17,7 +17,7 @@ namespace kinguin_Clone {
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
-        /// To modify move field declaration from designer file to Code-behind file.
+        /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListView GameView;
         
@@ -26,7 +26,7 @@ namespace kinguin_Clone {
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
-        /// To modify move field declaration from designer file to Code-behind file.
+        /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListView ObjectView;
         
@@ -36,9 +36,9 @@ namespace kinguin_Clone {
         /// <remarks>
         /// Auto-generated property.
         /// </remarks>
-        public new SiteMaster Master {
+        public new kinguin_Clone.SiteMaster Master {
             get {
-                return ((SiteMaster)(base.Master));
+                return ((kinguin_Clone.SiteMaster)(base.Master));
             }
         }
     }

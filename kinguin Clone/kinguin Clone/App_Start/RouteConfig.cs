@@ -25,7 +25,7 @@ namespace kinguin_Clone
         /// <summary>
         /// The register routes.
         /// </summary>
-        /// <param Name="routes">
+        /// <param name="routes">
         /// The routes.
         /// </param>
         public static void RegisterRoutes(RouteCollection routes)

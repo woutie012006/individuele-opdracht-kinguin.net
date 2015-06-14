@@ -1,4 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ChangeUserInfo.aspx.cs" Inherits="kinguin_Clone.ChangeUserInfo" %>
+<%@ Import Namespace="System.Web.UI.WebControls.WebParts" %>
+<%@ Import Namespace="System.Web.UI" %>
+<%@ Import Namespace="System.Web.UI.WebControls" %>
+<%@ Import Namespace="System.Web.UI.WebControls.Expressions" %>
+<%@ Import Namespace="System.Web.DynamicData" %>
+<%@ Import Namespace="System.Web.UI.WebControls" %>
 <%@ MasterType VirtualPath="~/Site.master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -24,17 +30,17 @@
         <asp:TextBox ID="tbEmail" runat="server" CssClass="form-control" TextMode="Email"></asp:TextBox><br>
         <asp:RequiredFieldValidator ControlToValidate="tbEmail" runat="server" ErrorMessage="Email is empty" CssClass="alert alert-dismissible alert-danger"></asp:RequiredFieldValidator><br>
 
-        <asp:Label runat="server" Text="NickName"></asp:Label><br>
+        <asp:Label runat="server" Text="Nickname"></asp:Label><br>
         <asp:TextBox ID="tbNickname" runat="server" CssClass="form-control"></asp:TextBox><br>
-        <asp:RequiredFieldValidator ControlToValidate="tbNickname" runat="server" ErrorMessage="NickName is empty" CssClass="alert alert-dismissible alert-danger"></asp:RequiredFieldValidator><br>
+        <asp:RequiredFieldValidator ControlToValidate="tbNickname" runat="server" ErrorMessage="Nickname is empty" CssClass="alert alert-dismissible alert-danger"></asp:RequiredFieldValidator><br>
         
           <asp:Label id="lblSellerName" Visible="False" runat="server" Text="SellerName"></asp:Label><br>
         <asp:TextBox ID="tbSellerName" runat="server" CssClass="form-control" Visible="False"></asp:TextBox><br>
-        <asp:RequiredFieldValidator ID="tbSellerNameVal" ControlToValidate="tbSellerName" runat="server" ErrorMessage="SellerName is empty" CssClass="alert alert-dismissible alert-danger" Enabled="False"></asp:RequiredFieldValidator><br>
+        <asp:RequiredFieldValidator ID="tbSellerNameVal" ControlToValidate="tbSellerName" runat="server" ErrorMessage="Sellername is empty" CssClass="alert alert-dismissible alert-danger" Enabled="False"></asp:RequiredFieldValidator><br>
         
            <asp:Label ID="lblBankAccount" Visible="False" runat="server" Text="BankAccount"></asp:Label><br>
         <asp:TextBox ID="tbBankAccount" runat="server" CssClass="form-control" Visible="False"></asp:TextBox><br>
-        <asp:RequiredFieldValidator ID="tbBankAccountVal" ControlToValidate="tbBankAccount" runat="server" ErrorMessage="SellerName is empty" CssClass="alert alert-dismissible alert-danger" Enabled="False"></asp:RequiredFieldValidator><br>
+        <asp:RequiredFieldValidator ID="tbBankAccountVal" ControlToValidate="tbBankAccount" runat="server" ErrorMessage="Sellername is empty" CssClass="alert alert-dismissible alert-danger" Enabled="False"></asp:RequiredFieldValidator><br>
         
 
         <br>

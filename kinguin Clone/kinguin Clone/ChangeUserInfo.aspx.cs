@@ -17,8 +17,6 @@ using kinguin_Clone.classes;
 
 namespace kinguin_Clone
 {
-    using kinguin_Clone.classes;
-
     /// <summary>
     /// The change user info.
     /// </summary>
@@ -32,20 +30,20 @@ namespace kinguin_Clone
         /// <summary>
         /// The page_ load.
         /// </summary>
-        /// <param Name="sender">
+        /// <param name="sender">
         /// The sender.
         /// </param>
-        /// <param Name="e">
+        /// <param name="e">
         /// The e.
         /// </param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (this.Master.administration == null || this.Master.administration.CurrentUser == null)
+            if (this.Master.administration == null || this.Master.administration.currentUser == null)
             {
                 this.Response.Redirect("Default.aspx");
             }
 
-            this.cUser = this.Master.administration.CurrentUser;
+            this.cUser = this.Master.administration.currentUser;
 
             this.tbName.Text = this.cUser.Name;
             this.tbAdres.Text = this.cUser.Adres;
@@ -73,10 +71,10 @@ namespace kinguin_Clone
         /// <summary>
         /// The btn submit_ on click.
         /// </summary>
-        /// <param Name="sender">
+        /// <param name="sender">
         /// The sender.
         /// </param>
-        /// <param Name="e">
+        /// <param name="e">
         /// The e.
         /// </param>
         protected void btnSubmit_OnClick(object sender, EventArgs e)

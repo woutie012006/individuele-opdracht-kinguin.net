@@ -18,8 +18,6 @@ using kinguin_Clone.classes;
 
 namespace kinguin_Clone
 {
-    using kinguin_Clone.classes;
-
     /// <summary>
     /// The site master.
     /// </summary>
@@ -50,10 +48,10 @@ namespace kinguin_Clone
         /// <summary>
         /// The page_ load.
         /// </summary>
-        /// <param Name="sender">
+        /// <param name="sender">
         /// The sender.
         /// </param>
-        /// <param Name="e">
+        /// <param name="e">
         /// The e.
         /// </param>
         protected void Page_Load(object sender, EventArgs e)
@@ -61,7 +59,7 @@ namespace kinguin_Clone
             this.LoginLogout.NavigateUrl = "/Default.aspx";
 
             // HttpCookie c = Request.Cookies["kinguin"];
-            User c = this.administration.CurrentUser;
+            User c = this.administration.currentUser;
             if (c != null)
             {
                 this.LoginLogout.Text = "Log out";
@@ -77,10 +75,10 @@ namespace kinguin_Clone
         /// <summary>
         /// The btn search_ on click.
         /// </summary>
-        /// <param Name="sender">
+        /// <param name="sender">
         /// The sender.
         /// </param>
-        /// <param Name="e">
+        /// <param name="e">
         /// The e.
         /// </param>
         protected void btnSearch_OnClick(object sender, EventArgs e)

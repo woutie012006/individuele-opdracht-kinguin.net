@@ -3,7 +3,7 @@
 //   
 // </copyright>
 // <summary>
-//   The shopping Cart.
+//   The shopping cart.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
@@ -19,10 +19,8 @@ using kinguin_Clone.classes;
 
 namespace kinguin_Clone
 {
-    using kinguin_Clone.classes;
-
     /// <summary>
-    /// The shopping Cart.
+    /// The shopping cart.
     /// </summary>
     public partial class ShoppingCart : System.Web.UI.Page
     {
@@ -34,42 +32,42 @@ namespace kinguin_Clone
         /// <summary>
         /// The page_ load.
         /// </summary>
-        /// <param Name="sender">
+        /// <param name="sender">
         /// The sender.
         /// </param>
-        /// <param Name="e">
+        /// <param name="e">
         /// The e.
         /// </param>
         protected void Page_Load(object sender, EventArgs e)
         {
             this.administration = this.Master.administration;
-            if (this.administration.CurrentUser != null)
+            if (this.administration.currentUser != null)
             {
                 // url redirection check
                 string sellingobject = this.Request.QueryString["GameCopyID"];
 
-                if (this.administration.CurrentUser != null && this.administration.CurrentUser is Seller)
+                if (this.administration.currentUser != null && this.administration.currentUser is Seller)
                 {
                     if (!string.IsNullOrEmpty(sellingobject))
                     {
-                        (this.administration.CurrentUser as Seller).Cart.AddCopyByID(
+                        (this.administration.currentUser as Seller).cart.AddCopyByID(
                             Convert.ToInt32(sellingobject), 
-                            this.administration.CurrentUser);
+                            this.administration.currentUser);
                     }
 
-                    List<GameCopy> data = ((Seller)this.administration.CurrentUser).Cart.Owned;
+                    List<GameCopy> data = ((Seller)this.administration.currentUser).cart.owned;
                     this.ItemView.DataSource = data;
                 }
-                else if (this.administration.CurrentUser != null && this.administration.CurrentUser is Buyer)
+                else if (this.administration.currentUser != null && this.administration.currentUser is Buyer)
                 {
                     if (!string.IsNullOrEmpty(sellingobject))
                     {
-                        (this.administration.CurrentUser as Buyer).Cart.AddCopyByID(
+                        (this.administration.currentUser as Buyer).cart.AddCopyByID(
                             Convert.ToInt32(sellingobject), 
-                            this.administration.CurrentUser);
+                            this.administration.currentUser);
                     }
 
-                    List<GameCopy> data = ((Buyer)this.administration.CurrentUser).Cart.Owned;
+                    List<GameCopy> data = ((Buyer)this.administration.currentUser).cart.owned;
                     this.ItemView.DataSource = data;
                 }
             }
@@ -78,7 +76,7 @@ namespace kinguin_Clone
         /// <summary>
         /// The page_ pre render.
         /// </summary>
-        /// <param Name="sender">
+        /// <param name="sender">
         /// The sender.
         /// </param>
         /// <param name="e">
@@ -92,10 +90,10 @@ namespace kinguin_Clone
         /// <summary>
         /// The item view_ on item data bound view_ item data bound.
         /// </summary>
-        /// <param Name="sender">
+        /// <param name="sender">
         /// The sender.
         /// </param>
-        /// <param Name="e">
+        /// <param name="e">
         /// The e.
         /// </param>
         protected void ItemView_OnItemDataBoundView_ItemDataBound(object sender, ListViewItemEventArgs e)

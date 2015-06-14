@@ -27,9 +27,9 @@ namespace kinguin_Clone {
         /// <remarks>
         /// Auto-generated property.
         /// </remarks>
-        public new SiteMaster Master {
+        public new kinguin_Clone.SiteMaster Master {
             get {
-                return ((SiteMaster)(base.Master));
+                return ((kinguin_Clone.SiteMaster)(base.Master));
             }
         }
     }
