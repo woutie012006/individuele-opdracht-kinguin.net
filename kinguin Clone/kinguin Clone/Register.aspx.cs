@@ -12,7 +12,6 @@ namespace kinguin_Clone
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
         }
 
         protected void btnSubmit_OnClick(object sender, EventArgs e)

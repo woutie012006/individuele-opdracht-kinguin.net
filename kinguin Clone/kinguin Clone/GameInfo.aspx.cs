@@ -12,11 +12,11 @@ namespace kinguin_Clone
 {
     public partial class GameInfo : System.Web.UI.Page
     {
-        Administration administration = new Administration();
+        private Administration administration = new Administration();
         private Game currentGame;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            
             if (!Request.RawUrl.EndsWith("info"))
             {
                 try
@@ -25,12 +25,11 @@ namespace kinguin_Clone
                     string[] s = k.Split('/');
                     int id = Convert.ToInt32(s[s.Length - 1]);
                     List<Game> data = new List<Game>();
-                    data.Add(administration.GetGameByID(id)); 
+                    data.Add(administration.GetGameByID(id));
                     GameView.DataSource = data;
 
                     this.currentGame = data[0];
                     ObjectView.DataSource = currentGame.GetAllCopies();
-
                 }
                 catch (Exception exception)
                 {
@@ -41,6 +40,7 @@ namespace kinguin_Clone
                 }
             }
         }
+
         protected void Page_PreRender(object sender, EventArgs e)
         {
             GameView.DataBind();

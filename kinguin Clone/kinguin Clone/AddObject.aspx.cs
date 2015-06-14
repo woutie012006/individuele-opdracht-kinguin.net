@@ -11,7 +11,8 @@ namespace kinguin_Clone
     public partial class AddObject : System.Web.UI.Page
     {
         private Administration administration;
-        private List<Game> games; 
+        private List<Game> games;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             administration = Master.administration;

@@ -22,11 +22,11 @@ namespace kinguin_Clone.classes
             OracleDataReader oddr;
             List<User> users = new List<User>();
             string sql = "SELECT L.SOORT,L.LIDNR,L.NAAM,L.ADRES,L.TELEFOONNR," +
-                          "L.KINGUINBALANCE," +
-                          "K.NICKNAME," +
-                          "V.VERKOPERNAAM,V.BANKREKING, l.EMAIL " +
-                          "FROM lid l, klant k, verkoper v  " +
-                          "WHERE (l.lidnr = K.Lidnr or L.Lidnr = V.Lidnr or (l.lidnr not in (select lidnr from verkoper) AND L.LIDNR NOT IN (SELECT LIDNR FROM KLANT)))";
+                         "L.KINGUINBALANCE," +
+                         "K.NICKNAME," +
+                         "V.VERKOPERNAAM,V.BANKREKING, l.EMAIL " +
+                         "FROM lid l, klant k, verkoper v  " +
+                         "WHERE (l.lidnr = K.Lidnr or L.Lidnr = V.Lidnr or (l.lidnr not in (select lidnr from verkoper) AND L.LIDNR NOT IN (SELECT LIDNR FROM KLANT)))";
 
             OracleCommand oc2 = new OracleCommand(sql, db.oracleConnection);
 
@@ -70,11 +70,11 @@ namespace kinguin_Clone.classes
             OracleDataReader odr;
             List<User> users = new List<User>();
             string sql = "SELECT L.SOORT,L.LIDNR,L.NAAM,L.ADRES,L.TELEFOONNR," +
-                          "L.KINGUINBALANCE," +
-                          "K.NICKNAME,l.EMAIL" +
-                          "FROM lid l, klant k, verkoper v  " +
-                          "WHERE l.lidnr = K.Lidnr" +
-                          " and l.NAAM like " + name;
+                         "L.KINGUINBALANCE," +
+                         "K.NICKNAME,l.EMAIL" +
+                         "FROM lid l, klant k, verkoper v  " +
+                         "WHERE l.lidnr = K.Lidnr" +
+                         " and l.NAAM like " + name;
 
             OracleCommand oc = new OracleCommand(sql, db.oracleConnection);
 
@@ -109,11 +109,11 @@ namespace kinguin_Clone.classes
             OracleDataReader odr;
             List<User> users = new List<User>();
             string sql = "SELECT L.SOORT,L.LIDNR,L.NAAM,L.ADRES,L.TELEFOONNR," +
-                          "L.KINGUINBALANCE," +
-                          "K.NICKNAME,l.EMAIL" +
-                          "FROM lid l, klant k, verkoper v  " +
-                          "WHERE l.lidnr = K.Lidnr" +
-                          " and k.NICKNAME like " + nickname;
+                         "L.KINGUINBALANCE," +
+                         "K.NICKNAME,l.EMAIL" +
+                         "FROM lid l, klant k, verkoper v  " +
+                         "WHERE l.lidnr = K.Lidnr" +
+                         " and k.NICKNAME like " + nickname;
 
             OracleCommand oc = new OracleCommand(sql, db.oracleConnection);
 
@@ -147,11 +147,11 @@ namespace kinguin_Clone.classes
             OracleDataReader odr;
             List<User> users = new List<User>();
             string sql = "SELECT L.SOORT,L.LIDNR,L.NAAM,L.ADRES,L.TELEFOONNR," +
-                          "L.KINGUINBALANCE," +
-                          "K.NICKNAME,l.EMAIL" +
-                          "FROM lid l, klant k, verkoper v  " +
-                          "WHERE l.lidnr = K.Lidnr" +
-                          " and l.LIDNR =" + userID;
+                         "L.KINGUINBALANCE," +
+                         "K.NICKNAME,l.EMAIL" +
+                         "FROM lid l, klant k, verkoper v  " +
+                         "WHERE l.lidnr = K.Lidnr" +
+                         " and l.LIDNR =" + userID;
 
             OracleCommand oc = new OracleCommand(sql, db.oracleConnection);
 
@@ -186,12 +186,12 @@ namespace kinguin_Clone.classes
             OracleDataReader odr;
             List<User> users = new List<User>();
             string sql = "SELECT L.SOORT,L.LIDNR,L.NAAM,L.ADRES,L.TELEFOONNR," +
-                          "L.KINGUINBALANCE," +
-                          "K.NICKNAME,l.EMAIL" +
-                          "V.VERKOPERNAAM,V.BANKREKING " +
-                          "FROM lid l, klant k, verkoper v  " +
-                          "WHERE L.Lidnr = V.Lidnr" +
-                          " and l.NAAM like " + name;
+                         "L.KINGUINBALANCE," +
+                         "K.NICKNAME,l.EMAIL" +
+                         "V.VERKOPERNAAM,V.BANKREKING " +
+                         "FROM lid l, klant k, verkoper v  " +
+                         "WHERE L.Lidnr = V.Lidnr" +
+                         " and l.NAAM like " + name;
 
             OracleCommand oc = new OracleCommand(sql, db.oracleConnection);
 
@@ -213,7 +213,8 @@ namespace kinguin_Clone.classes
                 switch (type)
                 {
                     case "VERKOPER":
-                        users.Add(new Seller(usernr, naam, adres, telNr, kinguinbalance, nickname, sellername, bankreking, email));
+                        users.Add(new Seller(usernr, naam, adres, telNr, kinguinbalance, nickname, sellername,
+                            bankreking, email));
                         break;
                 }
             }
@@ -227,12 +228,12 @@ namespace kinguin_Clone.classes
             OracleDataReader odr;
             List<User> users = new List<User>();
             string sql = "SELECT L.SOORT,L.LIDNR,L.NAAM,L.ADRES,L.TELEFOONNR," +
-                          "L.KINGUINBALANCE," +
-                          "K.NICKNAME,l.EMAIL" +
-                          "V.VERKOPERNAAM,V.BANKREKING " +
-                          "FROM lid l, klant k, verkoper v  " +
-                          "WHERE L.Lidnr = V.Lidnr" +
-                          " and v.VERKOPERNAAM like " + sellerName;
+                         "L.KINGUINBALANCE," +
+                         "K.NICKNAME,l.EMAIL" +
+                         "V.VERKOPERNAAM,V.BANKREKING " +
+                         "FROM lid l, klant k, verkoper v  " +
+                         "WHERE L.Lidnr = V.Lidnr" +
+                         " and v.VERKOPERNAAM like " + sellerName;
 
             OracleCommand oc = new OracleCommand(sql, db.oracleConnection);
 
@@ -254,7 +255,8 @@ namespace kinguin_Clone.classes
                 switch (type)
                 {
                     case "VERKOPER":
-                        users.Add(new Seller(usernr, naam, adres, telNr, kinguinbalance, nickname, sellername, bankreking, email));
+                        users.Add(new Seller(usernr, naam, adres, telNr, kinguinbalance, nickname, sellername,
+                            bankreking, email));
                         break;
                 }
             }
@@ -267,12 +269,12 @@ namespace kinguin_Clone.classes
             OracleDataReader odr;
             List<User> users = new List<User>();
             string sql = "SELECT L.SOORT,L.LIDNR,L.NAAM,L.ADRES,L.TELEFOONNR," +
-                          "L.KINGUINBALANCE," +
-                          "K.NICKNAME,l.EMAIL" +
-                          "V.VERKOPERNAAM,V.BANKREKING " +
-                          "FROM lid l, klant k, verkoper v  " +
-                          "WHERE L.Lidnr = V.Lidnr" +
-                          " and l.LIDNR = " + userID;
+                         "L.KINGUINBALANCE," +
+                         "K.NICKNAME,l.EMAIL" +
+                         "V.VERKOPERNAAM,V.BANKREKING " +
+                         "FROM lid l, klant k, verkoper v  " +
+                         "WHERE L.Lidnr = V.Lidnr" +
+                         " and l.LIDNR = " + userID;
 
             OracleCommand oc = new OracleCommand(sql, db.oracleConnection);
 
@@ -294,7 +296,8 @@ namespace kinguin_Clone.classes
                 switch (type)
                 {
                     case "VERKOPER":
-                        users.Add(new Seller(usernr, naam, adres, telNr, kinguinbalance, nickname, sellername, bankreking, email));
+                        users.Add(new Seller(usernr, naam, adres, telNr, kinguinbalance, nickname, sellername,
+                            bankreking, email));
                         break;
                 }
             }
@@ -312,7 +315,8 @@ namespace kinguin_Clone.classes
                              "(seq_game.nextval, " +
                              " '" + game.name + "' , " +
                              " '" + game.description + "', " +
-                             "to_date('"+ game.date + "','DD-MM-YYYY HH24:MI:SS')" +              //might not work so needs to be checked
+                             "to_date('" + game.date + "','DD-MM-YYYY HH24:MI:SS')" +
+                             //might not work so needs to be checked
                              ",'" + game.picture + "', " +
                              " '" + game.specificatie + "'," +
                              " '" + game.platform + "'," +
@@ -333,10 +337,10 @@ namespace kinguin_Clone.classes
 
         public bool RemoveGame(string name)
         {
-             try
+            try
             {
                 DatabaseConnection db = new DatabaseConnection();
-                string sql = "DELETE FROM Game WHERE naam = '"+ name +"'";
+                string sql = "DELETE FROM Game WHERE naam = '" + name + "'";
 
                 OracleCommand oc = new OracleCommand(sql, db.oracleConnection);
                 oc.Connection.Open();
@@ -349,8 +353,6 @@ namespace kinguin_Clone.classes
                 Debug.WriteLine(e);
             }
             return false;
-
-            
         }
 
         public bool ChangeGameName(string from, string to)

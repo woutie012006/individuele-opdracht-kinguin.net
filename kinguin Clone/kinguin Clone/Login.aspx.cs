@@ -12,7 +12,7 @@ namespace kinguin_Clone
 {
     public partial class Login : System.Web.UI.Page
     {
-        Administration administration;
+        private Administration administration;
 
 
         protected void Page_Load(object sender, EventArgs e)
@@ -21,21 +21,19 @@ namespace kinguin_Clone
             User c = administration.currentUser;
 
             if (c != null)
-                        Response.Redirect("~/");
-            
+                Response.Redirect("~/");
+
             LoginForm.UserNameLabelText = "E-mail ";
-            
         }
 
-        protected void LoginForm_OnAuthenticate(object sender, AuthenticateEventArgs e)//different class ??????
+        protected void LoginForm_OnAuthenticate(object sender, AuthenticateEventArgs e) //different class ??????
         {
-            System.Web.UI.WebControls.Login l = (System.Web.UI.WebControls.Login)sender;
+            System.Web.UI.WebControls.Login l = (System.Web.UI.WebControls.Login) sender;
             if (administration.Login(l.UserName, l.Password))
             {
                 e.Authenticated = true;
                 Response.Redirect("~/Default.aspx");
             }
         }
-
     }
 }

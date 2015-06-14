@@ -15,7 +15,7 @@
 
                 <div class="col-md-3 col-sm-6 hero-feature">
                     <div class="thumbnail">
-                        <asp:Image ID="IMGGame" runat="server" />
+                        <asp:Image ID="IMGGame" runat="server"/>
                         <div class="caption">
                             <h3><%# Eval("name") %></h3>
                             <p><%# Eval("description") %></p>

@@ -7,23 +7,23 @@
         <table class="table table-bordered table-striped">
 
             <thead>
-                <tr>
-                    <th>Item Name</th>
-                    <th>Description</th>
-                    <th>Price</th>
-                </tr>
+            <tr>
+                <th>Item Name</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
             </thead>
 
             <tbody>
-                <asp:ListView ID="ItemView" OnItemDataBound="ItemView_OnItemDataBoundView_ItemDataBound" runat="server">
-                    <ItemTemplate>
-                        <tr>
-                            <td><%# Eval("name") %></td>
-                            <td><%# Eval("description") %></td>
-                            <td><%# Eval("price") %></td>
-                        </tr>
-                    </ItemTemplate>
-                </asp:ListView>
+            <asp:ListView ID="ItemView" OnItemDataBound="ItemView_OnItemDataBoundView_ItemDataBound" runat="server">
+                <ItemTemplate>
+                    <tr>
+                        <td><%# Eval("name") %></td>
+                        <td><%# Eval("description") %></td>
+                        <td><%# Eval("price") %></td>
+                    </tr>
+                </ItemTemplate>
+            </asp:ListView>
             </tbody>
         </table>
 

@@ -19,40 +19,37 @@ namespace kinguin_Clone
             if (administration.currentUser != null)
             {
                 //url redirection check
-                string sellingobject = Request.QueryString["GameCopyID"] ;
-                
+                string sellingobject = Request.QueryString["GameCopyID"];
 
 
                 if (administration.currentUser != null && administration.currentUser is Seller)
                 {
                     if (!string.IsNullOrEmpty(sellingobject))
                     {
-                        (administration.currentUser as Seller).cart.AddCopyByID(Convert.ToInt32(sellingobject), administration.currentUser);
+                        (administration.currentUser as Seller).cart.AddCopyByID(Convert.ToInt32(sellingobject),
+                            administration.currentUser);
                     }
-                    List<GameCopy> data = ((Seller)administration.currentUser).cart.owned;
+                    List<GameCopy> data = ((Seller) administration.currentUser).cart.owned;
                     ItemView.DataSource = data;
                 }
                 else if (administration.currentUser != null && administration.currentUser is Buyer)
                 {
-                    
                     if (!string.IsNullOrEmpty(sellingobject))
                     {
-                        (administration.currentUser as Buyer).cart.AddCopyByID(Convert.ToInt32(sellingobject), administration.currentUser);
+                        (administration.currentUser as Buyer).cart.AddCopyByID(Convert.ToInt32(sellingobject),
+                            administration.currentUser);
                     }
-                    List<GameCopy> data = ((Buyer)administration.currentUser).cart.owned;
+                    List<GameCopy> data = ((Buyer) administration.currentUser).cart.owned;
                     ItemView.DataSource = data;
                 }
             }
-
-
-
-
-
         }
+
         protected void Page_PreRender(object sender, EventArgs e)
         {
             ItemView.DataBind();
         }
+
         protected void ItemView_OnItemDataBoundView_ItemDataBound(object sender, ListViewItemEventArgs e)
         {
             //throw new NotImplementedException();

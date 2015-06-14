@@ -2,12 +2,12 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div id ="jumbotron" class="jumbotron alert alert-dismissible alert-info" runat="server" >
+    <div id="jumbotron" class="jumbotron alert alert-dismissible alert-info" runat="server">
         <br>
         <asp:Image ID="imgJumbotron" runat="server" Width="100%"/>
         <br>
         <br>
-         <%--<asp:Panel ID="Panel" runat="server">
+        <%--<asp:Panel ID="Panel" runat="server">
             <asp:Image ID="adimage" runat="server" ></asp:Image>
 
         </asp:Panel>--%>
@@ -21,7 +21,7 @@
             <h2>Getting started</h2>
             <p>
                 ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
+                A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
             </p>
             <p>
                 <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>

@@ -20,7 +20,7 @@ namespace kinguin_Clone.classes
             try
             {
                 DatabaseConnection db = new DatabaseConnection();
-                 
+
                 string sql = "SELECT count(*) FROM lid WHERE email=:un AND password=:pw";
                 OracleCommand oc = new OracleCommand(sql, db.oracleConnection);
 
@@ -49,7 +49,7 @@ namespace kinguin_Clone.classes
 
                     oc2.Parameters.Add("un", email);
                     oc2.Parameters.Add("pw", password);
-                    
+
                     oddr = oc2.ExecuteReader();
                     if (oddr.Read())
                     {
@@ -69,12 +69,13 @@ namespace kinguin_Clone.classes
                                 currentUser = new Admin(usernr, naam, adres, telNr, kinguinbalance, email);
                                 break;
                             case "KLANT":
-                                currentUser = new Buyer(usernr,naam,adres,telNr,kinguinbalance,nickname, email);
+                                currentUser = new Buyer(usernr, naam, adres, telNr, kinguinbalance, nickname, email);
                                 break;
                             case "VERKOPER":
                                 string verkopernaam = oddr.GetString(7);
                                 string bankreking = oddr.GetString(8);
-                                currentUser = new Seller(usernr, naam, adres, telNr, kinguinbalance, nickname,verkopernaam,bankreking, email);
+                                currentUser = new Seller(usernr, naam, adres, telNr, kinguinbalance, nickname,
+                                    verkopernaam, bankreking, email);
                                 break;
                         }
                     }
@@ -89,11 +90,9 @@ namespace kinguin_Clone.classes
             }
 
             return false;
-
-
         }
 
-        public bool Register(string name, string adres,string telNr, string email, string Password , string nickname)
+        public bool Register(string name, string adres, string telNr, string email, string Password, string nickname)
         {
             try
             {
@@ -107,7 +106,7 @@ namespace kinguin_Clone.classes
                              " 'KLANT'," +
                              " (0)," +
                              " '" + email + "', " +
-                             "'"+ Password +"')";
+                             "'" + Password + "')";
 
                 OracleCommand oc = new OracleCommand(sql, db.oracleConnection);
                 oc.Connection.Open();
@@ -115,8 +114,8 @@ namespace kinguin_Clone.classes
                 oc.Connection.Close();
 
                 sql = "insert into KLANT (LIDNR, NICKNAME)" +
-                             " values " +
-                             "(seq_LID.currval,'" + nickname + "')";
+                      " values " +
+                      "(seq_LID.currval,'" + nickname + "')";
 
                 oc = new OracleCommand(sql, db.oracleConnection);
                 oc.Connection.Open();
@@ -137,7 +136,9 @@ namespace kinguin_Clone.classes
             List<Game> games = new List<Game>();
             string query = null;
             searchterm = searchterm.Replace("?", "%");
-            query = "select gamenr,naam, categorie, datum,foto,specificatie,platform,beschrijving from game where naam like '" + searchterm + "'";
+            query =
+                "select gamenr,naam, categorie, datum,foto,specificatie,platform,beschrijving from game where naam like '" +
+                searchterm + "'";
 
 
             OracleDataReader dr = db.ExecuteReadQuery(query);
@@ -157,12 +158,15 @@ namespace kinguin_Clone.classes
             }
             return games;
         }
+
         public List<Game> GetGamesByCategory(string searchterm)
         {
             DatabaseConnection db = new DatabaseConnection();
             List<Game> games = new List<Game>();
 
-            string query = "select gamenr,naam,categorie, datum,foto,specificatie,platform, beschrijving from game where upper(categorie)= upper('" + searchterm + "')";
+            string query =
+                "select gamenr,naam,categorie, datum,foto,specificatie,platform, beschrijving from game where upper(categorie)= upper('" +
+                searchterm + "')";
 
 
             OracleDataReader dr = db.ExecuteReadQuery(query);
@@ -182,12 +186,15 @@ namespace kinguin_Clone.classes
             }
             return games;
         }
+
         public List<Game> GetGamesByPlatform(string searchterm)
         {
             DatabaseConnection db = new DatabaseConnection();
             List<Game> games = new List<Game>();
 
-            string query = "select gamenr,naam, categorie, datum,foto,specificatie,platform,beschrijving from game where upper(platform)= upper('" + searchterm + "')";
+            string query =
+                "select gamenr,naam, categorie, datum,foto,specificatie,platform,beschrijving from game where upper(platform)= upper('" +
+                searchterm + "')";
 
 
             OracleDataReader dr = db.ExecuteReadQuery(query);
@@ -207,6 +214,7 @@ namespace kinguin_Clone.classes
             }
             return games;
         }
+
         public List<Game> GetallGames()
         {
             DatabaseConnection db = new DatabaseConnection();
@@ -232,6 +240,7 @@ namespace kinguin_Clone.classes
             }
             return games;
         }
+
         public Game GetGameByID(int id)
         {
             Game g;
@@ -239,7 +248,9 @@ namespace kinguin_Clone.classes
 
             DatabaseConnection db = new DatabaseConnection();
 
-            string query = "select gamenr,naam, categorie, datum,foto,specificatie,platform,beschrijving from game where rownum=1 and GameNr = " + id;
+            string query =
+                "select gamenr,naam, categorie, datum,foto,specificatie,platform,beschrijving from game where rownum=1 and GameNr = " +
+                id;
 
 
             OracleDataReader dr = db.ExecuteReadQuery(query);
@@ -259,7 +270,9 @@ namespace kinguin_Clone.classes
 
             return g;
         }
+
         #region
+
         //public List<GameCopy> GetCartCopies()
         //{
         //    List<GameCopy> copies = new List<GameCopy>();
@@ -306,7 +319,9 @@ namespace kinguin_Clone.classes
 
 
         //}
-#endregion 
+
+        #endregion
+
         public List<Advert> GetAdds()
         {
             List<Advert> ads = new List<Advert>();
@@ -324,7 +339,6 @@ namespace kinguin_Clone.classes
             }
             oc.Connection.Close();
             return ads;
-
         }
 
         //public List<Game> GetGamesBestSold()

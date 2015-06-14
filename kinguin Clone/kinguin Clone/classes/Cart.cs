@@ -13,13 +13,14 @@ namespace kinguin_Clone.classes
 
         public Cart(User currentUser)
         {
-
             owned = GetUserCopies(currentUser);
         }
+
         public void AddGame(GameCopy game, User currentUser)
         {
             DatabaseConnection db = new DatabaseConnection();
-            string query = "INSERT INTO mandje (verkoopobject, lidnr) VALUES (" +game.copyNr+", "+ currentUser.UserNr+")";
+            string query = "INSERT INTO mandje (verkoopobject, lidnr) VALUES (" + game.copyNr + ", " +
+                           currentUser.UserNr + ")";
             db.OpenConnection();
             db.ExecuteQuery(query);
             db.CloseConnection();
@@ -45,20 +46,18 @@ namespace kinguin_Clone.classes
 
         public List<GameCopy> GetUserCopies(User currentUser)
         {
-             List<GameCopy> copies = new List<GameCopy>();
-             if (currentUser == null)
-             {
-                 return copies; //zo crasht het programma niet en wordt er niet toegevoegd.
-             }
+            List<GameCopy> copies = new List<GameCopy>();
+            if (currentUser == null)
+            {
+                return copies; //zo crasht het programma niet en wordt er niet toegevoegd.
+            }
 
             DatabaseConnection db = new DatabaseConnection();
 
             string query = "select g.gamenr,g.naam,g.categorie,g.datum," +
                            " g.foto,g.specificatie,g.platform, g.beschrijving, " +
                            "O.Objectnr, o.prijs,O.Verkoopsdatum,O.Code , o.eigenaar_lidnr" +
-
                            "from mandje m , verkoopobject o, game g " +
-
                            "where M.Relevant= 'Y' " +
                            "and M.Verkoopobject = O.Objectnr " +
                            "and O.Gamenr = G.Gamenr " +
@@ -79,11 +78,12 @@ namespace kinguin_Clone.classes
                 string beschrijving = dr.GetString(7);
                 int objectnr = dr.GetInt32(8);
                 float price = dr.GetFloat(9);
-                DateTime datum =dr.GetDateTime(10);
+                DateTime datum = dr.GetDateTime(10);
                 string code = dr.GetString(11);
                 int eigenaar = dr.GetInt32(12);
 
-                copies.Add(new GameCopy(gamenr, name, category, date, picture, specificatie, platform, objectnr, price, datum, code, beschrijving, eigenaar));
+                copies.Add(new GameCopy(gamenr, name, category, date, picture, specificatie, platform, objectnr, price,
+                    datum, code, beschrijving, eigenaar));
             }
             return copies;
         }
@@ -99,7 +99,8 @@ namespace kinguin_Clone.classes
 
                 DatabaseConnection db = new DatabaseConnection();
 
-                string query = "insert into mandje (verkoopobject,lidnr,relevant) values(" + copyid + "," + currentUser.UserNr + ",'Y')";
+                string query = "insert into mandje (verkoopobject,lidnr,relevant) values(" + copyid + "," +
+                               currentUser.UserNr + ",'Y')";
                 db.OpenConnection();
                 db.ExecuteQuery(query);
                 db.CloseConnection();

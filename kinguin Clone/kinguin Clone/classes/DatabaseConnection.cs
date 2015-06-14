@@ -2,35 +2,37 @@
 using System;
 using System.Data;
 using System.Threading.Tasks;
+
 //using System.Windows.Forms;
 
 namespace Ict4Events_WindowsForms
 {
-
     //Bron : https://github.com/teunw/PTS2-Camping-Management-program   Dit is de klasse die is geschreven tijdens de proftaak
 
     /// <summary>
     /// Class for the connection to the database.
     /// </summary>
-    sealed class DatabaseConnection
+    internal sealed class DatabaseConnection
     {
-        public const string databaseArgs = "user id=" + userName + ";password=" + password + ";data source=" + serverAddress;
+        public const string databaseArgs =
+            "user id=" + userName + ";password=" + password + ";data source=" + serverAddress + ";service name=" + servicename;
 
         private OracleConnection connection;
-        private const string userName = "kinguin", password = "Password123", serverAddress = "127.0.0.1", sid = "xe";
+        private const string userName = "dbi311425", password = "zqy7T4qfdD", serverAddress = "fhictora01.fhict.local", sid = "xe", servicename = "fhictora";
 
         //private DatabaseQueries databaseQueries;
 
         private static readonly DatabaseConnection _instance = new DatabaseConnection();
-      
+
 
         public static DatabaseConnection Instance
         {
             get { return _instance; }
         }
 
-        public OracleConnection oracleConnection {
-            get { return connection;}
+        public OracleConnection oracleConnection
+        {
+            get { return connection; }
         }
 
         /// <summary>
@@ -41,8 +43,8 @@ namespace Ict4Events_WindowsForms
             get
             {
                 return connection.State == ConnectionState.Open
-                    || connection.State == ConnectionState.Fetching
-                    || connection.State == ConnectionState.Executing;
+                       || connection.State == ConnectionState.Fetching
+                       || connection.State == ConnectionState.Executing;
             }
         }
 
@@ -97,7 +99,7 @@ namespace Ict4Events_WindowsForms
             query = query.Replace(";", "");
             try
             {
-                OpenConnection(); 
+                OpenConnection();
                 OracleCommand oracleCommand = ExecuteCommand(query);
                 OracleDataReader o = oracleCommand.ExecuteReader();
                 return o;
@@ -172,7 +174,8 @@ namespace Ict4Events_WindowsForms
         /// <see cref="http://docs.oracle.com/cd/B19306_01/win.102/b14307/OracleExceptionClass.htm"/>
         public void CloseConnection()
         {
-            if (connection.State == System.Data.ConnectionState.Open || connection.State == System.Data.ConnectionState.Connecting)
+            if (connection.State == System.Data.ConnectionState.Open ||
+                connection.State == System.Data.ConnectionState.Connecting)
             {
                 try
                 {

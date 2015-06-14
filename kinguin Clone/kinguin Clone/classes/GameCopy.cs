@@ -13,7 +13,8 @@ namespace kinguin_Clone.classes
         public string code { get; set; }
         public int Owner { get; set; }
 
-        public GameCopy(int gameNr, string name, string category, DateTime date, string picture, string specificatie, string platform, int CopyNr, float price, DateTime SellingDate, string code, string description, int owner)
+        public GameCopy(int gameNr, string name, string category, DateTime date, string picture, string specificatie,
+            string platform, int CopyNr, float price, DateTime SellingDate, string code, string description, int owner)
             : base(gameNr, name, category, date, picture, specificatie, platform, description)
         {
             this.copyNr = CopyNr;
@@ -35,6 +36,7 @@ namespace kinguin_Clone.classes
             this.sellingDate = SellingDate;
             this.code = code;
         }
+
         /// <summary>
         /// /////////////////////////////////////////////////////////////////////////////////////////BNORT IMPLEMENTED YET
         /// </summary>

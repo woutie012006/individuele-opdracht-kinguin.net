@@ -10,23 +10,23 @@ namespace kinguin_Clone
 {
     public partial class GamesPage : System.Web.UI.Page
     {
-        Administration administration = new Administration();
+        private Administration administration = new Administration();
 
         protected void Page_Load(object sender, EventArgs e)
         {
             string[] url = Request.RawUrl.Split('/');
-            
+
 
             if (Request.RawUrl.EndsWith("Page"))
             {
                 List<Game> data = administration.GetallGames();
                 GamesView.DataSource = data;
             }
-            else if (url[url.Length - 2].ToUpper() == "GENRE")    //check if it needs to look for genre.
+            else if (url[url.Length - 2].ToUpper() == "GENRE") //check if it needs to look for genre.
             {
                 try
                 {
-                    string requested = url[url.Length-1];
+                    string requested = url[url.Length - 1];
                     List<Game> data = administration.GetGamesByCategory(requested);
                     GamesView.DataSource = data;
                 }
@@ -38,11 +38,11 @@ namespace kinguin_Clone
                     });
                 }
             }
-            else if (url[url.Length-2].ToUpper() == "PLATFORM") //check if it needs to look for platform.
+            else if (url[url.Length - 2].ToUpper() == "PLATFORM") //check if it needs to look for platform.
             {
                 try
                 {
-                    string requested = url[url.Length-1];
+                    string requested = url[url.Length - 1];
                     List<Game> data = administration.GetGamesByPlatform(requested);
                     GamesView.DataSource = data;
                 }
@@ -53,13 +53,12 @@ namespace kinguin_Clone
                         Text = "Game Not found, the following error occured : " + exception.Message
                     });
                 }
-
             }
-            else if (url[url.Length-2].ToUpper() == "SEARCH") //check if it needs to look for platform.
+            else if (url[url.Length - 2].ToUpper() == "SEARCH") //check if it needs to look for platform.
             {
                 try
                 {
-                    string requested = url[url.Length-1];// Request.RawUrl.Replace(url[1],"");
+                    string requested = url[url.Length - 1]; // Request.RawUrl.Replace(url[1],"");
                     requested = "%" + requested + "%";
                     requested = requested.Replace(" ", "%");
                     List<Game> data = administration.GetGamesByName(requested);
@@ -72,9 +71,9 @@ namespace kinguin_Clone
                         Text = "Game Not found, the following error occured : " + exception.Message
                     });
                 }
-
             }
         }
+
         protected void Page_PreRender(object sender, EventArgs e)
         {
             GamesView.DataBind();
@@ -92,6 +91,5 @@ namespace kinguin_Clone
             HyperLink btnMoreInfo = e.Item.FindControl("btnMoreInfo") as HyperLink;
             btnMoreInfo.NavigateUrl = "~/GameInfo.aspx/" + game.gameNr;
         }
-      
     }
 }

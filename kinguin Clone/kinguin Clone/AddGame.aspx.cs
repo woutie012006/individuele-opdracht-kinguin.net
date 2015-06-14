@@ -18,16 +18,14 @@ namespace kinguin_Clone
                 Response.Redirect("Default.aspx");
             }
             clDate.SelectedDate = System.DateTime.Now;
-            
-            string[] platform = {"PS","XBOX", "PC"};
-            string[] category = { "MURDER", "RPG", "RACING" };
+
+            string[] platform = {"PS", "XBOX", "PC"};
+            string[] category = {"MURDER", "RPG", "RACING"};
             for (int i = 0; i <= 2; i++)
             {
                 ddPlatform.Items.Add(platform[i]);
                 ddCategory.Items.Add(category[i]);
-
             }
-
         }
 
         protected void btnAddGame_OnClick(object sender, EventArgs e)
@@ -46,17 +44,15 @@ namespace kinguin_Clone
 
             picture.SaveAs(filePath);
 
-            Game game = new Game(-1,tbName.Text,ddCategory.Text,clDate.SelectedDate,file,tbSpecifications.InnerText , ddPlatform.Text,tbDescription.InnerText );
+            Game game = new Game(-1, tbName.Text, ddCategory.Text, clDate.SelectedDate, file, tbSpecifications.InnerText,
+                ddPlatform.Text, tbDescription.InnerText);
             if (Master.administration.currentUser is Admin)
             {
                 if ((Master.administration.currentUser as Admin).AddGame(game))
                 {
-                    ClientScript.RegisterStartupScript(this.GetType(), "Game alert", "alert('" + "You succesfully added a game." + "');", true);
-
-
-
+                    ClientScript.RegisterStartupScript(this.GetType(), "Game alert",
+                        "alert('" + "You succesfully added a game." + "');", true);
                 }
-
             }
             else
             {

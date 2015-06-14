@@ -14,7 +14,7 @@ namespace kinguin_Clone
             Master.administration.currentUser = null;
             Session["administration"] = Master.administration;
             lblLogout.Text = "You have been successfully logged out";
-            HyperLink h = (HyperLink)Master.FindControl("LoginLogout");
+            HyperLink h = (HyperLink) Master.FindControl("LoginLogout");
             h.Text = "Login";
             h.NavigateUrl = "Login.aspx";
         }

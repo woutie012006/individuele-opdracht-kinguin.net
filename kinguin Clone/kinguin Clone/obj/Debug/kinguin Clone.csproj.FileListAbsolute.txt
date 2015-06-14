@@ -5,10 +5,6 @@ C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\ki
 C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\kinguin Clone\bin\AspNet.ScriptManager.bootstrap.dll
 C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\kinguin Clone\bin\AspNet.ScriptManager.jQuery.dll
 C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\kinguin Clone\bin\Microsoft.AspNet.FriendlyUrls.dll
-C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\kinguin Clone\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
-C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\kinguin Clone\bin\Microsoft.ScriptManager.MSAjax.dll
-C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\kinguin Clone\bin\Microsoft.ScriptManager.WebForms.dll
-C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\kinguin Clone\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\kinguin Clone\bin\Newtonsoft.Json.dll
 C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\kinguin Clone\bin\Oracle.ManagedDataAccess.dll
 C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\kinguin Clone\bin\System.Web.Optimization.dll
@@ -20,4 +16,3 @@ C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\ki
 C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\kinguin Clone\obj\Debug\kinguin Clone.dll
 C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\kinguin Clone\obj\Debug\kinguin Clone.pdb
 C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\kinguin Clone\bin\kinguin Clone.dll.config
-C:\Users\user\Documents\GitHub\individuele-opdracht-kinguin.net\kinguin Clone\kinguin Clone\bin\AjaxControlToolkit.dll

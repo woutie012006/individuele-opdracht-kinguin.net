@@ -18,7 +18,8 @@ namespace kinguin_Clone.classes
         public string platform { get; set; }
         public string category { get; set; }
 
-        public Game(int gameNr, string name, string category, DateTime date, string picture, string specificatie, string platform, string description)
+        public Game(int gameNr, string name, string category, DateTime date, string picture, string specificatie,
+            string platform, string description)
         {
             this.gameNr = gameNr;
             this.name = name;
@@ -35,7 +36,8 @@ namespace kinguin_Clone.classes
             DatabaseConnection db = new DatabaseConnection();
             List<GameCopy> copies = new List<GameCopy>();
 
-            string query = "select objectnr,prijs,code from verkoopobject where gamenr = " + gameNr + " and verkoopsdatum <to_date('01/01/1901','DD/MM/YYYY')";
+            string query = "select objectnr,prijs,code from verkoopobject where gamenr = " + gameNr +
+                           " and verkoopsdatum <to_date('01/01/1901','DD/MM/YYYY')";
 
 
             OracleDataReader dr = db.ExecuteReadQuery(query);
@@ -46,11 +48,9 @@ namespace kinguin_Clone.classes
                 float price = dr.GetFloat(1);
                 string code = dr.GetString(2);
                 //datetime = minval because unsold games don't have a sellingdate.
-                copies.Add(new GameCopy(this, objectNr, price, DateTime.MinValue,code ));
+                copies.Add(new GameCopy(this, objectNr, price, DateTime.MinValue, code));
             }
             return copies;
         }
-
-
     }
 }

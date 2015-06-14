@@ -14,7 +14,7 @@ namespace kinguin_Clone
         {
             get
             {
-                Administration a =  (Administration) Session["administration"];
+                Administration a = (Administration) Session["administration"];
                 if (a != null)
                 {
                     return a;
@@ -23,8 +23,8 @@ namespace kinguin_Clone
             }
             set { Session["administration"] = value; }
         }
-                
-        
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
             LoginLogout.NavigateUrl = "/Default.aspx";
@@ -36,19 +36,18 @@ namespace kinguin_Clone
                 LoginLogout.Text = "Log out";
                 LoginLogout.NavigateUrl = "/Logout.aspx";
                 hlUserPage.Visible = true;
-            }else
+            }
+            else
             {
                 LoginLogout.NavigateUrl = "/Login.aspx";
             }
-
         }
+
         protected void btnSearch_OnClick(object sender, EventArgs e)
         {
+            string searchterm = tbSearch.Text; //.Replace(" ", "?");
 
-            string searchterm = tbSearch.Text;//.Replace(" ", "?");
-          
             Response.Redirect("GamesPage.aspx/search/" + searchterm);
-
         }
     }
 }
