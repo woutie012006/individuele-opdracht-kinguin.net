@@ -147,5 +147,42 @@ namespace kinguin_Clone.classes
 
             return false;
         }
+
+        /// <summary>
+        /// The become seller.
+        /// </summary>
+        /// <param name="sellerName">
+        /// The sellerName.
+        /// </param>
+        /// <param name="bankaccount">
+        /// The bankaccount.
+        /// </param>
+        /// <returns>
+        /// The <see cref="bool"/>.
+        /// </returns>
+        public bool BecomeSeller(string sellerName, string bankaccount)
+        {
+            try
+            {
+                DatabaseConnection db = new DatabaseConnection();
+                string query = "UPDATE LID  SET SOORT='VERKOPER'";
+                db.OpenConnection();
+                db.ExecuteQuery(query);
+                db.CloseConnection();
+                
+                query = "Insert into VERKOPER (verkopernaam,bankrekening, lidnr) values('" + sellerName + "','" + bankaccount+ "'," + this.UserNr + ")";
+                db.OpenConnection();
+                db.ExecuteQuery(query);
+                db.CloseConnection();
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e);
+            }
+
+            return false;
+        }
     }
 }

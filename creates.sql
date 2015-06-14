@@ -241,7 +241,9 @@ ALTER TABLE advertentie
 
   
   
-  
+INSERT INTO LID (LIDNR, NAAM, ADRES, TELEFOONNR, SOORT, KINGUINBALANCE, EMAIL, PASSWORD) VALUES ('9', 'Admin', 'adminroad 12', '0000000', 'ADMIN', '0', 'admin@kinguin.net', 'Password123')
+INSERT INTO KLANT (NICKNAME, LIDNR) VALUES ('Admin', '9')
+
   
   
   
