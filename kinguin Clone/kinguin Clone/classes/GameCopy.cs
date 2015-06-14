@@ -3,24 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace kinguin_Clone.classes
+namespace Kinguin_Clone.classes
 {
     public class GameCopy : Game
     {
-        public int copyNr { get; set; }
-        public float price { get; set; }
-        public DateTime sellingDate { get; set; }
-        public string code { get; set; }
+        public int CopyNr { get; set; }
+        public float Price { get; set; }
+        public DateTime SellingDate { get; set; }
+        public string Code { get; set; }
         public int Owner { get; set; }
 
         public GameCopy(int gameNr, string name, string category, DateTime date, string picture, string specificatie,
-            string platform, int CopyNr, float price, DateTime SellingDate, string code, string description, int owner)
+            string platform, int CopyNr, float price, DateTime sellingDate, string code, string description, int owner)
             : base(gameNr, name, category, date, picture, specificatie, platform, description)
         {
-            this.copyNr = CopyNr;
-            this.price = price;
-            this.sellingDate = SellingDate;
-            this.code = code;
+            this.CopyNr = CopyNr;
+            this.Price = price;
+            this.SellingDate = sellingDate;
+            this.Code = code;
             this.Owner = owner;
         }
 
@@ -29,12 +29,12 @@ namespace kinguin_Clone.classes
         /// </summary>
         /// <returns></returns>
         public GameCopy(Game g, int CopyNr, float price, DateTime SellingDate, string code)
-            : base(g.gameNr, g.name, g.category, g.date, g.picture, g.specificatie, g.platform, g.description)
+            : base(g.GameNr, g.Name, g.Category, g.Date, g.Picture, g.Specificatie, g.Platform, g.Description)
         {
-            this.copyNr = CopyNr;
-            this.price = price;
-            this.sellingDate = SellingDate;
-            this.code = code;
+            this.CopyNr = CopyNr;
+            this.Price = price;
+            this.SellingDate = SellingDate;
+            this.Code = code;
         }
 
         /// <summary>

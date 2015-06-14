@@ -2,40 +2,40 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Ict4Events_WindowsForms;
+using Kinguin_Clone;
 using Oracle.ManagedDataAccess.Client;
 
-namespace kinguin_Clone.classes
+namespace Kinguin_Clone.classes
 {
     public class Cart
     {
-        public List<GameCopy> owned { get; set; }
+        public List<GameCopy> Owned { get; set; }
 
         public Cart(User currentUser)
         {
-            owned = GetUserCopies(currentUser);
+            Owned = GetUserCopies(currentUser);
         }
 
         public void AddGame(GameCopy game, User currentUser)
         {
             DatabaseConnection db = new DatabaseConnection();
-            string query = "INSERT INTO mandje (verkoopobject, lidnr) VALUES (" + game.copyNr + ", " +
+            string query = "INSERT INTO mandje (verkoopobject, lidnr) VALUES (" + game.CopyNr + ", " +
                            currentUser.UserNr + ")";
             db.OpenConnection();
             db.ExecuteQuery(query);
             db.CloseConnection();
-            owned.Add(game);
+            Owned.Add(game);
         }
 
         public void RemoveGame(GameCopy game, User currentUser)
         {
             DatabaseConnection db = new DatabaseConnection();
             string query = "UPDATE mandje  SET relevant = 'N' " +
-                           "WHERE lidnr=" + currentUser.UserNr + " and verkoopobject=" + game.copyNr;
+                           "WHERE lidnr=" + currentUser.UserNr + " and verkoopobject=" + game.CopyNr;
             db.OpenConnection();
             db.ExecuteQuery(query);
             db.CloseConnection();
-            owned.Remove(game);
+            Owned.Remove(game);
         }
 
         public bool Buycart(User currentUser)
@@ -55,7 +55,7 @@ namespace kinguin_Clone.classes
             DatabaseConnection db = new DatabaseConnection();
 
             string query = "select g.gamenr,g.naam,g.categorie,g.datum," +
-                           " g.foto,g.specificatie,g.platform, g.beschrijving, " +
+                           " g.foto,g.Specificatie,g.Platform, g.beschrijving, " +
                            "O.Objectnr, o.prijs,O.Verkoopsdatum,O.Code , o.eigenaar_lidnr" +
                            "from mandje m , verkoopobject o, game g " +
                            "where M.Relevant= 'Y' " +
@@ -104,7 +104,7 @@ namespace kinguin_Clone.classes
                 db.OpenConnection();
                 db.ExecuteQuery(query);
                 db.CloseConnection();
-                owned = GetUserCopies(currentUser);
+                Owned = GetUserCopies(currentUser);
             }
             catch (Exception exception)
             {

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 //using System.Windows.Forms;
 
-namespace Ict4Events_WindowsForms
+namespace Kinguin_Clone
 {
     //Bron : https://github.com/teunw/PTS2-Camping-Management-program   Dit is de klasse die is geschreven tijdens de proftaak
 
@@ -15,19 +15,20 @@ namespace Ict4Events_WindowsForms
     internal sealed class DatabaseConnection
     {
         public const string databaseArgs =
-            "user id=" + userName + ";password=" + password + ";data source=" + serverAddress;// + ";service name=" + servicename;
+            "user id=" + userName + ";password=" + password + ";data source=" + serverAddress;
+            // + ";service Name=" + servicename;
 
         private OracleConnection connection;
         //private const string userName = "dbi311425", password = "zqy7T4qfdD", serverAddress = "fhictora01.fhict.local", sid = "xe", servicename = "fhictora";
         private const string userName = "kinguin", password = "Password123", serverAddress = "127.0.0.1";
         //private DatabaseQueries databaseQueries;
 
-        private static readonly DatabaseConnection _instance = new DatabaseConnection();
+        private static readonly DatabaseConnection databaseInstance = new DatabaseConnection();
 
 
-        public static DatabaseConnection Instance
+        public static DatabaseConnection DatabaseInstance
         {
-            get { return _instance; }
+            get { return databaseInstance; }
         }
 
         public OracleConnection oracleConnection
@@ -71,7 +72,7 @@ namespace Ict4Events_WindowsForms
         /// Executes command on the database, can be used for many different things
         /// </summary>
         /// <see cref="https://msdn.microsoft.com/en-us/library/system.data.oracleclient.oraclecommand%28v=vs.110%29.aspx"/>
-        /// <param name="query">Query you want to use</param>
+        /// <param Name="query">Query you want to use</param>
         /// <returns>OracleCommand results for your query</returns
         public OracleCommand ExecuteCommand(string query)
         {
@@ -83,20 +84,20 @@ namespace Ict4Events_WindowsForms
         /// <summary>
         /// Executes a SELECT or query with result on the database
         /// </summary>
-        /// <param name="query">The query you want to execute</param>
+        /// <param Name="query">The query you want to execute</param>
         /// <returns>OracleDataReader containing the query results, if query failed returns null</returns>
         /// <example>This example shows how to get all rows from a query
-        /// <code>
-        /// OracleDataReader odr = DatabaseConnection.Instance.ExecuteReadQuery("SELECT TEST FROM TEST");
+        /// <Code>
+        /// OracleDataReader odr = DatabaseConnection.DatabaseInstance.ExecuteReadQuery("SELECT TEST FROM TEST");
         /// do
         /// {
         ///     System.Diagnostics.Debug.WriteLine(odr.GetValue(0));
         /// } while (odr.Read());
-        /// </code>
+        /// </Code>
         /// </example>
         public OracleDataReader ExecuteReadQuery(string query)
         {
-            query = query.Replace(";", "");
+            query = query.Replace(";", string.Empty);
             try
             {
                 OpenConnection();
@@ -114,8 +115,8 @@ namespace Ict4Events_WindowsForms
         /// <summary>
         /// Executes a prepared statement on the database, NOT TESTED YET
         /// </summary>
-        /// <param name="query">Query to execute</param>
-        /// <param name="parameters">Prepared parameters for the query</param>
+        /// <param Name="query">Query to execute</param>
+        /// <param Name="parameters">Prepared parameters for the query</param>
         /// <returns>Your query result</returns>
         public OracleDataReader ExecuteReadQuery(string query, OracleParameterCollection parameters)
         {
@@ -135,11 +136,11 @@ namespace Ict4Events_WindowsForms
         /// Query the database, can be used for queries that don't return a value
         /// </summary>
         /// <returns>Value of rows affected, -1 on statements not affecting any rows</returns>
-        /// <param name="query">Query you want to execute, DONT USE SEMICOLONS (;)</param>
-        /// <example>DatabaseConnection.Instance.ExecuteQuery("UPDATE SOMETHING SET KEY = VALUE")</example>
+        /// <param Name="query">Query you want to execute, DONT USE SEMICOLONS (;)</param>
+        /// <example>DatabaseConnection.DatabaseInstance.ExecuteQuery("UPDATE SOMETHING SET KEY = VALUE")</example>
         public int ExecuteQuery(string query)
         {
-            query = query.Replace(";", "");
+            query = query.Replace(";", String.Empty);
             OracleCommand oracleCommand = ExecuteCommand(query);
             oracleCommand.CommandType = CommandType.Text;
 

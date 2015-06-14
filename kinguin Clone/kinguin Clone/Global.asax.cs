@@ -7,7 +7,7 @@ using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
 
-namespace kinguin_Clone
+namespace Kinguin_Clone
 {
     public class Global : HttpApplication
     {

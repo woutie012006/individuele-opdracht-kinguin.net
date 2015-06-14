@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace kinguin_Clone {
+namespace Kinguin_Clone {
     
     
     public partial class Register {
@@ -26,7 +26,7 @@ namespace kinguin_Clone {
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// To modify move field declaration from designer file to Code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbAdres;
         
@@ -35,7 +35,7 @@ namespace kinguin_Clone {
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// To modify move field declaration from designer file to Code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbTelNr;
         
@@ -44,7 +44,7 @@ namespace kinguin_Clone {
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// To modify move field declaration from designer file to Code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbEmail;
         
@@ -53,7 +53,7 @@ namespace kinguin_Clone {
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// To modify move field declaration from designer file to Code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbNickname;
         
@@ -62,7 +62,7 @@ namespace kinguin_Clone {
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// To modify move field declaration from designer file to Code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbPassword1;
         
@@ -71,7 +71,7 @@ namespace kinguin_Clone {
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// To modify move field declaration from designer file to Code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbPassword2;
         
@@ -80,7 +80,7 @@ namespace kinguin_Clone {
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// To modify move field declaration from designer file to Code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSubmit;
         
@@ -90,9 +90,9 @@ namespace kinguin_Clone {
         /// <remarks>
         /// Auto-generated property.
         /// </remarks>
-        public new kinguin_Clone.SiteMaster Master {
+        public new SiteMaster Master {
             get {
-                return ((kinguin_Clone.SiteMaster)(base.Master));
+                return ((SiteMaster)(base.Master));
             }
         }
     }

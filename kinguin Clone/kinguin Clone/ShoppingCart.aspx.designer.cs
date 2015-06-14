@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace kinguin_Clone {
+namespace Kinguin_Clone {
     
     
     public partial class ShoppingCart {
@@ -27,9 +27,9 @@ namespace kinguin_Clone {
         /// <remarks>
         /// Auto-generated property.
         /// </remarks>
-        public new kinguin_Clone.SiteMaster Master {
+        public new SiteMaster Master {
             get {
-                return ((kinguin_Clone.SiteMaster)(base.Master));
+                return ((SiteMaster)(base.Master));
             }
         }
     }

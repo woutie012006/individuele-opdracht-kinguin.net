@@ -5,9 +5,9 @@ using System.Security.Policy;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using kinguin_Clone.classes;
+using Kinguin_Clone.classes;
 
-namespace kinguin_Clone
+namespace Kinguin_Clone
 {
     public partial class ShoppingCart : System.Web.UI.Page
     {
@@ -26,20 +26,20 @@ namespace kinguin_Clone
                 {
                     if (!string.IsNullOrEmpty(sellingobject))
                     {
-                        (administration.currentUser as Seller).cart.AddCopyByID(Convert.ToInt32(sellingobject),
+                        (administration.currentUser as Seller).Cart.AddCopyByID(Convert.ToInt32(sellingobject),
                             administration.currentUser);
                     }
-                    List<GameCopy> data = ((Seller) administration.currentUser).cart.owned;
+                    List<GameCopy> data = ((Seller) administration.currentUser).Cart.Owned;
                     ItemView.DataSource = data;
                 }
                 else if (administration.currentUser != null && administration.currentUser is Buyer)
                 {
                     if (!string.IsNullOrEmpty(sellingobject))
                     {
-                        (administration.currentUser as Buyer).cart.AddCopyByID(Convert.ToInt32(sellingobject),
+                        (administration.currentUser as Buyer).Cart.AddCopyByID(Convert.ToInt32(sellingobject),
                             administration.currentUser);
                     }
-                    List<GameCopy> data = ((Buyer) administration.currentUser).cart.owned;
+                    List<GameCopy> data = ((Buyer) administration.currentUser).Cart.Owned;
                     ItemView.DataSource = data;
                 }
             }

@@ -5,9 +5,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using kinguin_Clone.classes;
+using Kinguin_Clone.classes;
 
-namespace kinguin_Clone
+namespace Kinguin_Clone
 {
     public partial class AddGame : System.Web.UI.Page
     {

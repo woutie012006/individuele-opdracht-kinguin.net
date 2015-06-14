@@ -4,10 +4,10 @@ using System.Diagnostics;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Web;
-using Ict4Events_WindowsForms;
+using Kinguin_Clone;
 using Oracle.ManagedDataAccess.Client;
 
-namespace kinguin_Clone.classes
+namespace Kinguin_Clone.classes
 {
     public class Admin : User
     {
@@ -40,7 +40,7 @@ namespace kinguin_Clone.classes
                 string adres = oddr.GetString(3);
                 string telNr = oddr.GetString(4);
                 float kinguinbalance = oddr.GetFloat(5);
-                //email is already available
+                // email is already available
                 string nickname = oddr.GetString(6);
                 string email = oddr.GetString(9);
 
@@ -127,7 +127,7 @@ namespace kinguin_Clone.classes
                 string adres = odr.GetString(3);
                 string telNr = odr.GetString(4);
                 float kinguinbalance = odr.GetFloat(5);
-                //string nickname = odr.GetString(6);
+                // string nickname = odr.GetString(6);
                 string email = odr.GetString(7);
 
 
@@ -313,14 +313,14 @@ namespace kinguin_Clone.classes
                              " (GAMENR,NAAM,BESCHRIJVING,DATUM,FOTO,SPECIFICATIE,PLATFORM,CATEGORIE)" +
                              " values " +
                              "(seq_game.nextval, " +
-                             " '" + game.name + "' , " +
-                             " '" + game.description + "', " +
-                             "to_date('" + game.date + "','DD-MM-YYYY HH24:MI:SS')" +
-                             //might not work so needs to be checked
-                             ",'" + game.picture + "', " +
-                             " '" + game.specificatie + "'," +
-                             " '" + game.platform + "'," +
-                             " '" + game.category + "')";
+                             " '" + game.Name + "' , " +
+                             " '" + game.Description + "', " +
+                             "to_date('" + game.Date + "','DD-MM-YYYY HH24:MI:SS')" +
+                             // might not work so needs to be checked
+                             ",'" + game.Picture + "', " +
+                             " '" + game.Specificatie + "'," +
+                             " '" + game.Platform + "'," +
+                             " '" + game.Category + "')";
 
                 OracleCommand oc = new OracleCommand(sql, db.oracleConnection);
                 oc.Connection.Open();

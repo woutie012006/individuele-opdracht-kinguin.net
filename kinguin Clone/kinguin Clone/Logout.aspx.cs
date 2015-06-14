@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace kinguin_Clone
+namespace Kinguin_Clone
 {
     public partial class Logout : System.Web.UI.Page
     {

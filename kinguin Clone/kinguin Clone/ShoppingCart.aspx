@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ShoppingCart.aspx.cs" Inherits="kinguin_Clone.ShoppingCart" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ShoppingCart.aspx.cs" Inherits="Kinguin_Clone.ShoppingCart" %>
 <%@ MasterType virtualpath="~/Site.master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
@@ -18,9 +18,9 @@
             <asp:ListView ID="ItemView" OnItemDataBound="ItemView_OnItemDataBoundView_ItemDataBound" runat="server">
                 <ItemTemplate>
                     <tr>
-                        <td><%# Eval("name") %></td>
-                        <td><%# Eval("description") %></td>
-                        <td><%# Eval("price") %></td>
+                        <td><%# Eval("Name") %></td>
+                        <td><%# Eval("Description") %></td>
+                        <td><%# Eval("Price") %></td>
                     </tr>
                 </ItemTemplate>
             </asp:ListView>

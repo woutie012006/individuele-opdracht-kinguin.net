@@ -4,13 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using kinguin_Clone.classes;
+using Kinguin_Clone.classes;
 
-namespace kinguin_Clone
+namespace Kinguin_Clone
 {
     public partial class ChangeUserInfo : System.Web.UI.Page
     {
         private User cUser;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Master.administration == null || Master.administration.currentUser == null)
@@ -36,9 +37,8 @@ namespace kinguin_Clone
                 lblBankAccount.Visible = true;
                 tbBankAccount.Visible = true;
                 tbBankAccountVal.Enabled = true;
-                
-                tbBankAccount.Text = ((Seller)cUser).BankAccount;
 
+                tbBankAccount.Text = ((Seller) cUser).BankAccount;
             }
         }
 
@@ -48,22 +48,27 @@ namespace kinguin_Clone
             {
                 cUser.ChangeName(tbName.Text);
             }
+
             if (tbAdres.Text != cUser.Adres)
             {
                 cUser.ChangeAdres(tbAdres.Text);
             }
+
             if (tbTelNr.Text != cUser.PhoneNr)
             {
                 cUser.ChangePhoneNr(tbTelNr.Text);
             }
+
             if (tbEmail.Text != cUser.Email)
             {
                 cUser.ChangeEmail(tbEmail.Text);
             }
-            if (tbNickname.Text != ((Buyer)cUser).Nickname)
+
+            if (tbNickname.Text != ((Buyer) cUser).Nickname)
             {
-                ((Buyer)cUser).ChangeNickname(tbNickname.Text);
+                ((Buyer) cUser).ChangeNickname(tbNickname.Text);
             }
+
             if (cUser is Seller)
             {
                 Seller sUser = cUser as Seller;
@@ -71,10 +76,12 @@ namespace kinguin_Clone
                 {
                     sUser.ChangeSellerName(tbSellerName.Text);
                 }
+
                 if (tbBankAccount.Text != sUser.SellerName)
                 {
                     sUser.ChangeBankAccount(tbBankAccount.Text);
                 }
+
             }
 
         }

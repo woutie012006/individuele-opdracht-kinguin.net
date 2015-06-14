@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.Dynamic;
 using System.Linq;
 using System.Web;
-using Ict4Events_WindowsForms;
+using Kinguin_Clone;
 
-namespace kinguin_Clone.classes
+namespace Kinguin_Clone.classes
 {
     public abstract class User
     {
@@ -83,6 +83,7 @@ namespace kinguin_Clone.classes
             }
             return false;
         }
+
         public bool ChangeEmail(string email)
         {
             try
@@ -105,8 +106,8 @@ namespace kinguin_Clone.classes
         /// <summary>
         /// what to do can be either *,+,-, / this is used to know what needs to be done
         /// </summary>
-        /// <param name="change"></param>
-        /// <param name="whattodo"></param>
+        /// <param Name="change"></param>
+        /// <param Name="whattodo"></param>
         /// <returns></returns>
         public bool ChangeKinguinBalance(float change, string whattodo)
         {
@@ -116,7 +117,6 @@ namespace kinguin_Clone.classes
                 {
                     throw new Exception("invalid whattodo");
                 }
-                ;
 
 
                 DatabaseConnection db = new DatabaseConnection();
