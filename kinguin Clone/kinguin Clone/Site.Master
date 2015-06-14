@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="kinguin_Clone.SiteMaster" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Kinguin_Clone.SiteMaster" %>
 
 <!DOCTYPE html>
 
@@ -60,7 +60,7 @@
                             <a runat="server" href="~/GamesPage.aspx">Games</a>
                         </li>
                         <li>
-                            <a runat="server" href="~/ShoppingCart.aspx">Shopping cart</a>
+                            <a runat="server" href="~/ShoppingCart.aspx">Shopping Cart</a>
                         </li>
                         <li>
                             <a runat="server" href="~/UserPage.aspx" visible="False" id="hlUserPage">User info</a>

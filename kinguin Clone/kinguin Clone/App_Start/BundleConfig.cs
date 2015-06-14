@@ -14,7 +14,7 @@ using System.Web.UI;
 
 #endregion
 
-namespace kinguin_Clone
+namespace Kinguin_Clone
 {
     /// <summary>
     /// The bundle config.
@@ -25,7 +25,7 @@ namespace kinguin_Clone
         /// <summary>
         /// The register bundles.
         /// </summary>
-        /// <param name="bundles">
+        /// <param Name="bundles">
         /// The bundles.
         /// </param>
         public static void RegisterBundles(BundleCollection bundles)

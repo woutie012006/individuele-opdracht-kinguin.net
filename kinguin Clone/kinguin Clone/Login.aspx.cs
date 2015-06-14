@@ -12,12 +12,14 @@
 using System;
 using System.Web.UI.WebControls;
 
-using kinguin_Clone.classes;
+using Kinguin_Clone.classes;
 
 #endregion
 
-namespace kinguin_Clone
+namespace Kinguin_Clone
 {
+    using Kinguin_Clone.classes;
+
     /// <summary>
     /// The login.
     /// </summary>
@@ -31,16 +33,16 @@ namespace kinguin_Clone
         /// <summary>
         /// The page_ load.
         /// </summary>
-        /// <param name="sender">
+        /// <param Name="sender">
         /// The sender.
         /// </param>
-        /// <param name="e">
+        /// <param Name="e">
         /// The e.
         /// </param>
         protected void Page_Load(object sender, EventArgs e)
         {
             this.administration = this.Master.administration;
-            User c = this.administration.currentUser;
+            User c = this.administration.CurrentUser;
 
             if (c != null)
             {
@@ -53,10 +55,10 @@ namespace kinguin_Clone
         /// <summary>
         /// The login form_ on authenticate.
         /// </summary>
-        /// <param name="sender">
+        /// <param Name="sender">
         /// The sender.
         /// </param>
-        /// <param name="e">
+        /// <param Name="e">
         /// The e.
         /// </param>
         protected void LoginForm_OnAuthenticate(object sender, AuthenticateEventArgs e)

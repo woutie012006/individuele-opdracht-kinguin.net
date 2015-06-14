@@ -15,7 +15,7 @@ using Microsoft.AspNet.FriendlyUrls;
 
 #endregion
 
-namespace kinguin_Clone
+namespace Kinguin_Clone
 {
     /// <summary>
     /// The route config.
@@ -25,7 +25,7 @@ namespace kinguin_Clone
         /// <summary>
         /// The register routes.
         /// </summary>
-        /// <param name="routes">
+        /// <param Name="routes">
         /// The routes.
         /// </param>
         public static void RegisterRoutes(RouteCollection routes)

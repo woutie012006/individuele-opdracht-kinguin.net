@@ -16,7 +16,7 @@ using System.Web.Routing;
 
 #endregion
 
-namespace kinguin_Clone
+namespace Kinguin_Clone
 {
     /// <summary>
     /// The global.
@@ -26,10 +26,10 @@ namespace kinguin_Clone
         /// <summary>
         /// The application_ start.
         /// </summary>
-        /// <param name="sender">
+        /// <param Name="sender">
         /// The sender.
         /// </param>
-        /// <param name="e">
+        /// <param Name="e">
         /// The e.
         /// </param>
         private void Application_Start(object sender, EventArgs e)

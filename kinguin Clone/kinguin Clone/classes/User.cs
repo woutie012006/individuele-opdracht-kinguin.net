@@ -16,7 +16,7 @@ using Ict4Events_WindowsForms;
 
 #endregion
 
-namespace kinguin_Clone.classes
+namespace Kinguin_Clone.classes
 {
     /// <summary>
     /// The user.
@@ -26,22 +26,22 @@ namespace kinguin_Clone.classes
         /// <summary>
         /// Initializes a new instance of the <see cref="User"/> class.
         /// </summary>
-        /// <param name="Usernr">
+        /// <param Name="Usernr">
         /// The usernr.
         /// </param>
-        /// <param name="name">
-        /// The name.
+        /// <param Name="name">
+        /// The Name.
         /// </param>
-        /// <param name="adres">
+        /// <param Name="adres">
         /// The adres.
         /// </param>
-        /// <param name="phonenr">
+        /// <param Name="phonenr">
         /// The phonenr.
         /// </param>
-        /// <param name="kinguinBalance">
+        /// <param Name="kinguinBalance">
         /// The kinguin balance.
         /// </param>
-        /// <param name="email">
+        /// <param Name="email">
         /// The email.
         /// </param>
         protected User(int Usernr, string name, string adres, string phonenr, float kinguinBalance, string email)
@@ -60,7 +60,7 @@ namespace kinguin_Clone.classes
         public int UserNr { get; set; }
 
         /// <summary>
-        /// Gets or sets the name.
+        /// Gets or sets the Name.
         /// </summary>
         public string Name { get; set; }
 
@@ -85,10 +85,10 @@ namespace kinguin_Clone.classes
         public string Email { get; set; }
 
         /// <summary>
-        /// The change name.
+        /// The change Name.
         /// </summary>
-        /// <param name="name">
-        /// The name.
+        /// <param Name="name">
+        /// The Name.
         /// </param>
         /// <returns>
         /// The <see cref="bool"/>.
@@ -116,7 +116,7 @@ namespace kinguin_Clone.classes
         /// <summary>
         /// The change adres.
         /// </summary>
-        /// <param name="adres">
+        /// <param Name="adres">
         /// The adres.
         /// </param>
         /// <returns>
@@ -145,7 +145,7 @@ namespace kinguin_Clone.classes
         /// <summary>
         /// The change phone nr.
         /// </summary>
-        /// <param name="phonenr">
+        /// <param Name="phonenr">
         /// The phonenr.
         /// </param>
         /// <returns>
@@ -174,7 +174,7 @@ namespace kinguin_Clone.classes
         /// <summary>
         /// The change email.
         /// </summary>
-        /// <param name="email">
+        /// <param Name="email">
         /// The email.
         /// </param>
         /// <returns>
@@ -203,9 +203,9 @@ namespace kinguin_Clone.classes
         /// <summary>
         /// what to do can be either *,+,-, / this is used to know what needs to be done
         /// </summary>
-        /// <param name="change">
+        /// <param Name="change">
         /// </param>
-        /// <param name="whattodo">
+        /// <param Name="whattodo">
         /// </param>
         /// <returns>
         /// The <see cref="bool"/>.
@@ -218,9 +218,7 @@ namespace kinguin_Clone.classes
                 {
                     throw new Exception("invalid whattodo");
                 }
-
-                ;
-
+                
                 DatabaseConnection db = new DatabaseConnection();
                 string query = "UPDATE LID  SET kinguinbalance= ((select kinguinbalance from lid where lidnr = "
                                + this.UserNr + " and rownum =1)" + whattodo + change + ") where lidnr =" + this.UserNr;

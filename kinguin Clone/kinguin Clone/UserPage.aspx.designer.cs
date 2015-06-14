@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace kinguin_Clone {
+namespace Kinguin_Clone {
     
     
     public partial class UserPage {
@@ -26,7 +26,7 @@ namespace kinguin_Clone {
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// To modify move field declaration from designer file to Code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblAdres;
         
@@ -35,7 +35,7 @@ namespace kinguin_Clone {
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// To modify move field declaration from designer file to Code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPhonenr;
         
@@ -44,7 +44,7 @@ namespace kinguin_Clone {
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// To modify move field declaration from designer file to Code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblKinguinBalance;
         
@@ -53,7 +53,7 @@ namespace kinguin_Clone {
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// To modify move field declaration from designer file to Code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink hlChangeUserinfo;
         
@@ -62,7 +62,7 @@ namespace kinguin_Clone {
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// To modify move field declaration from designer file to Code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink hlAddGame;
         
@@ -71,7 +71,7 @@ namespace kinguin_Clone {
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// To modify move field declaration from designer file to Code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink hlAddObject;
         
@@ -81,9 +81,9 @@ namespace kinguin_Clone {
         /// <remarks>
         /// Auto-generated property.
         /// </remarks>
-        public new kinguin_Clone.SiteMaster Master {
+        public new SiteMaster Master {
             get {
-                return ((kinguin_Clone.SiteMaster)(base.Master));
+                return ((SiteMaster)(base.Master));
             }
         }
     }

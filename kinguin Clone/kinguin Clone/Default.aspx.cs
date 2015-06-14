@@ -12,12 +12,14 @@
 using System;
 using System.Web.UI;
 
-using kinguin_Clone.classes;
+using Kinguin_Clone.classes;
 
 #endregion
 
-namespace kinguin_Clone
+namespace Kinguin_Clone
 {
+    using Kinguin_Clone.classes;
+
     /// <summary>
     /// The _ default.
     /// </summary>
@@ -26,18 +28,18 @@ namespace kinguin_Clone
         /// <summary>
         /// The page_ load.
         /// </summary>
-        /// <param name="sender">
+        /// <param Name="sender">
         /// The sender.
         /// </param>
-        /// <param name="e">
+        /// <param Name="e">
         /// The e.
         /// </param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.imgJumbotron.ImageUrl = new Administration().GetAdds()[1].picture;
+            this.imgJumbotron.ImageUrl = new Administration().GetAdds()[1].Picture;
 
-            // jumbotron.Style["background-image"] = new Administration().GetAdds()[1].picture;
-            // dimage.ImageUrl = new Administration().GetAdds()[1].picture;
+            // jumbotron.Style["background-image"] = new Administration().GetAdds()[1].Picture;
+            // dimage.ImageUrl = new Administration().GetAdds()[1].Picture;
         }
     }
 }

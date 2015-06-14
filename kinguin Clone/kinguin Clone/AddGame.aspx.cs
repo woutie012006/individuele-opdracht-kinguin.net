@@ -13,12 +13,14 @@ using System;
 using System.IO;
 using System.Web;
 
-using kinguin_Clone.classes;
+using Kinguin_Clone.classes;
 
 #endregion
 
-namespace kinguin_Clone
+namespace Kinguin_Clone
 {
+    using Kinguin_Clone.classes;
+
     /// <summary>
     /// The add game.
     /// </summary>
@@ -27,15 +29,15 @@ namespace kinguin_Clone
         /// <summary>
         /// The page_ load.
         /// </summary>
-        /// <param name="sender">
+        /// <param Name="sender">
         /// The sender.
         /// </param>
-        /// <param name="e">
+        /// <param Name="e">
         /// The e.
         /// </param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!(this.Master.administration.currentUser is Admin))
+            if (!(this.Master.administration.CurrentUser is Admin))
             {
                 this.Response.Redirect("Default.aspx");
             }
@@ -54,10 +56,10 @@ namespace kinguin_Clone
         /// <summary>
         /// The btn add game_ on click.
         /// </summary>
-        /// <param name="sender">
+        /// <param Name="sender">
         /// The sender.
         /// </param>
-        /// <param name="e">
+        /// <param Name="e">
         /// The e.
         /// </param>
         protected void btnAddGame_OnClick(object sender, EventArgs e)
@@ -87,9 +89,9 @@ namespace kinguin_Clone
                 this.tbSpecifications.InnerText, 
                 this.ddPlatform.Text, 
                 this.tbDescription.InnerText);
-            if (this.Master.administration.currentUser is Admin)
+            if (this.Master.administration.CurrentUser is Admin)
             {
-                if ((this.Master.administration.currentUser as Admin).AddGame(game))
+                if ((this.Master.administration.CurrentUser as Admin).AddGame(game))
                 {
                     this.ClientScript.RegisterStartupScript(
                         this.GetType(), 

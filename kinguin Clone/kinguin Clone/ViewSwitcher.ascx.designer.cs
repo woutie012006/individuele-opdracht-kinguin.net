@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace kinguin_Clone {
+namespace Kinguin_Clone {
     
     
     public partial class ViewSwitcher {

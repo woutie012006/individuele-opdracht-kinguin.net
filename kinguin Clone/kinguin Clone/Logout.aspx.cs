@@ -14,7 +14,7 @@ using System.Web.UI.WebControls;
 
 #endregion
 
-namespace kinguin_Clone
+namespace Kinguin_Clone
 {
     /// <summary>
     /// The logout.
@@ -24,15 +24,15 @@ namespace kinguin_Clone
         /// <summary>
         /// The page_ load.
         /// </summary>
-        /// <param name="sender">
+        /// <param Name="sender">
         /// The sender.
         /// </param>
-        /// <param name="e">
+        /// <param Name="e">
         /// The e.
         /// </param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.Master.administration.currentUser = null;
+            this.Master.administration.CurrentUser = null;
             this.Session["administration"] = this.Master.administration;
             this.lblLogout.Text = "You have been successfully logged out";
             HyperLink h = (HyperLink)this.Master.FindControl("LoginLogout");

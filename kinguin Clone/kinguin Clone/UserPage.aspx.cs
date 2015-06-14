@@ -11,12 +11,14 @@
 
 using System;
 
-using kinguin_Clone.classes;
+using Kinguin_Clone.classes;
 
 #endregion
 
-namespace kinguin_Clone
+namespace Kinguin_Clone
 {
+    using Kinguin_Clone.classes;
+
     /// <summary>
     /// The user page.
     /// </summary>
@@ -30,36 +32,36 @@ namespace kinguin_Clone
         /// <summary>
         /// The page_ load.
         /// </summary>
-        /// <param name="sender">
+        /// <param Name="sender">
         /// The sender.
         /// </param>
-        /// <param name="e">
+        /// <param Name="e">
         /// The e.
         /// </param>
         protected void Page_Load(object sender, EventArgs e)
         {
             this.administration = this.Master.administration;
 
-            if (this.administration == null || this.administration.currentUser == null)
+            if (this.administration == null || this.administration.CurrentUser == null)
             {
                 this.Response.Redirect("~/Default.aspx");
             }
 
-            this.lblName.Text = "Name : " + this.administration.currentUser.Name;
-            this.lblAdres.Text = "Adres : " + this.administration.currentUser.Adres;
-            this.lblPhonenr.Text = "Phone number : " + this.administration.currentUser.Name;
-            this.lblKinguinBalance.Text = "Kinguin Balance : " + this.administration.currentUser.KinguinBalance;
+            this.lblName.Text = "Name : " + this.administration.CurrentUser.Name;
+            this.lblAdres.Text = "Adres : " + this.administration.CurrentUser.Adres;
+            this.lblPhonenr.Text = "Phone number : " + this.administration.CurrentUser.Name;
+            this.lblKinguinBalance.Text = "Kinguin Balance : " + this.administration.CurrentUser.KinguinBalance;
 
-            if (this.Master.administration.currentUser is Admin)
+            if (this.Master.administration.CurrentUser is Admin)
             {
                 this.hlAddGame.Visible = true;
             }
-            else if (this.Master.administration.currentUser is Seller)
+            else if (this.Master.administration.CurrentUser is Seller)
             {
                 this.hlChangeUserinfo.Visible = true;
                 this.hlAddObject.Visible = true;
             }
-            else if (this.Master.administration.currentUser is Buyer)
+            else if (this.Master.administration.CurrentUser is Buyer)
             {
                 this.hlChangeUserinfo.Visible = true;
             }

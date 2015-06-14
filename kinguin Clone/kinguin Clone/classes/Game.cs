@@ -18,7 +18,7 @@ using Oracle.ManagedDataAccess.Client;
 
 #endregion
 
-namespace kinguin_Clone.classes
+namespace Kinguin_Clone.classes
 {
     /// <summary>
     /// The game.
@@ -28,29 +28,29 @@ namespace kinguin_Clone.classes
         /// <summary>
         /// Initializes a new instance of the <see cref="Game"/> class.
         /// </summary>
-        /// <param name="gameNr">
+        /// <param Name="gameNr">
         /// The game nr.
         /// </param>
-        /// <param name="name">
-        /// The name.
+        /// <param Name="name">
+        /// The Name.
         /// </param>
-        /// <param name="category">
-        /// The category.
+        /// <param Name="Category">
+        /// The Category.
         /// </param>
-        /// <param name="date">
-        /// The date.
+        /// <param Name="Date">
+        /// The Date.
         /// </param>
-        /// <param name="picture">
-        /// The picture.
+        /// <param Name="Picture">
+        /// The Picture.
         /// </param>
-        /// <param name="specificatie">
-        /// The specificatie.
+        /// <param Name="Specificatie">
+        /// The Specificatie.
         /// </param>
-        /// <param name="platform">
-        /// The platform.
+        /// <param Name="Platform">
+        /// The Platform.
         /// </param>
-        /// <param name="description">
-        /// The description.
+        /// <param Name="Description">
+        /// The Description.
         /// </param>
         public Game(
             int gameNr, 
@@ -62,68 +62,68 @@ namespace kinguin_Clone.classes
             string platform, 
             string description)
         {
-            this.gameNr = gameNr;
-            this.name = name;
-            this.category = category;
-            this.date = date;
-            this.picture = picture;
-            this.specificatie = specificatie;
-            this.platform = platform;
-            this.description = description;
+            this.GameNr = gameNr;
+            this.Name = name;
+            this.Category = category;
+            this.Date = date;
+            this.Picture = picture;
+            this.Specificatie = specificatie;
+            this.Platform = platform;
+            this.Description = description;
         }
 
         /// <summary>
         /// Gets or sets the game nr.
         /// </summary>
-        public int gameNr { get; set; }
+        public int GameNr { get; set; }
 
         /// <summary>
-        /// Gets or sets the name.
+        /// Gets or sets the Name.
         /// </summary>
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets the description.
+        /// Gets or sets the Description.
         /// </summary>
-        public string description { get; set; }
+        public string Description { get; set; }
 
         /// <summary>
-        /// Gets or sets the date.
+        /// Gets or sets the Date.
         /// </summary>
-        public DateTime date { get; set; }
+        public DateTime Date { get; set; }
 
         /// <summary>
-        /// Gets or sets the picture.
+        /// Gets or sets the Picture.
         /// </summary>
-        public string picture { get; set; }
+        public string Picture { get; set; }
 
         /// <summary>
-        /// Gets or sets the specificatie.
+        /// Gets or sets the Specificatie.
         /// </summary>
-        public string specificatie { get; set; }
+        public string Specificatie { get; set; }
 
         /// <summary>
-        /// Gets or sets the platform.
+        /// Gets or sets the Platform.
         /// </summary>
-        public string platform { get; set; }
+        public string Platform { get; set; }
 
         /// <summary>
-        /// Gets or sets the category.
+        /// Gets or sets the Category.
         /// </summary>
-        public string category { get; set; }
+        public string Category { get; set; }
 
         /// <summary>
         /// The get all copies.
         /// </summary>
         /// <returns>
-        /// The <see cref="List"/>.
+        /// The <see cref="List{T}"/>.
         /// </returns>
         public List<GameCopy> GetAllCopies()
         {
             DatabaseConnection db = new DatabaseConnection();
             List<GameCopy> copies = new List<GameCopy>();
 
-            string query = "select objectnr,prijs,code from verkoopobject where gamenr = " + this.gameNr
+            string query = "select objectnr,prijs,Code from verkoopobject where gamenr = " + this.GameNr
                            + " and verkoopsdatum <to_date('01/01/1901','DD/MM/YYYY')";
 
             OracleDataReader dr = db.ExecuteReadQuery(query);

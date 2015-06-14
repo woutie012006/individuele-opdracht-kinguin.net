@@ -13,7 +13,7 @@ using System;
 
 #endregion
 
-namespace kinguin_Clone.classes
+namespace Kinguin_Clone.classes
 {
     /// <summary>
     /// The game copy.
@@ -23,43 +23,43 @@ namespace kinguin_Clone.classes
         /// <summary>
         /// Initializes a new instance of the <see cref="GameCopy"/> class.
         /// </summary>
-        /// <param name="gameNr">
+        /// <param Name="gameNr">
         /// The game nr.
         /// </param>
-        /// <param name="name">
-        /// The name.
+        /// <param Name="name">
+        /// The Name.
         /// </param>
         /// <param name="category">
-        /// The category.
+        /// The Category.
         /// </param>
-        /// <param name="date">
-        /// The date.
+        /// <param Name="Date">
+        /// The Date.
         /// </param>
-        /// <param name="picture">
-        /// The picture.
+        /// <param Name="Picture">
+        /// The Picture.
         /// </param>
-        /// <param name="specificatie">
-        /// The specificatie.
+        /// <param Name="Specificatie">
+        /// The Specificatie.
         /// </param>
-        /// <param name="platform">
-        /// The platform.
+        /// <param Name="Platform">
+        /// The Platform.
         /// </param>
-        /// <param name="CopyNr">
+        /// <param Name="CopyNr">
         /// The copy nr.
         /// </param>
-        /// <param name="price">
-        /// The price.
+        /// <param Name="Price">
+        /// The Price.
         /// </param>
-        /// <param name="SellingDate">
-        /// The selling date.
+        /// <param Name="SellingDate">
+        /// The selling Date.
         /// </param>
-        /// <param name="code">
-        /// The code.
+        /// <param Name="Code">
+        /// The Code.
         /// </param>
-        /// <param name="description">
-        /// The description.
+        /// <param Name="Description">
+        /// The Description.
         /// </param>
-        /// <param name="owner">
+        /// <param Name="owner">
         /// The owner.
         /// </param>
         public GameCopy(
@@ -70,18 +70,18 @@ namespace kinguin_Clone.classes
             string picture, 
             string specificatie, 
             string platform, 
-            int CopyNr, 
+            int copyNr, 
             float price, 
-            DateTime SellingDate, 
+            DateTime sellingDate, 
             string code, 
             string description, 
             int owner)
             : base(gameNr, name, category, date, picture, specificatie, platform, description)
         {
-            this.copyNr = CopyNr;
-            this.price = price;
-            this.sellingDate = SellingDate;
-            this.code = code;
+            this.CopyNr = copyNr;
+            this.Price = price;
+            this.SellingDate = sellingDate;
+            this.Code = code;
             this.Owner = owner;
         }
 
@@ -89,51 +89,51 @@ namespace kinguin_Clone.classes
         /// Initializes a new instance of the <see cref="GameCopy"/> class. 
         /// intended for when someone might look at their gamecopy. it then needs to 
         /// </summary>
-        /// <param name="g">
+        /// <param Name="g">
         /// The g.
         /// </param>
-        /// <param name="CopyNr">
+        /// <param Name="CopyNr">
         /// The Copy Nr.
         /// </param>
-        /// <param name="price">
-        /// The price.
+        /// <param Name="Price">
+        /// The Price.
         /// </param>
-        /// <param name="SellingDate">
+        /// <param Name="SellingDate">
         /// The Selling Date.
         /// </param>
-        /// <param name="code">
-        /// The code.
+        /// <param Name="Code">
+        /// The Code.
         /// </param>
         /// <returns>
         /// </returns>
         public GameCopy(Game g, int CopyNr, float price, DateTime SellingDate, string code)
-            : base(g.gameNr, g.name, g.category, g.date, g.picture, g.specificatie, g.platform, g.description)
+            : base(g.GameNr, g.Name, g.Category, g.Date, g.Picture, g.Specificatie, g.Platform, g.Description)
         {
-            this.copyNr = CopyNr;
-            this.price = price;
-            this.sellingDate = SellingDate;
-            this.code = code;
+            this.CopyNr = CopyNr;
+            this.Price = price;
+            this.SellingDate = SellingDate;
+            this.Code = code;
         }
 
         /// <summary>
         /// Gets or sets the copy nr.
         /// </summary>
-        public int copyNr { get; set; }
+        public int CopyNr { get; set; }
 
         /// <summary>
-        /// Gets or sets the price.
+        /// Gets or sets the Price.
         /// </summary>
-        public float price { get; set; }
+        public float Price { get; set; }
 
         /// <summary>
-        /// Gets or sets the selling date.
+        /// Gets or sets the selling Date.
         /// </summary>
-        public DateTime sellingDate { get; set; }
+        public DateTime SellingDate { get; set; }
 
         /// <summary>
-        /// Gets or sets the code.
+        /// Gets or sets the Code.
         /// </summary>
-        public string code { get; set; }
+        public string Code { get; set; }
 
         /// <summary>
         /// Gets or sets the owner.

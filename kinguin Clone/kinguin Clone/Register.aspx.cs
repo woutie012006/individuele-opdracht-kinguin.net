@@ -13,7 +13,7 @@ using System;
 
 #endregion
 
-namespace kinguin_Clone
+namespace Kinguin_Clone
 {
     /// <summary>
     /// The register.
@@ -23,10 +23,10 @@ namespace kinguin_Clone
         /// <summary>
         /// The page_ load.
         /// </summary>
-        /// <param name="sender">
+        /// <param Name="sender">
         /// The sender.
         /// </param>
-        /// <param name="e">
+        /// <param Name="e">
         /// The e.
         /// </param>
         protected void Page_Load(object sender, EventArgs e)
@@ -36,10 +36,10 @@ namespace kinguin_Clone
         /// <summary>
         /// The btn submit_ on click.
         /// </summary>
-        /// <param name="sender">
+        /// <param Name="sender">
         /// The sender.
         /// </param>
-        /// <param name="e">
+        /// <param Name="e">
         /// The e.
         /// </param>
         protected void btnSubmit_OnClick(object sender, EventArgs e)

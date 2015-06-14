@@ -3,7 +3,7 @@
 //   
 // </copyright>
 // <summary>
-//   The shopping cart.
+//   The shopping Cart.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
@@ -13,14 +13,16 @@ using System;
 using System.Collections.Generic;
 using System.Web.UI.WebControls;
 
-using kinguin_Clone.classes;
+using Kinguin_Clone.classes;
 
 #endregion
 
-namespace kinguin_Clone
+namespace Kinguin_Clone
 {
+    using Kinguin_Clone.classes;
+
     /// <summary>
-    /// The shopping cart.
+    /// The shopping Cart.
     /// </summary>
     public partial class ShoppingCart : System.Web.UI.Page
     {
@@ -32,42 +34,42 @@ namespace kinguin_Clone
         /// <summary>
         /// The page_ load.
         /// </summary>
-        /// <param name="sender">
+        /// <param Name="sender">
         /// The sender.
         /// </param>
-        /// <param name="e">
+        /// <param Name="e">
         /// The e.
         /// </param>
         protected void Page_Load(object sender, EventArgs e)
         {
             this.administration = this.Master.administration;
-            if (this.administration.currentUser != null)
+            if (this.administration.CurrentUser != null)
             {
                 // url redirection check
                 string sellingobject = this.Request.QueryString["GameCopyID"];
 
-                if (this.administration.currentUser != null && this.administration.currentUser is Seller)
+                if (this.administration.CurrentUser != null && this.administration.CurrentUser is Seller)
                 {
                     if (!string.IsNullOrEmpty(sellingobject))
                     {
-                        (this.administration.currentUser as Seller).cart.AddCopyByID(
+                        (this.administration.CurrentUser as Seller).Cart.AddCopyByID(
                             Convert.ToInt32(sellingobject), 
-                            this.administration.currentUser);
+                            this.administration.CurrentUser);
                     }
 
-                    List<GameCopy> data = ((Seller)this.administration.currentUser).cart.owned;
+                    List<GameCopy> data = ((Seller)this.administration.CurrentUser).Cart.Owned;
                     this.ItemView.DataSource = data;
                 }
-                else if (this.administration.currentUser != null && this.administration.currentUser is Buyer)
+                else if (this.administration.CurrentUser != null && this.administration.CurrentUser is Buyer)
                 {
                     if (!string.IsNullOrEmpty(sellingobject))
                     {
-                        (this.administration.currentUser as Buyer).cart.AddCopyByID(
+                        (this.administration.CurrentUser as Buyer).Cart.AddCopyByID(
                             Convert.ToInt32(sellingobject), 
-                            this.administration.currentUser);
+                            this.administration.CurrentUser);
                     }
 
-                    List<GameCopy> data = ((Buyer)this.administration.currentUser).cart.owned;
+                    List<GameCopy> data = ((Buyer)this.administration.CurrentUser).Cart.Owned;
                     this.ItemView.DataSource = data;
                 }
             }
@@ -76,7 +78,7 @@ namespace kinguin_Clone
         /// <summary>
         /// The page_ pre render.
         /// </summary>
-        /// <param name="sender">
+        /// <param Name="sender">
         /// The sender.
         /// </param>
         /// <param name="e">
@@ -90,10 +92,10 @@ namespace kinguin_Clone
         /// <summary>
         /// The item view_ on item data bound view_ item data bound.
         /// </summary>
-        /// <param name="sender">
+        /// <param Name="sender">
         /// The sender.
         /// </param>
-        /// <param name="e">
+        /// <param Name="e">
         /// The e.
         /// </param>
         protected void ItemView_OnItemDataBoundView_ItemDataBound(object sender, ListViewItemEventArgs e)

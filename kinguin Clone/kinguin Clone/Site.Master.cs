@@ -12,12 +12,14 @@
 using System;
 using System.Web.UI;
 
-using kinguin_Clone.classes;
+using Kinguin_Clone.classes;
 
 #endregion
 
-namespace kinguin_Clone
+namespace Kinguin_Clone
 {
+    using Kinguin_Clone.classes;
+
     /// <summary>
     /// The site master.
     /// </summary>
@@ -48,10 +50,10 @@ namespace kinguin_Clone
         /// <summary>
         /// The page_ load.
         /// </summary>
-        /// <param name="sender">
+        /// <param Name="sender">
         /// The sender.
         /// </param>
-        /// <param name="e">
+        /// <param Name="e">
         /// The e.
         /// </param>
         protected void Page_Load(object sender, EventArgs e)
@@ -59,7 +61,7 @@ namespace kinguin_Clone
             this.LoginLogout.NavigateUrl = "/Default.aspx";
 
             // HttpCookie c = Request.Cookies["kinguin"];
-            User c = this.administration.currentUser;
+            User c = this.administration.CurrentUser;
             if (c != null)
             {
                 this.LoginLogout.Text = "Log out";
@@ -75,10 +77,10 @@ namespace kinguin_Clone
         /// <summary>
         /// The btn search_ on click.
         /// </summary>
-        /// <param name="sender">
+        /// <param Name="sender">
         /// The sender.
         /// </param>
-        /// <param name="e">
+        /// <param Name="e">
         /// The e.
         /// </param>
         protected void btnSearch_OnClick(object sender, EventArgs e)

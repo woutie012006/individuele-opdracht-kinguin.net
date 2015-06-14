@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="kinguin_Clone.Register" EnableEventValidation="false" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="Kinguin_Clone.Register" EnableEventValidation="false" %>
 <%@ Import Namespace="System.Web.UI.WebControls.WebParts" %>
 <%@ Import Namespace="System.Web.UI" %>
 <%@ Import Namespace="System.Web.UI.WebControls" %>
@@ -30,9 +30,9 @@
         <asp:TextBox ID="tbEmail" runat="server" CssClass="form-control" TextMode="Email"></asp:TextBox><br>
         <asp:RequiredFieldValidator ControlToValidate="tbEmail" runat="server" ErrorMessage="Email is empty" CssClass="alert alert-dismissible alert-danger"></asp:RequiredFieldValidator><br>
 
-        <asp:Label runat="server" Text="Nickname"></asp:Label><br>
+        <asp:Label runat="server" Text="NickName"></asp:Label><br>
         <asp:TextBox ID="tbNickname" runat="server" CssClass="form-control"></asp:TextBox><br>
-        <asp:RequiredFieldValidator ControlToValidate="tbNickname" runat="server" ErrorMessage="Nickname is empty" CssClass="alert alert-dismissible alert-danger"></asp:RequiredFieldValidator><br>
+        <asp:RequiredFieldValidator ControlToValidate="tbNickname" runat="server" ErrorMessage="NickName is empty" CssClass="alert alert-dismissible alert-danger"></asp:RequiredFieldValidator><br>
 
         <asp:Label runat="server" Text="Password"></asp:Label><br>
         <asp:TextBox ID="tbPassword1" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox><br>

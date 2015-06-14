@@ -17,7 +17,7 @@ using Ict4Events_WindowsForms;
 
 #endregion
 
-namespace kinguin_Clone.classes
+namespace Kinguin_Clone.classes
 {
     /// <summary>
     /// The buyer.
@@ -27,25 +27,25 @@ namespace kinguin_Clone.classes
         /// <summary>
         /// Initializes a new instance of the <see cref="Buyer"/> class.
         /// </summary>
-        /// <param name="Usernr">
+        /// <param Name="Usernr">
         /// The usernr.
         /// </param>
-        /// <param name="name">
-        /// The name.
+        /// <param Name="name">
+        /// The Name.
         /// </param>
-        /// <param name="adres">
+        /// <param Name="adres">
         /// The adres.
         /// </param>
-        /// <param name="phonenr">
+        /// <param Name="phonenr">
         /// The phonenr.
         /// </param>
-        /// <param name="kinguinBalance">
+        /// <param Name="kinguinBalance">
         /// The kinguin balance.
         /// </param>
-        /// <param name="nickname">
+        /// <param Name="nickname">
         /// The nickname.
         /// </param>
-        /// <param name="email">
+        /// <param Name="email">
         /// The email.
         /// </param>
         public Buyer(
@@ -59,7 +59,7 @@ namespace kinguin_Clone.classes
             : base(Usernr, name, adres, phonenr, kinguinBalance, email)
         {
             this.Nickname = nickname;
-            this.cart = new Cart(this);
+            this.Cart = new Cart(this);
         }
 
         /// <summary>
@@ -68,51 +68,51 @@ namespace kinguin_Clone.classes
         public string Nickname { get; set; }
 
         /// <summary>
-        /// Gets or sets the games owned.
+        /// Gets or sets the games Owned.
         /// </summary>
-        public List<GameCopy> gamesOwned { get; set; }
+        public List<GameCopy> GamesOwned { get; set; }
 
         /// <summary>
-        /// Gets or sets the cart.
+        /// Gets or sets the Cart.
         /// </summary>
-        public Cart cart { get; set; }
+        public Cart Cart { get; set; }
 
         /// <summary>
         /// The get user copies.
         /// </summary>
         /// <returns>
-        /// The <see cref="List"/>.
+        /// The <see cref="List{T}"/>.
         /// </returns>
         public List<GameCopy> GetUserCopies()
         {
             // todo implement Buyer.GetUserCopies()
-            return this.cart.owned;
+            return this.Cart.Owned;
         }
 
         /// <summary>
-        /// The add game to cart.
+        /// The add game to Cart.
         /// </summary>
-        /// <param name="game">
+        /// <param Name="game">
         /// The game.
         /// </param>
         public void AddGameToCart(GameCopy game)
         {
-            this.cart.AddGame(game, this);
+            this.Cart.AddGame(game, this);
         }
 
         /// <summary>
-        /// The remove game to cart.
+        /// The remove game to Cart.
         /// </summary>
-        /// <param name="game">
+        /// <param Name="game">
         /// The game.
         /// </param>
         public void RemoveGameToCart(GameCopy game)
         {
-            this.cart.RemoveGame(game, this);
+            this.Cart.RemoveGame(game, this);
         }
 
         /// <summary>
-        /// The buy cart.
+        /// The buy Cart.
         /// </summary>
         public void BuyCart()
         {
@@ -122,7 +122,7 @@ namespace kinguin_Clone.classes
         /// <summary>
         /// The change nickname.
         /// </summary>
-        /// <param name="nickname">
+        /// <param Name="nickname">
         /// The nickname.
         /// </param>
         /// <returns>

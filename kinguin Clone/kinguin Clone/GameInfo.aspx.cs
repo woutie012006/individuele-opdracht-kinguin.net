@@ -13,12 +13,14 @@ using System;
 using System.Collections.Generic;
 using System.Web.UI.WebControls;
 
-using kinguin_Clone.classes;
+using Kinguin_Clone.classes;
 
 #endregion
 
-namespace kinguin_Clone
+namespace Kinguin_Clone
 {
+    using Kinguin_Clone.classes;
+
     /// <summary>
     /// The game info.
     /// </summary>
@@ -37,10 +39,10 @@ namespace kinguin_Clone
         /// <summary>
         /// The page_ load.
         /// </summary>
-        /// <param name="sender">
+        /// <param Name="sender">
         /// The sender.
         /// </param>
-        /// <param name="e">
+        /// <param Name="e">
         /// The e.
         /// </param>
         protected void Page_Load(object sender, EventArgs e)
@@ -70,10 +72,10 @@ namespace kinguin_Clone
         /// <summary>
         /// The page_ pre render.
         /// </summary>
-        /// <param name="sender">
+        /// <param Name="sender">
         /// The sender.
         /// </param>
-        /// <param name="e">
+        /// <param Name="e">
         /// The e.
         /// </param>
         protected void Page_PreRender(object sender, EventArgs e)
@@ -85,33 +87,33 @@ namespace kinguin_Clone
         /// <summary>
         /// The games view_ on item data bound_ item data bound.
         /// </summary>
-        /// <param name="sender">
+        /// <param Name="sender">
         /// The sender.
         /// </param>
-        /// <param name="e">
+        /// <param Name="e">
         /// The e.
         /// </param>
         protected void GamesView_OnItemDataBound_ItemDataBound(object sender, ListViewItemEventArgs e)
         {
             Game game = e.Item.DataItem as Game;
             Image image = e.Item.FindControl("imgGame") as Image;
-            image.ImageUrl = game.picture;
+            image.ImageUrl = game.Picture;
         }
 
         /// <summary>
         /// The object view_ on item data bound.
         /// </summary>
-        /// <param name="sender">
+        /// <param Name="sender">
         /// The sender.
         /// </param>
-        /// <param name="e">
+        /// <param Name="e">
         /// The e.
         /// </param>
         protected void ObjectView_OnItemDataBound(object sender, ListViewItemEventArgs e)
         {
             GameCopy game = e.Item.DataItem as GameCopy;
             HyperLink btn = e.Item.FindControl("btnPutInCart") as HyperLink;
-            btn.NavigateUrl = "/ShoppingCart.aspx?GameCopyID=" + game.copyNr;
+            btn.NavigateUrl = "/ShoppingCart.aspx?GameCopyID=" + game.CopyNr;
         }
     }
 }

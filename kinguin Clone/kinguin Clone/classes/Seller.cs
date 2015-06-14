@@ -16,7 +16,7 @@ using Ict4Events_WindowsForms;
 
 #endregion
 
-namespace kinguin_Clone.classes
+namespace Kinguin_Clone.classes
 {
     /// <summary>
     /// The seller.
@@ -26,31 +26,31 @@ namespace kinguin_Clone.classes
         /// <summary>
         /// Initializes a new instance of the <see cref="Seller"/> class.
         /// </summary>
-        /// <param name="Usernr">
+        /// <param Name="Usernr">
         /// The usernr.
         /// </param>
-        /// <param name="name">
-        /// The name.
+        /// <param Name="name">
+        /// The Name.
         /// </param>
-        /// <param name="adres">
+        /// <param Name="adres">
         /// The adres.
         /// </param>
-        /// <param name="phonenr">
+        /// <param Name="phonenr">
         /// The phonenr.
         /// </param>
-        /// <param name="kinguinBalance">
+        /// <param Name="kinguinBalance">
         /// The kinguin balance.
         /// </param>
-        /// <param name="nickname">
+        /// <param Name="nickname">
         /// The nickname.
         /// </param>
-        /// <param name="SellerName">
-        /// The seller name.
+        /// <param Name="SellerName">
+        /// The seller Name.
         /// </param>
-        /// <param name="bankaccount">
+        /// <param Name="bankaccount">
         /// The bankaccount.
         /// </param>
-        /// <param name="email">
+        /// <param Name="email">
         /// The email.
         /// </param>
         public Seller(
@@ -70,7 +70,7 @@ namespace kinguin_Clone.classes
         }
 
         /// <summary>
-        /// Gets or sets the seller name.
+        /// Gets or sets the seller Name.
         /// </summary>
         public string SellerName { get; set; }
 
@@ -80,10 +80,10 @@ namespace kinguin_Clone.classes
         public string BankAccount { get; set; }
 
         /// <summary>
-        /// The change seller name.
+        /// The change seller Name.
         /// </summary>
-        /// <param name="name">
-        /// The name.
+        /// <param Name="name">
+        /// The Name.
         /// </param>
         /// <returns>
         /// The <see cref="bool"/>.
@@ -111,7 +111,7 @@ namespace kinguin_Clone.classes
         /// <summary>
         /// The change bank account.
         /// </summary>
-        /// <param name="bankAccount">
+        /// <param Name="bankAccount">
         /// The bank account.
         /// </param>
         /// <returns>
@@ -140,7 +140,7 @@ namespace kinguin_Clone.classes
         /// <summary>
         /// The add game copy.
         /// </summary>
-        /// <param name="gameCopy">
+        /// <param Name="gameCopy">
         /// The game copy.
         /// </param>
         /// <returns>
@@ -151,10 +151,10 @@ namespace kinguin_Clone.classes
             try
             {
                 DatabaseConnection db = new DatabaseConnection();
-                string query = "insert into verkoopobject (objectnr,gamenr,prijs, verkoopsdatum,code,eigenaar_lidnr) "
-                               + " values (seq_verkoopobject.nextval," + gameCopy.gameNr + ",( " + gameCopy.price
-                               + "),to_date('" + gameCopy.sellingDate + "','DD-MM-YYYY HH24:MI:SS')  " + "  ,'"
-                               + gameCopy.code + "'," + gameCopy.Owner + ")";
+                string query = "insert into verkoopobject (objectnr,gamenr,prijs, verkoopsdatum,Code,eigenaar_lidnr) "
+                               + " values (seq_verkoopobject.nextval," + gameCopy.GameNr + ",( " + gameCopy.Price
+                               + "),to_date('" + gameCopy.SellingDate + "','DD-MM-YYYY HH24:MI:SS')  " + "  ,'"
+                               + gameCopy.Code + "'," + gameCopy.Owner + ")";
                 db.OpenConnection();
                 db.ExecuteQuery(query);
                 db.CloseConnection();

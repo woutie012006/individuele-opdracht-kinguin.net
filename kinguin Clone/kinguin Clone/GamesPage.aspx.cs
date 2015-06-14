@@ -13,12 +13,14 @@ using System;
 using System.Collections.Generic;
 using System.Web.UI.WebControls;
 
-using kinguin_Clone.classes;
+using Kinguin_Clone.classes;
 
 #endregion
 
-namespace kinguin_Clone
+namespace Kinguin_Clone
 {
+    using Kinguin_Clone.classes;
+
     /// <summary>
     /// The games page.
     /// </summary>
@@ -32,10 +34,10 @@ namespace kinguin_Clone
         /// <summary>
         /// The page_ load.
         /// </summary>
-        /// <param name="sender">
+        /// <param Name="sender">
         /// The sender.
         /// </param>
-        /// <param name="e">
+        /// <param Name="e">
         /// The e.
         /// </param>
         protected void Page_Load(object sender, EventArgs e)
@@ -64,7 +66,7 @@ namespace kinguin_Clone
             }
             else if (url[url.Length - 2].ToUpper() == "PLATFORM")
             {
-                // check if it needs to look for platform.
+                // check if it needs to look for Platform.
                 try
                 {
                     string requested = url[url.Length - 1];
@@ -79,7 +81,7 @@ namespace kinguin_Clone
             }
             else if (url[url.Length - 2].ToUpper() == "SEARCH")
             {
-                // check if it needs to look for platform.
+                // check if it needs to look for Platform.
                 try
                 {
                     string requested = url[url.Length - 1]; // Request.RawUrl.Replace(url[1],"");
@@ -99,10 +101,10 @@ namespace kinguin_Clone
         /// <summary>
         /// The page_ pre render.
         /// </summary>
-        /// <param name="sender">
+        /// <param Name="sender">
         /// The sender.
         /// </param>
-        /// <param name="e">
+        /// <param Name="e">
         /// The e.
         /// </param>
         protected void Page_PreRender(object sender, EventArgs e)
@@ -113,22 +115,22 @@ namespace kinguin_Clone
         /// <summary>
         /// The games view_ on item data bound_ item data bound.
         /// </summary>
-        /// <param name="sender">
+        /// <param Name="sender">
         /// The sender.
         /// </param>
-        /// <param name="e">
+        /// <param Name="e">
         /// The e.
         /// </param>
         protected void GamesView_OnItemDataBound_ItemDataBound(object sender, ListViewItemEventArgs e)
         {
             Game game = e.Item.DataItem as Game;
             Image image = e.Item.FindControl("IMGGame") as Image;
-            image.ImageUrl = game.picture;
+            image.ImageUrl = game.Picture;
 
             // HyperLink btnbuyNow = e.Item.FindControl("btnBuyNow") as HyperLink;
-            // btnbuyNow.NavigateUrl = "~/ShoppingCart.aspx/" + game.gameNr;
+            // btnbuyNow.NavigateUrl = "~/ShoppingCart.aspx/" + game.GameNr;
             HyperLink btnMoreInfo = e.Item.FindControl("btnMoreInfo") as HyperLink;
-            btnMoreInfo.NavigateUrl = "~/GameInfo.aspx/" + game.gameNr;
+            btnMoreInfo.NavigateUrl = "~/GameInfo.aspx/" + game.GameNr;
         }
     }
 }

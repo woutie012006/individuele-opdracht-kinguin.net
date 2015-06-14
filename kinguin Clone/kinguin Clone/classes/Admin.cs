@@ -19,7 +19,7 @@ using Oracle.ManagedDataAccess.Client;
 
 #endregion
 
-namespace kinguin_Clone.classes
+namespace Kinguin_Clone.classes
 {
     /// <summary>
     /// The admin.
@@ -29,22 +29,22 @@ namespace kinguin_Clone.classes
         /// <summary>
         /// Initializes a new instance of the <see cref="Admin"/> class.
         /// </summary>
-        /// <param name="Usernr">
+        /// <param Name="Usernr">
         /// The usernr.
         /// </param>
-        /// <param name="name">
-        /// The name.
+        /// <param Name="name">
+        /// The Name.
         /// </param>
         /// <param name="adres">
         /// The adres.
         /// </param>
-        /// <param name="phonent">
+        /// <param Name="phonent">
         /// The phonent.
         /// </param>
-        /// <param name="kinguinBalance">
+        /// <param Name="kinguinBalance">
         /// The kinguin balance.
         /// </param>
-        /// <param name="email">
+        /// <param Name="email">
         /// The email.
         /// </param>
         public Admin(int Usernr, string name, string adres, string phonent, float kinguinBalance, string email)
@@ -56,7 +56,7 @@ namespace kinguin_Clone.classes
         /// The get all users.
         /// </summary>
         /// <returns>
-        /// The <see cref="List"/>.
+        /// The <see cref="List{T}"/>.
         /// </returns>
         public List<User> GetAllUsers()
         {
@@ -113,13 +113,13 @@ namespace kinguin_Clone.classes
         }
 
         /// <summary>
-        /// The get buyers by name.
+        /// The get buyers by Name.
         /// </summary>
-        /// <param name="name">
-        /// The name.
+        /// <param Name="name">
+        /// The Name.
         /// </param>
         /// <returns>
-        /// The <see cref="List"/>.
+        /// The <see cref="List{T}"/>.
         /// </returns>
         public List<User> GetBuyersByName(string name)
         {
@@ -159,11 +159,11 @@ namespace kinguin_Clone.classes
         /// <summary>
         /// The get buyers by nickname.
         /// </summary>
-        /// <param name="nickname">
+        /// <param Name="nickname">
         /// The nickname.
         /// </param>
         /// <returns>
-        /// The <see cref="List"/>.
+        /// The <see cref="List{T}"/>.
         /// </returns>
         public List<User> GetBuyersByNickname(string nickname)
         {
@@ -204,11 +204,11 @@ namespace kinguin_Clone.classes
         /// <summary>
         /// The get buyers by user id.
         /// </summary>
-        /// <param name="userID">
+        /// <param Name="userID">
         /// The user id.
         /// </param>
         /// <returns>
-        /// The <see cref="List"/>.
+        /// The <see cref="List{T}"/>.
         /// </returns>
         public List<User> GetBuyersByUserID(int userID)
         {
@@ -245,13 +245,13 @@ namespace kinguin_Clone.classes
         }
 
         /// <summary>
-        /// The get sellers by name.
+        /// The get sellers by Name.
         /// </summary>
-        /// <param name="name">
-        /// The name.
+        /// <param Name="name">
+        /// The Name.
         /// </param>
         /// <returns>
-        /// The <see cref="List"/>.
+        /// The <see cref="List{T}"/>.
         /// </returns>
         public List<User> GetSellersByName(string name)
         {
@@ -301,13 +301,13 @@ namespace kinguin_Clone.classes
         }
 
         /// <summary>
-        /// The get sellers by sellers name.
+        /// The get sellers by sellers Name.
         /// </summary>
-        /// <param name="sellerName">
-        /// The seller name.
+        /// <param Name="sellerName">
+        /// The seller Name.
         /// </param>
         /// <returns>
-        /// The <see cref="List"/>.
+        /// The <see cref="List{T}"/>.
         /// </returns>
         public List<User> GetSellersBySellersName(string sellerName)
         {
@@ -359,11 +359,11 @@ namespace kinguin_Clone.classes
         /// <summary>
         /// The get sellers by user id.
         /// </summary>
-        /// <param name="userID">
+        /// <param Name="userID">
         /// The user id.
         /// </param>
         /// <returns>
-        /// The <see cref="List"/>.
+        /// The <see cref="List{T}"/>.
         /// </returns>
         public List<User> GetSellersByUserID(int userID)
         {
@@ -414,7 +414,7 @@ namespace kinguin_Clone.classes
         /// <summary>
         /// The add game.
         /// </summary>
-        /// <param name="game">
+        /// <param Name="game">
         /// The game.
         /// </param>
         /// <returns>
@@ -427,12 +427,12 @@ namespace kinguin_Clone.classes
                 DatabaseConnection db = new DatabaseConnection();
                 string sql = "insert into game"
                              + " (GAMENR,NAAM,BESCHRIJVING,DATUM,FOTO,SPECIFICATIE,PLATFORM,CATEGORIE)" + " values "
-                             + "(seq_game.nextval, " + " '" + game.name + "' , " + " '" + game.description + "', "
-                             + "to_date('" + game.date + "','DD-MM-YYYY HH24:MI:SS')" +
+                             + "(seq_game.nextval, " + " '" + game.Name + "' , " + " '" + game.Description + "', "
+                             + "to_date('" + game.Date + "','DD-MM-YYYY HH24:MI:SS')" +
 
                              // might not work so needs to be checked
-                             ",'" + game.picture + "', " + " '" + game.specificatie + "'," + " '" + game.platform + "',"
-                             + " '" + game.category + "')";
+                             ",'" + game.Picture + "', " + " '" + game.Specificatie + "'," + " '" + game.Platform + "',"
+                             + " '" + game.Category + "')";
 
                 OracleCommand oc = new OracleCommand(sql, db.oracleConnection);
                 oc.Connection.Open();
@@ -451,8 +451,8 @@ namespace kinguin_Clone.classes
         /// <summary>
         /// The remove game.
         /// </summary>
-        /// <param name="name">
-        /// The name.
+        /// <param Name="name">
+        /// The Name.
         /// </param>
         /// <returns>
         /// The <see cref="bool"/>.
@@ -479,12 +479,12 @@ namespace kinguin_Clone.classes
         }
 
         /// <summary>
-        /// The change game name.
+        /// The change game Name.
         /// </summary>
-        /// <param name="from">
+        /// <param Name="from">
         /// The from.
         /// </param>
-        /// <param name="to">
+        /// <param Name="to">
         /// The to.
         /// </param>
         /// <returns>
