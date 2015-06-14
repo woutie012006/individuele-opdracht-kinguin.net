@@ -65,36 +65,34 @@
                         <li>
                             <a runat="server" href="~/UserPage.aspx" visible="False" id="hlUserPage">User info</a>
                         </li>
-                        
+
                         <li>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Genre<span class="caret"></span></a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="GamesPage.aspx/genre/ACTION">Action</a></li>
-                                    <li><a href="GamesPage.aspx/genre/RPG">RPG</a></li>
-                                    <li><a href="GamesPage.aspx/genre/SHOOTER">Shooter</a></li>
-                                    <li><a href="GamesPage.aspx/genre/RACING">Racing</a></li>
-                                    <li><a href="GamesPage.aspx/genre/MURDER">Murder</a></li>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="GamesPage.aspx/genre/ACTION">Action</a></li>
+                                <li><a href="GamesPage.aspx/genre/RPG">RPG</a></li>
+                                <li><a href="GamesPage.aspx/genre/SHOOTER">Shooter</a></li>
+                                <li><a href="GamesPage.aspx/genre/RACING">Racing</a></li>
+                                <li><a href="GamesPage.aspx/genre/MURDER">Murder</a></li>
 
-                                </ul>
-                            </li>
-                        
-                            <li>
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Platform<span class="caret"></span></a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="GamesPage.aspx/platform/PC">Pc masterrace</a></li>
-                                    <li><a href="GamesPage.aspx/platform/XBOX">Xbox</a></li>
-                                    <li><a href="GamesPage.aspx/platform/PS">Playstation</a></li>
-                                </ul>
-                            </li>
-                        </ul>
+                            </ul>
+                        </li>
 
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Platform<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="GamesPage.aspx/platform/PC">Pc masterrace</a></li>
+                                <li><a href="GamesPage.aspx/platform/XBOX">Xbox</a></li>
+                                <li><a href="GamesPage.aspx/platform/PS">Playstation</a></li>
+                            </ul>
+                        </li>
 
-                    <div id="LoginLink" style="float: right; margin-top: 10px; margin-bottom: 10px;">
-
-                        <asp:TextBox ID="tbSearch" runat="server"></asp:TextBox>
-                        <asp:Button ID="btnSearch" runat="server" OnClick="btnSearch_OnClick" type="button" CssClass="glyphicon-search btn btn-primary" aria-label="Left Align" Style="background-color: rgba(0, 0, 0, 0.0); border-width: 0;" Text="Search" />
-                        <asp:HyperLink ID="LoginLogout" runat="server" Text="Login" class="btn btn-default"></asp:HyperLink>
-                    </div>
+                        <div id="LoginLink" style="float: right; margin-top: 10px; margin-bottom: 10px;">
+                            <asp:TextBox ID="tbSearch" runat="server"></asp:TextBox>
+                            <asp:Button ID="btnSearch" runat="server" OnClick="btnSearch_OnClick" type="button" CssClass="glyphicon-search btn btn-primary" aria-label="Left Align" Style="background-color: rgba(0, 0, 0, 0.0); border-width: 0;" Text="Search" />
+                            <asp:HyperLink ID="LoginLogout" runat="server" Text="Login" class="btn btn-default"></asp:HyperLink>
+                        </div>
+                    </ul>
                 </div>
             </div>
         </div>
