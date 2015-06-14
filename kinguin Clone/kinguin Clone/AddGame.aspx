@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddGame.aspx.cs" Inherits="Kinguin_Clone.AddGame" EnableEventValidation="false" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddGame.aspx.cs" Inherits="kinguin_Clone.AddGame" EnableEventValidation="false" %>
 <%@ MasterType VirtualPath="~/Site.master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
@@ -14,13 +14,13 @@
 
         <asp:Label runat="server" Text="Platform"></asp:Label><br>
         <asp:FileUpload ID="fuPicture" runat="server" CssClass="form-control"/>
-        <asp:RequiredFieldValidator ControlToValidate="fuPicture" runat="server" ErrorMessage="No Picture was loaded" CssClass="alert alert-dismissible alert-danger"></asp:RequiredFieldValidator><br>
+        <asp:RequiredFieldValidator ControlToValidate="fuPicture" runat="server" ErrorMessage="No picture was loaded" CssClass="alert alert-dismissible alert-danger"></asp:RequiredFieldValidator><br>
 
         <asp:Label runat="server" Text="Description"></asp:Label><br>
         <textarea id="tbDescription" cols="20" rows="5" runat="server" CssClass="form-control"></textarea><br>
         <asp:RequiredFieldValidator ControlToValidate="tbDescription" runat="server" ErrorMessage="Description was not entered" CssClass="alert alert-dismissible alert-danger"></asp:RequiredFieldValidator><br>
 
-        <asp:Label runat="server" Text="Release Date"></asp:Label><br>
+        <asp:Label runat="server" Text="Release date"></asp:Label><br>
         <asp:Calendar ID="clDate" runat="server"></asp:Calendar><br/>
         <br>
 

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 //using System.Windows.Forms;
 
-namespace Kinguin_Clone
+namespace Ict4Events_WindowsForms
 {
     //Bron : https://github.com/teunw/PTS2-Camping-Management-program   Dit is de klasse die is geschreven tijdens de proftaak
 
@@ -15,20 +15,19 @@ namespace Kinguin_Clone
     internal sealed class DatabaseConnection
     {
         public const string databaseArgs =
-            "user id=" + userName + ";password=" + password + ";data source=" + serverAddress;
-            // + ";service Name=" + servicename;
+            "user id=" + userName + ";password=" + password + ";data source=" + serverAddress;// + ";service name=" + servicename;
 
         private OracleConnection connection;
         //private const string userName = "dbi311425", password = "zqy7T4qfdD", serverAddress = "fhictora01.fhict.local", sid = "xe", servicename = "fhictora";
         private const string userName = "kinguin", password = "Password123", serverAddress = "127.0.0.1";
         //private DatabaseQueries databaseQueries;
 
-        private static readonly DatabaseConnection databaseInstance = new DatabaseConnection();
+        private static readonly DatabaseConnection _instance = new DatabaseConnection();
 
 
-        public static DatabaseConnection DatabaseInstance
+        public static DatabaseConnection Instance
         {
-            get { return databaseInstance; }
+            get { return _instance; }
         }
 
         public OracleConnection oracleConnection
@@ -72,7 +71,7 @@ namespace Kinguin_Clone
         /// Executes command on the database, can be used for many different things
         /// </summary>
         /// <see cref="https://msdn.microsoft.com/en-us/library/system.data.oracleclient.oraclecommand%28v=vs.110%29.aspx"/>
-        /// <param Name="query">Query you want to use</param>
+        /// <param name="query">Query you want to use</param>
         /// <returns>OracleCommand results for your query</returns
         public OracleCommand ExecuteCommand(string query)
         {
@@ -84,20 +83,20 @@ namespace Kinguin_Clone
         /// <summary>
         /// Executes a SELECT or query with result on the database
         /// </summary>
-        /// <param Name="query">The query you want to execute</param>
+        /// <param name="query">The query you want to execute</param>
         /// <returns>OracleDataReader containing the query results, if query failed returns null</returns>
         /// <example>This example shows how to get all rows from a query
-        /// <Code>
-        /// OracleDataReader odr = DatabaseConnection.DatabaseInstance.ExecuteReadQuery("SELECT TEST FROM TEST");
+        /// <code>
+        /// OracleDataReader odr = DatabaseConnection.Instance.ExecuteReadQuery("SELECT TEST FROM TEST");
         /// do
         /// {
         ///     System.Diagnostics.Debug.WriteLine(odr.GetValue(0));
         /// } while (odr.Read());
-        /// </Code>
+        /// </code>
         /// </example>
         public OracleDataReader ExecuteReadQuery(string query)
         {
-            query = query.Replace(";", string.Empty);
+            query = query.Replace(";", "");
             try
             {
                 OpenConnection();
@@ -115,8 +114,8 @@ namespace Kinguin_Clone
         /// <summary>
         /// Executes a prepared statement on the database, NOT TESTED YET
         /// </summary>
-        /// <param Name="query">Query to execute</param>
-        /// <param Name="parameters">Prepared parameters for the query</param>
+        /// <param name="query">Query to execute</param>
+        /// <param name="parameters">Prepared parameters for the query</param>
         /// <returns>Your query result</returns>
         public OracleDataReader ExecuteReadQuery(string query, OracleParameterCollection parameters)
         {
@@ -136,11 +135,11 @@ namespace Kinguin_Clone
         /// Query the database, can be used for queries that don't return a value
         /// </summary>
         /// <returns>Value of rows affected, -1 on statements not affecting any rows</returns>
-        /// <param Name="query">Query you want to execute, DONT USE SEMICOLONS (;)</param>
-        /// <example>DatabaseConnection.DatabaseInstance.ExecuteQuery("UPDATE SOMETHING SET KEY = VALUE")</example>
+        /// <param name="query">Query you want to execute, DONT USE SEMICOLONS (;)</param>
+        /// <example>DatabaseConnection.Instance.ExecuteQuery("UPDATE SOMETHING SET KEY = VALUE")</example>
         public int ExecuteQuery(string query)
         {
-            query = query.Replace(";", String.Empty);
+            query = query.Replace(";", "");
             OracleCommand oracleCommand = ExecuteCommand(query);
             oracleCommand.CommandType = CommandType.Text;
 

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Kinguin_Clone {
+namespace kinguin_Clone {
     
     
     public partial class Logout {
@@ -17,7 +17,7 @@ namespace Kinguin_Clone {
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
-        /// To modify move field declaration from designer file to Code-behind file.
+        /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblLogout;
         
@@ -27,9 +27,9 @@ namespace Kinguin_Clone {
         /// <remarks>
         /// Auto-generated property.
         /// </remarks>
-        public new SiteMaster Master {
+        public new kinguin_Clone.SiteMaster Master {
             get {
-                return ((SiteMaster)(base.Master));
+                return ((kinguin_Clone.SiteMaster)(base.Master));
             }
         }
     }

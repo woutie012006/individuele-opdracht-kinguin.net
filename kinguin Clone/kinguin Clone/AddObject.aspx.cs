@@ -4,9 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Kinguin_Clone.classes;
+using kinguin_Clone.classes;
 
-namespace Kinguin_Clone
+namespace kinguin_Clone
 {
     public partial class AddObject : System.Web.UI.Page
     {
@@ -24,7 +24,7 @@ namespace Kinguin_Clone
 
             for (int i = 0; i < games.Count; i++)
             {
-                ddlGame.Items.Add(games[i].Name);
+                ddlGame.Items.Add(games[i].name);
             }
             //for (int i = 0; i < 100; i++)
             //{
@@ -34,7 +34,7 @@ namespace Kinguin_Clone
 
         protected void btnSubmit_OnClick(object sender, EventArgs e)
         {
-            Game g = games.Find(f => f.Name == ddlGame.Text);
+            Game g = games.Find(f => f.name == ddlGame.Text);
             (Master.administration.currentUser as Seller).AddGameCopy(new GameCopy(g, -1, Int32.Parse(tbPrice.Text),
                 new DateTime(0, 0, 1900), tbCode.Text));
         }

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="UserPage.aspx.cs" Inherits="Kinguin_Clone.UserPage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="UserPage.aspx.cs" Inherits="kinguin_Clone.UserPage" %>
 <%@ MasterType virtualpath="~/Site.master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <br>

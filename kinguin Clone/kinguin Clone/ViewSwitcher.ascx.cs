@@ -7,7 +7,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.FriendlyUrls.Resolvers;
 
-namespace Kinguin_Clone
+namespace kinguin_Clone
 {
     public partial class ViewSwitcher : System.Web.UI.UserControl
     {
@@ -31,7 +31,7 @@ namespace Kinguin_Clone
             var switchViewRoute = RouteTable.Routes[switchViewRouteName];
             if (switchViewRoute == null)
             {
-                // Friendly URLs is not enabled or the Name of the switch view route is out of sync
+                // Friendly URLs is not enabled or the name of the switch view route is out of sync
                 this.Visible = false;
                 return;
             }

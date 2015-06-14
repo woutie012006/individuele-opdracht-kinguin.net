@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="GamesPage.aspx.cs" Inherits="Kinguin_Clone.GamesPage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="GamesPage.aspx.cs" Inherits="kinguin_Clone.GamesPage" %>
 <%@ MasterType virtualpath="~/Site.master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
@@ -17,8 +17,8 @@
                     <div class="thumbnail">
                         <asp:Image ID="IMGGame" runat="server"/>
                         <div class="caption">
-                            <h3><%# Eval("Name") %></h3>
-                            <p><%# Eval("Description") %></p>
+                            <h3><%# Eval("name") %></h3>
+                            <p><%# Eval("description") %></p>
                             <h3></h3>
                             <p>
                                 <%--<asp:HyperLink ID="btnBuyNow" CssClass="btn btn-primary" runat="server" Text="Buy Now!" />--%>

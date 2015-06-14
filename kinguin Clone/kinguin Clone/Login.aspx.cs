@@ -4,11 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Kinguin_Clone;
-using Kinguin_Clone.classes;
+using Ict4Events_WindowsForms;
+using kinguin_Clone.classes;
 using Oracle.ManagedDataAccess.Client;
 
-namespace Kinguin_Clone
+namespace kinguin_Clone
 {
     public partial class Login : System.Web.UI.Page
     {

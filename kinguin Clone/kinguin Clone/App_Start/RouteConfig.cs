@@ -4,7 +4,7 @@ using System.Web;
 using System.Web.Routing;
 using Microsoft.AspNet.FriendlyUrls;
 
-namespace Kinguin_Clone
+namespace kinguin_Clone
 {
     public static class RouteConfig
     {

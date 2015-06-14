@@ -4,9 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Kinguin_Clone.classes;
+using kinguin_Clone.classes;
 
-namespace Kinguin_Clone
+namespace kinguin_Clone
 {
     public partial class GamesPage : System.Web.UI.Page
     {
@@ -38,7 +38,7 @@ namespace Kinguin_Clone
                     });
                 }
             }
-            else if (url[url.Length - 2].ToUpper() == "PLATFORM") //check if it needs to look for Platform.
+            else if (url[url.Length - 2].ToUpper() == "PLATFORM") //check if it needs to look for platform.
             {
                 try
                 {
@@ -54,7 +54,7 @@ namespace Kinguin_Clone
                     });
                 }
             }
-            else if (url[url.Length - 2].ToUpper() == "SEARCH") //check if it needs to look for Platform.
+            else if (url[url.Length - 2].ToUpper() == "SEARCH") //check if it needs to look for platform.
             {
                 try
                 {
@@ -83,13 +83,13 @@ namespace Kinguin_Clone
         {
             Game game = e.Item.DataItem as Game;
             Image image = e.Item.FindControl("IMGGame") as Image;
-            image.ImageUrl = game.Picture;
+            image.ImageUrl = game.picture;
 
             //HyperLink btnbuyNow = e.Item.FindControl("btnBuyNow") as HyperLink;
-            //btnbuyNow.NavigateUrl = "~/ShoppingCart.aspx/" + game.GameNr;
+            //btnbuyNow.NavigateUrl = "~/ShoppingCart.aspx/" + game.gameNr;
 
             HyperLink btnMoreInfo = e.Item.FindControl("btnMoreInfo") as HyperLink;
-            btnMoreInfo.NavigateUrl = "~/GameInfo.aspx/" + game.GameNr;
+            btnMoreInfo.NavigateUrl = "~/GameInfo.aspx/" + game.gameNr;
         }
     }
 }

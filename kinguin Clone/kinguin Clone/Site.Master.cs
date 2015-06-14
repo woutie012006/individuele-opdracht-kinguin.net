@@ -4,9 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Kinguin_Clone.classes;
+using kinguin_Clone.classes;
 
-namespace Kinguin_Clone
+namespace kinguin_Clone
 {
     public partial class SiteMaster : MasterPage
     {
@@ -21,10 +21,7 @@ namespace Kinguin_Clone
                 }
                 return new Administration();
             }
-            set
-            {
-                Session["administration"] = value;
-            }
+            set { Session["administration"] = value; }
         }
 
 

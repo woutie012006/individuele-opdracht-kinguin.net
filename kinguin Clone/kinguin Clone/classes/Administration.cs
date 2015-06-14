@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Web;
-using Kinguin_Clone;
+using Ict4Events_WindowsForms;
 using Oracle.ManagedDataAccess.Client;
 
-namespace Kinguin_Clone.classes
+namespace kinguin_Clone.classes
 {
     public class Administration
     {
@@ -59,7 +59,7 @@ namespace Kinguin_Clone.classes
                         string adres = oddr.GetString(3);
                         string telNr = oddr.GetString(4);
                         float kinguinbalance = oddr.GetFloat(5);
-                        // email is already available
+                        //email is already available
                         string nickname = oddr.GetString(6);
 
 
@@ -92,7 +92,7 @@ namespace Kinguin_Clone.classes
             return false;
         }
 
-        public bool Register(string name, string adres, string telNr, string email, string password, string nickname)
+        public bool Register(string name, string adres, string telNr, string email, string Password, string nickname)
         {
             try
             {
@@ -106,7 +106,7 @@ namespace Kinguin_Clone.classes
                              " 'KLANT'," +
                              " (0)," +
                              " '" + email + "', " +
-                             "'" + password + "')";
+                             "'" + Password + "')";
 
                 OracleCommand oc = new OracleCommand(sql, db.oracleConnection);
                 oc.Connection.Open();
@@ -137,7 +137,7 @@ namespace Kinguin_Clone.classes
             string query = null;
             searchterm = searchterm.Replace("?", "%");
             query =
-                "select gamenr,naam, categorie, datum,foto,Specificatie,Platform,beschrijving from game where naam like '" +
+                "select gamenr,naam, categorie, datum,foto,specificatie,platform,beschrijving from game where naam like '" +
                 searchterm + "'";
 
 
@@ -165,7 +165,7 @@ namespace Kinguin_Clone.classes
             List<Game> games = new List<Game>();
 
             string query =
-                "select gamenr,naam,categorie, datum,foto,Specificatie,Platform, beschrijving from game where upper(categorie)= upper('" +
+                "select gamenr,naam,categorie, datum,foto,specificatie,platform, beschrijving from game where upper(categorie)= upper('" +
                 searchterm + "')";
 
 
@@ -193,7 +193,7 @@ namespace Kinguin_Clone.classes
             List<Game> games = new List<Game>();
 
             string query =
-                "select gamenr,naam, categorie, datum,foto,Specificatie,Platform,beschrijving from game where upper(Platform)= upper('" +
+                "select gamenr,naam, categorie, datum,foto,specificatie,platform,beschrijving from game where upper(platform)= upper('" +
                 searchterm + "')";
 
 
@@ -220,7 +220,7 @@ namespace Kinguin_Clone.classes
             DatabaseConnection db = new DatabaseConnection();
             List<Game> games = new List<Game>();
 
-            string query = "select gamenr,naam, categorie, datum,foto,Specificatie,Platform,beschrijving from game";
+            string query = "select gamenr,naam, categorie, datum,foto,specificatie,platform,beschrijving from game";
 
 
             OracleDataReader dr = db.ExecuteReadQuery(query);
@@ -249,7 +249,7 @@ namespace Kinguin_Clone.classes
             DatabaseConnection db = new DatabaseConnection();
 
             string query =
-                "select gamenr,naam, categorie, datum,foto,Specificatie,Platform,beschrijving from game where rownum=1 and GameNr = " +
+                "select gamenr,naam, categorie, datum,foto,specificatie,platform,beschrijving from game where rownum=1 and GameNr = " +
                 id;
 
 
@@ -285,7 +285,7 @@ namespace Kinguin_Clone.classes
         //    List<GameCopy> games = new List<GameCopy>();
 
         //    string query = "select g.gamenr,g.naam,g.categorie,g.datum," +
-        //                   " g.foto,g.Specificatie,g.Platform, g.beschrijving, " +
+        //                   " g.foto,g.specificatie,g.platform, g.beschrijving, " +
         //                   "O.Objectnr, o.prijs,O.Verkoopsdatum,O.Code " +
 
         //                   "from mandje m , verkoopobject o, game g " +
@@ -301,19 +301,19 @@ namespace Kinguin_Clone.classes
         //    while (dr.Read())
         //    {
         //        int gamenr = dr.GetInt32(0);
-        //        string Name = dr.GetString(1);
-        //        string Category = dr.GetString(2);
-        //        DateTime Date = dr.GetDateTime(3);
-        //        string Picture = dr.GetString(4);
-        //        string Specificatie = dr.GetString(5);
-        //        string Platform = dr.GetString(6);
+        //        string name = dr.GetString(1);
+        //        string category = dr.GetString(2);
+        //        DateTime date = dr.GetDateTime(3);
+        //        string picture = dr.GetString(4);
+        //        string specificatie = dr.GetString(5);
+        //        string platform = dr.GetString(6);
         //        string beschrijving = dr.GetString(7);
         //        int objectnr = dr.GetInt32(8);
-        //        float Price = dr.GetFloat(9);
+        //        float price = dr.GetFloat(9);
         //        DateTime datum = dr.GetDateTime(10);
-        //        string Code = dr.GetString(11);
+        //        string code = dr.GetString(11);
 
-        //        copies.Add(new GameCopy(gamenr, Name, Category, Date, Picture, Specificatie, Platform, objectnr,Price,datum,Code,beschrijving));
+        //        copies.Add(new GameCopy(gamenr, name, category, date, picture, specificatie, platform, objectnr,price,datum,code,beschrijving));
         //    }
         //    return games;
 
@@ -327,7 +327,7 @@ namespace Kinguin_Clone.classes
             List<Advert> ads = new List<Advert>();
 
             DatabaseConnection db = new DatabaseConnection();
-            string sql = "SELECT id, foto, url, Description FROM Advertentie ORDER BY dbms_random.value";
+            string sql = "SELECT id, foto, url, description FROM Advertentie ORDER BY dbms_random.value";
 
 
             OracleCommand oc = new OracleCommand(sql, db.oracleConnection);

@@ -6,9 +6,9 @@ using System.Net;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Kinguin_Clone.classes;
+using kinguin_Clone.classes;
 
-namespace Kinguin_Clone
+namespace kinguin_Clone
 {
     public partial class GameInfo : System.Web.UI.Page
     {
@@ -51,14 +51,14 @@ namespace Kinguin_Clone
         {
             Game game = e.Item.DataItem as Game;
             Image image = e.Item.FindControl("imgGame") as Image;
-            image.ImageUrl = game.Picture;
+            image.ImageUrl = game.picture;
         }
 
         protected void ObjectView_OnItemDataBound(object sender, ListViewItemEventArgs e)
         {
             GameCopy game = e.Item.DataItem as GameCopy;
             HyperLink btn = e.Item.FindControl("btnPutInCart") as HyperLink;
-            btn.NavigateUrl = "/ShoppingCart.aspx?GameCopyID=" + game.CopyNr;
+            btn.NavigateUrl = "/ShoppingCart.aspx?GameCopyID=" + game.copyNr;
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="GameInfo.aspx.cs" Inherits="Kinguin_Clone.GameInfo" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="GameInfo.aspx.cs" Inherits="kinguin_Clone.GameInfo" %>
 
 <%@ MasterType VirtualPath="~/Site.master" %>
 
@@ -18,9 +18,9 @@
                             <asp:Image ID="imgGame" CssClass="img-responsive" runat="server"/>
                             <div class="caption-full">
                                 <h4>
-                                    <a href="#"><%# Eval("Name") %></a>
+                                    <a href="#"><%# Eval("name") %></a>
                                 </h4>
-                                <p><%# Eval("Description") %></p>
+                                <p><%# Eval("description") %></p>
                             </div>
                         </div>
 
@@ -35,10 +35,10 @@
 
                         <div class="row">
                             <div class="col-md-12">
-                                <%# Eval("CopyNr") %>
-                                <span class="pull-right"><%# Eval("Price") %></span>
+                                <%# Eval("copyNr") %>
+                                <span class="pull-right"><%# Eval("price") %></span>
 
-                                <asp:HyperLink ID="btnPutInCart" CssClass="btn btn-default" runat="server" Text="put in Cart"/>
+                                <asp:HyperLink ID="btnPutInCart" CssClass="btn btn-default" runat="server" Text="put in cart"/>
                             </div>
                         </div>
 
