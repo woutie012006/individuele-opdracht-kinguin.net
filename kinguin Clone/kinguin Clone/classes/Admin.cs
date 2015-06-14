@@ -65,10 +65,12 @@ namespace kinguin_Clone.classes
             List<User> users = new List<User>();
             string sql = "SELECT L.SOORT,L.LIDNR,L.NAAM,L.ADRES,L.TELEFOONNR," + "L.KINGUINBALANCE," + "K.NICKNAME,"
                          + "V.VERKOPERNAAM,V.BANKREKING, l.EMAIL " + "FROM lid l, klant k, verkoper v  "
-                         + "WHERE (l.lidnr = K.Lidnr or L.Lidnr = V.Lidnr or (l.lidnr not in (select lidnr from verkoper) AND L.LIDNR NOT IN (SELECT LIDNR FROM KLANT)))";
+                         + "WHERE (l.soort = 'KLANT' and l.lidnr = K.Lidnr) or "
+                         + "(l.SOORT ='VERKOPER' and L.Lidnr = V.Lidnr  and l.lidnr = k.lidnr) or "
+                         + "(l.soort ='ADMIN' and l.lidnr = k.lidnr)";
 
             OracleCommand oc2 = new OracleCommand(sql, db.oracleConnection);
-
+            oc2.Connection.Open();
             oddr = oc2.ExecuteReader();
             while (oddr.Read())
             {
@@ -108,7 +110,7 @@ namespace kinguin_Clone.classes
                         break;
                 }
             }
-
+            oc2.Connection.Close();
             return users;
         }
 
@@ -132,7 +134,7 @@ namespace kinguin_Clone.classes
                          + " and l.NAAM like " + name;
 
             OracleCommand oc = new OracleCommand(sql, db.oracleConnection);
-
+            oc.Connection.Open();
             odr = oc.ExecuteReader();
             while (odr.Read())
             {
@@ -152,6 +154,7 @@ namespace kinguin_Clone.classes
                         break;
                 }
             }
+            oc.Connection.Close();
 
             return users;
         }
@@ -176,7 +179,7 @@ namespace kinguin_Clone.classes
                          + " and k.NICKNAME like " + nickname;
 
             OracleCommand oc = new OracleCommand(sql, db.oracleConnection);
-
+            oc.Connection.Open();
             odr = oc.ExecuteReader();
             while (odr.Read())
             {
@@ -197,7 +200,7 @@ namespace kinguin_Clone.classes
                         break;
                 }
             }
-
+            oc.Connection.Close();
             return users;
         }
 
@@ -220,7 +223,7 @@ namespace kinguin_Clone.classes
                          + " and l.LIDNR =" + userID;
 
             OracleCommand oc = new OracleCommand(sql, db.oracleConnection);
-
+            oc.Connection.Open();
             odr = oc.ExecuteReader();
             while (odr.Read())
             {
@@ -240,7 +243,7 @@ namespace kinguin_Clone.classes
                         break;
                 }
             }
-
+            oc.Connection.Close();
             return users;
         }
 
@@ -264,7 +267,7 @@ namespace kinguin_Clone.classes
                          + "WHERE L.Lidnr = V.Lidnr" + " and l.NAAM like " + name;
 
             OracleCommand oc = new OracleCommand(sql, db.oracleConnection);
-
+            oc.Connection.Open();
             odr = oc.ExecuteReader();
             while (odr.Read())
             {
@@ -296,7 +299,7 @@ namespace kinguin_Clone.classes
                         break;
                 }
             }
-
+            oc.Connection.Close();
             return users;
         }
 
@@ -320,7 +323,7 @@ namespace kinguin_Clone.classes
                          + "WHERE L.Lidnr = V.Lidnr" + " and v.VERKOPERNAAM like " + sellerName;
 
             OracleCommand oc = new OracleCommand(sql, db.oracleConnection);
-
+            oc.Connection.Open();
             odr = oc.ExecuteReader();
             while (odr.Read())
             {
@@ -352,7 +355,7 @@ namespace kinguin_Clone.classes
                         break;
                 }
             }
-
+            oc.Connection.Close();
             return users;
         }
 
@@ -375,7 +378,7 @@ namespace kinguin_Clone.classes
                          + "WHERE L.Lidnr = V.Lidnr" + " and l.LIDNR = " + userID;
 
             OracleCommand oc = new OracleCommand(sql, db.oracleConnection);
-
+            oc.Connection.Open();
             odr = oc.ExecuteReader();
             while (odr.Read())
             {
@@ -407,7 +410,7 @@ namespace kinguin_Clone.classes
                         break;
                 }
             }
-
+            oc.Connection.Close();
             return users;
         }
 

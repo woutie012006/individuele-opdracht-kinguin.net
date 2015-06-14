@@ -22,6 +22,15 @@ namespace kinguin_Clone {
         protected global::System.Web.UI.WebControls.TextBox tbName;
         
         /// <summary>
+        /// clDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar clDate;
+        
+        /// <summary>
         /// fuPicture control.
         /// </summary>
         /// <remarks>
@@ -38,15 +47,6 @@ namespace kinguin_Clone {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTextArea tbDescription;
-        
-        /// <summary>
-        /// clDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar clDate;
         
         /// <summary>
         /// tbSpecifications control.

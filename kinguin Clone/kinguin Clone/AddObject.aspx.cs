@@ -44,7 +44,7 @@ namespace kinguin_Clone
         /// </param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.administration = this.Master.administration;
+            this.administration = Master.administration;
             if (!(this.administration.CurrentUser is Seller))
             {
                 this.Response.Redirect("Default.aspx");
@@ -72,11 +72,24 @@ namespace kinguin_Clone
         /// <param name="e">
         /// The e.
         /// </param>
-        protected void btnSubmit_OnClick(object sender, EventArgs e)
+        protected void BtnSubmit_OnClick(object sender, EventArgs e)
         {
             Game g = this.games.Find(f => f.Name == this.ddlGame.Text);
-            (this.Master.administration.CurrentUser as Seller).AddGameCopy(
-                new GameCopy(g, -1, int.Parse(this.tbPrice.Text), new DateTime(0, 0, 1900), this.tbCode.Text));
+
+            if (g != null)
+            {
+
+                (Master.administration.CurrentUser as Seller).AddGameCopy(
+                    new GameCopy(g, -1, int.Parse(this.tbPrice.Text), new DateTime(1900, 1, 1), this.tbCode.Text));
+
+                this.ClientScript.RegisterStartupScript(
+                       this.GetType(),
+                       "Game alert",
+                       "alert('" + "You succesfully added a object with game " + g.Name + "');",
+                       true);
+
+            }
         }
+
     }
 }

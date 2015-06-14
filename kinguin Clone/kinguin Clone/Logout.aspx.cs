@@ -32,10 +32,10 @@ namespace kinguin_Clone
         /// </param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.Master.administration.CurrentUser = null;
-            this.Session["administration"] = this.Master.administration;
+            Master.administration.CurrentUser = null;
+            this.Session["administration"] = Master.administration;
             this.lblLogout.Text = "You have been successfully logged out";
-            HyperLink h = (HyperLink)this.Master.FindControl("LoginLogout");
+            HyperLink h = (HyperLink)Master.FindControl("LoginLogout");
             h.Text = "Login";
             h.NavigateUrl = "Login.aspx";
         }

@@ -35,7 +35,7 @@ namespace kinguin_Clone
         /// </param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!(this.Master.administration.CurrentUser is Admin))
+            if (!(Master.administration.CurrentUser is Admin))
             {
                 this.Response.Redirect("Default.aspx");
             }
@@ -69,7 +69,7 @@ namespace kinguin_Clone
             // string directory =  drives[0].Name;
             string filePath = this.Server.MapPath("~") + "/IMG/" + this.tbName.Text
                               + Path.GetExtension(picture.FileName);
-            string file = "/IMG/" + this.tbName.Text + "." + Path.GetExtension(picture.FileName);
+            string file = "/IMG/" + this.tbName.Text + Path.GetExtension(picture.FileName);
 
             if (!Directory.Exists(this.Server.MapPath("~") + "/IMG/"))
             {
@@ -87,9 +87,9 @@ namespace kinguin_Clone
                 this.tbSpecifications.InnerText, 
                 this.ddPlatform.Text, 
                 this.tbDescription.InnerText);
-            if (this.Master.administration.CurrentUser is Admin)
+            if (Master.administration.CurrentUser is Admin)
             {
-                if ((this.Master.administration.CurrentUser as Admin).AddGame(game))
+                if ((Master.administration.CurrentUser as Admin).AddGame(game))
                 {
                     this.ClientScript.RegisterStartupScript(
                         this.GetType(), 

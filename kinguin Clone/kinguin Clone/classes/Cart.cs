@@ -118,7 +118,7 @@ namespace kinguin_Clone.classes
             string query = "select g.gamenr,g.naam,g.categorie,g.datum,"
                            + " g.foto,g.Specificatie,g.Platform, g.beschrijving, "
                            + "O.Objectnr, o.prijs,O.Verkoopsdatum,O.Code , o.eigenaar_lidnr"
-                           + "from mandje m , verkoopobject o, game g " + "where M.Relevant= 'Y' "
+                           + " from mandje m , verkoopobject o, game g " + "where M.Relevant= 'Y' "
                            + "and M.Verkoopobject = O.Objectnr " + "and O.Gamenr = G.Gamenr " + "and m.lidnr = "
                            + currentUser.UserNr;
 

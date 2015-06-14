@@ -40,7 +40,7 @@ namespace kinguin_Clone
         /// </param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.administration = this.Master.administration;
+            this.administration = Master.administration;
             if (this.administration.CurrentUser != null)
             {
                 // url redirection check

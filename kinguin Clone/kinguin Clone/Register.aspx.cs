@@ -46,7 +46,7 @@ namespace kinguin_Clone
         {
             if (this.Page.IsValid)
             {
-                bool succes = this.Master.administration.Register(
+                bool succes = Master.administration.Register(
                     this.tbName.Text, 
                     this.tbAdres.Text, 
                     this.tbTelNr.Text, 

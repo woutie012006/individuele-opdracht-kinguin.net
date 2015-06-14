@@ -38,7 +38,7 @@ namespace kinguin_Clone
         /// </param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.administration = this.Master.administration;
+            this.administration = Master.administration;
 
             if (this.administration == null || this.administration.CurrentUser == null)
             {
@@ -53,13 +53,14 @@ namespace kinguin_Clone
             if (this.Master.administration.CurrentUser is Admin)
             {
                 this.hlAddGame.Visible = true;
+                this.hlAdminUserinfo.Visible = true;
             }
-            else if (this.Master.administration.CurrentUser is Seller)
+            else if (Master.administration.CurrentUser is Seller)
             {
                 this.hlChangeUserinfo.Visible = true;
                 this.hlAddObject.Visible = true;
             }
-            else if (this.Master.administration.CurrentUser is Buyer)
+            else if (Master.administration.CurrentUser is Buyer)
             {
                 this.hlChangeUserinfo.Visible = true;
             }
