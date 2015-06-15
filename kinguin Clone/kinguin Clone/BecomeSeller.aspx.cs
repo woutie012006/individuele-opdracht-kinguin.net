@@ -9,6 +9,8 @@ namespace kinguin_Clone
 {
     using kinguin_Clone.classes;
 
+    using Microsoft.Ajax.Utilities;
+
     /// <summary>
     /// The become seller.
     /// </summary>
@@ -25,7 +27,7 @@ namespace kinguin_Clone
         /// </param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!(this.Master.administration.CurrentUser is Admin))
+            if (!(this.Master.administration.CurrentUser is Buyer))
             {
                 Response.Redirect("Default.aspx");
             }
@@ -50,7 +52,8 @@ namespace kinguin_Clone
                        "Game alert",
                        "alert('" + "You succesfully became a seller !." + "');",
                        true);
-                Response.Redirect("UserPage.aspx");
+                this.Master.administration.CurrentUser = null;
+                Response.Redirect("/Login.aspx");
             }
 
         }

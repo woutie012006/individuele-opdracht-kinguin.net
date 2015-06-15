@@ -165,12 +165,12 @@ namespace kinguin_Clone.classes
             try
             {
                 DatabaseConnection db = new DatabaseConnection();
-                string query = "UPDATE LID  SET SOORT='VERKOPER'";
+                string query = "UPDATE LID  SET SOORT='VERKOPER' where lidnr =" + this.UserNr;
                 db.OpenConnection();
                 db.ExecuteQuery(query);
                 db.CloseConnection();
                 
-                query = "Insert into VERKOPER (verkopernaam,bankrekening, lidnr) values('" + sellerName + "','" + bankaccount+ "'," + this.UserNr + ")";
+                query = "Insert into VERKOPER (verkopernaam,bankreking, lidnr) values('" + sellerName + "','" + bankaccount + "'," + this.UserNr + ")";
                 db.OpenConnection();
                 db.ExecuteQuery(query);
                 db.CloseConnection();

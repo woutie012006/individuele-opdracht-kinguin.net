@@ -44,7 +44,7 @@ namespace kinguin_Clone
             {
                 this.Response.Redirect("~/Default.aspx");
             }
-
+            this.lblType.Text = "Type : " + administration.CurrentUser.GetType().Name;
             this.lblName.Text = "Name : " + this.administration.CurrentUser.Name;
             this.lblAdres.Text = "Adres : " + this.administration.CurrentUser.Adres;
             this.lblPhonenr.Text = "Phone number : " + this.administration.CurrentUser.Name;
@@ -63,6 +63,7 @@ namespace kinguin_Clone
             else if (Master.administration.CurrentUser is Buyer)
             {
                 this.hlChangeUserinfo.Visible = true;
+                this.hlBecomeSeller.Visible = true;
             }
         }
     }

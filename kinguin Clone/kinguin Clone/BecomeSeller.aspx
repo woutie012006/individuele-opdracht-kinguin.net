@@ -9,7 +9,7 @@
         <asp:TextBox ID="tbSellername" runat="server" CssClass="form-control"></asp:TextBox><br>
         <asp:RequiredFieldValidator ControlToValidate="tbSellername" runat="server" ErrorMessage="Sellername is empty" CssClass="alert alert-dismissible alert-danger"></asp:RequiredFieldValidator><br>
 
-        <asp:Label runat="server" Text="Adres"></asp:Label><br>
+        <asp:Label runat="server" Text="Bank account"></asp:Label><br>
         <asp:TextBox ID="tbBankaccount" runat="server" CssClass="form-control"></asp:TextBox><br>
         <asp:RequiredFieldValidator ControlToValidate="tbBankaccount" runat="server" ErrorMessage="Banaccount is empty" CssClass="alert alert-dismissible alert-danger"></asp:RequiredFieldValidator><br>
     <br>

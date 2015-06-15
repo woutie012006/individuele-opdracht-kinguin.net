@@ -47,8 +47,8 @@ namespace kinguin_Clone.classes
         /// <param name="email">
         /// The email.
         /// </param>
-        public Admin(int Usernr, string name, string adres, string phonent, float kinguinBalance, string email)
-            : base(Usernr, name, adres, phonent, kinguinBalance, email)
+        public Admin(int userNr, string name, string adres, string phoneNr, float kinguinBalance, string email)
+            : base(userNr, name, adres, phoneNr, kinguinBalance, email)
         {
         }
 

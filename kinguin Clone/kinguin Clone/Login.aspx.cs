@@ -61,9 +61,9 @@ namespace kinguin_Clone
         /// </param>
         protected void LoginForm_OnAuthenticate(object sender, AuthenticateEventArgs e)
         {
-            // different class ??????
+            
             System.Web.UI.WebControls.Login l = (System.Web.UI.WebControls.Login)sender;
-            if (this.administration.Login(l.UserName, l.Password))
+            if (this.administration.Login(l.UserName.ToLower(), l.Password))
             {
                 e.Authenticated = true;
                 this.Response.Redirect("~/Default.aspx");

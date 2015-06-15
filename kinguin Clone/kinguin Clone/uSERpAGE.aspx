@@ -9,6 +9,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <br>
     <br>
+    <asp:Label ID="lblType" runat="server" Text="Type : "></asp:Label><br>
     <asp:Label ID="lblName" runat="server" Text="Name : "></asp:Label><br>
     <asp:Label ID="lblAdres" runat="server" Text="Adres : "></asp:Label><br>
     <asp:Label ID="lblPhonenr" runat="server" Text="Phone number : "></asp:Label><br>
@@ -20,4 +21,6 @@
     <asp:HyperLink ID="hlAddGame" runat="server" NavigateUrl="AddGame.aspx" Visible="False">Add a game</asp:HyperLink><br>
     <asp:HyperLink ID="hlAddObject" runat="server" NavigateUrl="AddObject.aspx" Visible="False">Add Selling object</asp:HyperLink><br>
     <asp:HyperLink ID="hlAdminUserinfo" runat="server" NavigateUrl="AdminUserInfo.aspx" Visible="False">Admin user info</asp:HyperLink><br>
+    <asp:HyperLink ID="hlBecomeSeller" runat="server" NavigateUrl="BecomeSeller.aspx" Visible="False">Become a Seller !</asp:HyperLink><br>
+    <br>
 </asp:Content>
